@@ -22,6 +22,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::resource('Compras', ComprasController::class)->names('compras')->parameters(['Compras'=>'compra']); 
+Route::middleware(['auth:sanctum', 'verified'])->resource('Compras', ComprasController::class)->names('compras')->parameters(['Compras'=>'compra']); 
 
 Route::get('generate-pdf', [PDFController::class, 'generatePDF']);

@@ -14,6 +14,7 @@ class ComprasController extends Controller
     public function index()
     {
         //
+        return view('Compras.index');
     }
 
     /**

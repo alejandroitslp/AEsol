@@ -61,6 +61,13 @@
                             </div>
                         </label>
                         <br>
+
+                        @error('cantidad')
+                            <br>
+                                <small>*{{$message}}</small>
+                            <br>
+                        @enderror
+
                         
                 </div>
                 <div class="ml-14 mt-8">

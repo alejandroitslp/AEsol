@@ -12,4 +12,25 @@ class Compra extends Model
     //se establece la llave primaria como cod_producto
     protected $primaryKey='id';
 
+    protected $fillable = 
+    [
+        'foliocompra',
+        'codigo_producto',
+        'nombre_producto',
+        'cantidad_producto',
+        'fecha_emision',
+        'prov_prod',
+        'precio_u',
+        'precio_total',
+        'id_resp',
+        'embarc',
+        't_moneda',
+        'met_pago',
+        'p_total_c_imp',
+        'cot_ref',
+        'fecha_ref',
+        'cuenta_cargo',
+        'fecha_req',
+    ];
+
 }

@@ -2,7 +2,7 @@
     <div>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg grid grid-cols-2">
+            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg grid grid-cols-4">
                 <div class="ml-14 mt-8">
                     <form action="{{route('compras.store')}}" method="POST">
 
@@ -68,17 +68,11 @@
                             <br>
                         @enderror
 
-                        
-                </div>
-                <div class="ml-14 mt-8">
-                    <label>
-                        Fecha de emision
-                        <br>
-                        <div class="ml-8 mt-3">
-                        <input type="text" name="fechae" value={{old('fechae')}}>
-                        </div>
-                    </label>
-            
+                    <label >Fecha de emisión:</label>
+                    <div class="ml-8 mt-3">
+                        <input type="date" id="fechae" name="fechae" value="{{old('fechae')}}"min="2018-01-01" max="2022-12-31">
+                    </div>
+                   
                     @error('fechae')
                         <br>
                             <small>*{{$message}}</small>
@@ -86,29 +80,28 @@
                     @enderror
                     <br>
 
+                </div>
+                <div class="ml-14 mt-8">
                     
-                    {{-- <label>
-                        Proveedor
-                        <br>
-                        <div class="ml-8 mt-3">
-                        <input type="text" name="provprod" value={{old('provprod')}}>
-                            <select  id="provprod" name="prodprov">
-                                <option value="1" {{old('provprod')==1 ? 'selected' : ''}}>Juan Perez</option>
-                                <option value="2" {{old('provprod')==2 ? 'selected' : ''}}>Alejandro Perex</option>
-                            </select>
-                        </div>
-                    </label> --}}
-                    
+
                     <label>
-                        Proveedor
+                        Responsable de Orden: 
                         <br>
                         <div class="ml-8 mt-3">
-                            <select  id="provprod1" name="provprod">
-                                <option value="1" {{old('provprod')==1 ? 'selected' : ''}}>Juan Perez</option>
-                                <option value="2" {{old('provprod')==2 ? 'selected' : ''}}>Alejandro Perex</option>
+                            <select  id="provprod" name="provprod">
+                                @php
+                                    $counter1=0;   
+                                @endphp
+                                @foreach ($proveedores as $proveedor)
+                                    @php
+                                        $counter1=$counter1+1;    
+                                    @endphp
+                                    <option value="{{$proveedor->id}}" {{old('provprod')==$counter1 ? 'selected' : ''}}>{{$proveedor->nombre_prov}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </label>
+
             
                     @error('provprod')
                         <br>
@@ -132,26 +125,23 @@
                     @enderror
 
                     <br>
-                    <label>
-                        Precio Total de producto
-                        <br>
-                        <div class="ml-8 mt-3">
-                        <input type="text" name="ptotal" value={{old('ptotal')}}>
-                        </div>
-                    </label>
-            
-                    @error('ptotal')
-                        <br>
-                            <small>*{{$message}}</small>
-                        <br>
-                    @enderror
 
-                    <br>
+
                     <label>
-                        Responsable de orden: 
+                        Responsable de Orden: 
                         <br>
                         <div class="ml-8 mt-3">
-                        <input type="text" name="resp" value={{old('resp')}}>
+                            <select  id="resp1" name="resp">
+                                @php
+                                    $counter=0;   
+                                @endphp
+                                @foreach ($responsables as $responsable)
+                                    @php
+                                        $counter=$counter+1;    
+                                    @endphp
+                                    <option value="{{$responsable->id}}" {{old('resp')==$counter ? 'selected' : ''}}>{{$responsable->nombre_resp}}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </label>
             
@@ -175,8 +165,11 @@
                             <small>*{{$message}}</small>
                         <br>
                     @enderror
-
                     <br>
+
+                </div>
+                <div class="ml-14 mt-8">
+                    
                     <label>
                         Tipo de Moneda:
                         <br>
@@ -192,11 +185,21 @@
                     @enderror
 
                     <br>
+                    
+
                     <label>
-                        Metodo de Pago:
+                        Método de pago: 
                         <br>
                         <div class="ml-8 mt-3">
-                        <input type="text" name="metPago" value={{old('metPago')}}>
+                            <select  id="metPago" name="metPago">
+                                <option value="Efectivo"> 1. Efectivo </option>
+                                <option value="Tarjeta Credito"> 2. Tarjeta Credito </option>
+                                <option value="Tarjeta Debito"> 3. Tarjeta Debito </option>
+                                <option value="Paypal"> 4. Paypal </option>
+                                <option value="Transferencia Bancaria"> 5. Transferencia bancaria </option>
+                                <option value="Pago por movil"> 6. Pago por movil </option>
+                                <option value="Deposito Bancario">7. Deposito Bancario</option>
+                            </select>
                         </div>
                     </label>
             
@@ -205,21 +208,8 @@
                             <small>*{{$message}}</small>
                         <br>
                     @enderror
-
+                
                     <br>
-                    <label>
-                        Precio total con impuesto:
-                        <br>
-                        <div class="ml-8 mt-3">
-                        <input type="text" name="ptimp" value={{old('ptimp')}}>
-                        </div>
-                    </label>
-            
-                    @error('ptimp')
-                        <br>
-                            <small>*{{$message}}</small>
-                        <br>
-                    @enderror
 
                     <br>
                     <label>
@@ -237,21 +227,20 @@
                     @enderror
 
                     <br>
-                    <label>
-                        Fecha de referencia: 
-                        <br>
-                        <div class="ml-8 mt-3">
-                        <input type="text" name="fref" value={{old('fref')}}>
-                        </div>
-                    </label>
+                    <label >Fecha referencia:</label>
+                    <div class="ml-8 mt-3">
+                        <input type="date" id="fref" name="fref" value="{{old('fref')}}"min="2018-01-01" max="2022-12-31">
+                    </div>
             
                     @error('fref')
                         <br>
                             <small>*{{$message}}</small>
                         <br>
                     @enderror
-
                     <br>
+
+                </div>
+                <div class="ml-14 mt-8">
                     <label>
                         Cuenta cargo: 
                         <br>
@@ -267,13 +256,10 @@
                     @enderror
             
                     <br>
-                    <label>
-                        Fecha requerido:
-                        <br>
-                        <div class="ml-8 mt-3">
-                        <input type="text" name="freq">
-                        </div>
-                    </label>
+                    <label >Fecha requerida:</label>
+                    <div class="ml-8 mt-3">
+                        <input type="date" id="freq" name="freq" value="{{old('freq')}}"min="2018-01-01" max="2022-12-31">
+                    </div>
 
                     @error('freq')
                         <br>

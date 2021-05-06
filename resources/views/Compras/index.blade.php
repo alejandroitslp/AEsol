@@ -31,8 +31,13 @@
                                         <td>{{$compra->fecha_emision}}</td>
                                         <td>{{$compra->p_total_c_imp}}</td>
                                         <td>{{$compra->met_pago}}</td>
-                                        <th><a href=""></a>
-                                            <a href=""></a>
+                                        <th><form action="{{route('compras.destroy', $compra)}}" method="POST">
+                                            @csrf
+                                            @method('delete')
+                        
+                                            <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-6 mt-4 mb-3">Eliminar</button>
+                                       
+                                        </form>
                                         </th>
                                     </tr>
                                     @endforeach

@@ -25,14 +25,14 @@ class CreateComprasTable extends Migration
             $table->date('fecha_emision');
             
             $table->foreignId('prov_prod')->constrained('proveedores')->onDelete('cascade');
-            $table->integer('precio_u');
-            $table->integer('precio_total');
+            $table->decimal('precio_u', 8, 2);
+            $table->decimal('precio_total', 8, 2);
 
             $table->foreignId('id_resp')->constrained('responsables_compras')->onDelete('cascade');
             $table->string('embarc');
             $table->string('t_moneda');
             $table->string('met_pago');
-            $table->integer('p_total_c_imp');
+            $table->decimal('p_total_c_imp',8,2);
             $table->integer('cot_ref');
             $table->date('fecha_ref');
             $table->integer('cuenta_cargo');

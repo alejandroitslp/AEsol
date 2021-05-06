@@ -32,12 +32,12 @@ class StoreCompra extends FormRequest
             'fechae'=>'required',
             'provprod'=>'required',
             'punitario'=>'required',
-            'ptotal'=>'required',
+            
             'resp'=>'required',
             'embarque'=>'required',
             'tmoneda'=>'required',
             'metPago'=>'required',
-            'ptimp'=>'required',
+            
             'cref'=>'required',
             'fref'=>'required',
             'ccargo'=>'required',

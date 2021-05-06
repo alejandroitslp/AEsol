@@ -84,13 +84,29 @@
                             <small>*{{$message}}</small>
                         <br>
                     @enderror
-            
                     <br>
-                    <label>
+
+                    
+                    {{-- <label>
                         Proveedor
                         <br>
                         <div class="ml-8 mt-3">
                         <input type="text" name="provprod" value={{old('provprod')}}>
+                            <select  id="provprod" name="prodprov">
+                                <option value="1" {{old('provprod')==1 ? 'selected' : ''}}>Juan Perez</option>
+                                <option value="2" {{old('provprod')==2 ? 'selected' : ''}}>Alejandro Perex</option>
+                            </select>
+                        </div>
+                    </label> --}}
+                    
+                    <label>
+                        Proveedor
+                        <br>
+                        <div class="ml-8 mt-3">
+                            <select  id="provprod1" name="provprod">
+                                <option value="1" {{old('provprod')==1 ? 'selected' : ''}}>Juan Perez</option>
+                                <option value="2" {{old('provprod')==2 ? 'selected' : ''}}>Alejandro Perex</option>
+                            </select>
                         </div>
                     </label>
             

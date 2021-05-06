@@ -23,12 +23,12 @@ class CreateComprasTable extends Migration
             $table->string('nombre_producto');
             $table->integer('cantidad_producto');
             $table->date('fecha_emision');
-            $table->integer('prov_prod')->unsigned();
-            $table->foreign('prov_prod')->references('id')->on('proveedores')->onDelete('cascade');
+            
+            $table->foreignId('prov_prod')->constrained('proveedores')->onDelete('cascade');
             $table->integer('precio_u');
             $table->integer('precio_total');
-            $table->integer('id_resp')->unsigned();
-            $table->foreign('id_resp')->references('id')->on('responsables_compras')->onDelete('cascade');
+
+            $table->foreignId('id_resp')->constrained('responsables_compras')->onDelete('cascade');
             $table->string('embarc');
             $table->string('t_moneda');
             $table->string('met_pago');

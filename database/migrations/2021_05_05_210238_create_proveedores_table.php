@@ -22,7 +22,7 @@ class CreateProveedoresTable extends Migration
             $table->string('dir_prov');
             $table->string('loc_prov');
             $table->string('edo_prov');
-            $table->int('cp_prov');
+            $table->integer('cp_prov');
             $table->string('telefono_prov');
 
             /////////////////////////////////////////////

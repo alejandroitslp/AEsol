@@ -2,33 +2,17 @@
 
 namespace App\Http\Livewire;
 
-use App\Http\Requests\StoreCompra;
-use Livewire\Component;
-use App\Models\Proveedor;
 use App\Models\Productoscompra;
-use App\Models\Compra;
+use Livewire\Component;
 
-class TablaCompras extends Component
+class Tablacompras extends Component
 {
-    public $msg = '';
-    public $studentId = 55;
+    public $data;
+    public $item2;
 
-    
-   
     public function render()
     {
-        return view('livewire.tabla-compras');
+        $this->data = Productoscompra::where('folio', $this->item2)->get();
+        return view('livewire.tablacompras');
     }
-   
-    public function clickEvt(Compra $compra)
-    {
-        return $compra->foliocompra;
-        $this->msg =$compra->folioproducto;
-    }
-   
-    public function trackClickEvt($studentId)
-    {
-        $this->msg = $studentId;
-    }
-    
 }

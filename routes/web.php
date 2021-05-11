@@ -33,4 +33,3 @@ Route::get('Productoscompras/{productoscompra}', [ProductoscomprasController::cl
 
 Route::get('generate-pdf', [PDFController::class, 'generatePDF'])->name('generarPDF');
 
-Route::get('check-click-event', TablaCompras::class, 'clickEvt')->name('click-event');

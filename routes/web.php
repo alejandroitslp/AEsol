@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\ProveedoresController;
+use App\Http\Livewire\TablaCompras;
+use App\Http\Controllers\ProductoscomprasController;
 use App\Models\Proveedor;
 
 /*
@@ -25,6 +27,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::middleware(['auth:sanctum', 'verified'])->resource('Compras', ComprasController::class)->names('compras')->parameters(['Compras'=>'compra']); 
-Route::middleware(['auth:sanctum', 'verified'])->resource('Proveedores', ProveedoresController::class)->names('proveedores')->parameters(['Proveedores'=>'proveedor']); 
+Route::middleware(['auth:sanctum', 'verified'])->resource('Proveedores', ProveedoresController::class)->names('proveedores')->parameters(['Proveedores'=>'proveedor']);
+Route::middleware(['auth:sanctum', 'verified'])->resource('Productoscompras', ProductoscomprasController::class)->names('productoscompras')->parameters(['Productoscompras'=>'productoscompra']);
+Route::get('Productoscompras/{productoscompra}', [ProductoscomprasController::class, 'agregar'])->name('productoscompras.agregar');
 
-Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
+Route::get('generate-pdf', [PDFController::class, 'generatePDF'])->name('generarPDF');
+
+Route::get('check-click-event', TablaCompras::class, 'clickEvt')->name('click-event');

@@ -18,25 +18,22 @@ class CreateComprasTable extends Migration
 
             /* campos agragados segun especificaciones */
 
-            $table->string('foliocompra');
-            $table->string('codigo_producto');
-            $table->string('nombre_producto');
-            $table->integer('cantidad_producto');
+            $table->string('foliocompra')->index();
             $table->date('fecha_emision');
-            
-            $table->foreignId('prov_prod')->constrained('proveedores')->onDelete('cascade');
-            $table->decimal('precio_u', 8, 2);
+            $table->foreignId('prov_prod')->constrained('proveedores');
             $table->decimal('precio_total', 8, 2);
-
-            $table->foreignId('id_resp')->constrained('responsables_compras')->onDelete('cascade');
+            $table->foreignId('id_resp')->constrained('responsables_compras');
             $table->string('embarc');
             $table->string('t_moneda');
             $table->string('met_pago');
+            $table->decimal('impuesto',8,2);
             $table->decimal('p_total_c_imp',8,2);
             $table->integer('cot_ref');
             $table->date('fecha_ref');
             $table->integer('cuenta_cargo');
             $table->date('fecha_req');
+            $table->string('requisita');
+
             
 
             //////////////////////////////////////////////

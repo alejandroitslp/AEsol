@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade as PDF;
+use App\Models\Compra;
 
 class PDFController extends Controller
 {
-    public function generatePDF()
+    public function generatePDF($id)
     {
+        $compra=Compra::find($id);
+        
         $data = [
             'title' => 'Welcome to IT',
             'date' => date('m/d/Y')

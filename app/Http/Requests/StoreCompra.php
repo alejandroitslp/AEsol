@@ -26,12 +26,8 @@ class StoreCompra extends FormRequest
         return [
             //
             'folio'=>'required',
-            'codigo'=>'required',
-            'nombre'=>'required',
-            'cantidad'=>'required',
-            'fechae'=>'required',
+            
             'provprod'=>'required',
-            'punitario'=>'required',
             
             'resp'=>'required',
             'embarque'=>'required',

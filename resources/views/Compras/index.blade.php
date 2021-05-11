@@ -11,12 +11,12 @@
                                 <thead>
                                   <tr class="">
                                     <th class="w-1/7">Folio</th>
-                                    <th class="w-1/7">Codigo Producto</th>
-                                    <th class="w-1/7">Nombre de Producto</th>
-                                    <th class="w-1/7">Cantidad de Productos</th>
                                     <th class="w-1/7">Fecha de emision</th>
-                                    <th class="w-1/7">Precio total con impuesto</th>
-                                    <th class="w-1/7">Metodo de pago</th>
+                                    <th class="w-1/7">Precio total de compra</th>
+                                    <th class="w-1/7">Proveedor</th>
+                                    <th class="w-1/7">Metodo de Pago</th>
+                                    <th class="w-1/7">Requisitó</th>
+                                    <th class="w-1/7">Botones</th>
                                     <th></th>
                                   </tr>
                                 </thead>
@@ -25,26 +25,19 @@
                                     @foreach ($compras as $compra)
                                     <tr class="text-center" >
                                         <td>{{$compra->foliocompra}}</td>
-                                        <td>{{$compra->codigo_producto}}</td>
-                                        <td>{{$compra->nombre_producto}}</td>
-                                        <td>{{$compra->cantidad_producto}}</td>
                                         <td>{{$compra->fecha_emision}}</td>
-                                        <td>{{$compra->p_total_c_imp}}</td>
+                                        <td>$ {{$compra->p_total_c_imp}}</td>
+                                        <td>{{$compra->prov_prod}}</td>
                                         <td>{{$compra->met_pago}}</td>
-                                        <th><form action="{{route('compras.destroy', $compra)}}" method="POST">
-                                            @csrf
-                                            @method('delete')
-                        
-                                            <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-6 mt-4 mb-3">Eliminar</button>
-                                       
-                                        </form>
+                                        <td>{{$compra->requisita}}</td>
+                                        <th>
+                                            <a href="{{route('generarPDF', $compra->id)}}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-6 mt-4 mb-3">PDF</a>
                                         </th>
                                     </tr>
                                     @endforeach
                                   </tr>
                                 </tbody>
-                              </table>
-
+                            </table>
                         </div>
                         <div class="h-20 mt-8">
                             <a href="{{route('compras.create')}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-6 mt-48">Crear Orden de Compra</a>

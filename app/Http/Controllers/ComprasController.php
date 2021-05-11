@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Livewire\TablaCompras;
 use App\Models\Compra;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreCompra;
 use App\Models\Proveedor;
 use App\Models\ResponsableCompra;
+use Carbon\Carbon;
 
 class ComprasController extends Controller
 {
@@ -15,11 +17,13 @@ class ComprasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public $variable;
+
     public function index()
     {
         //
         
-        $compras=Compra::orderBy('fecha_emision')->get();
+        $compras=Compra::orderBy('fecha_emision')->paginate(10);
         
         return view('Compras.index', compact('compras'));
     }
@@ -33,7 +37,7 @@ class ComprasController extends Controller
     {
         //
         $proveedores= Proveedor::get();
-        $responsables=ResponsableCompra::orderBy('nombre_resp')->get();
+        $responsables=ResponsableCompra::get();
         return view('Compras.create', compact('proveedores', 'responsables'));
     }
 
@@ -46,33 +50,37 @@ class ComprasController extends Controller
     public function store(StoreCompra $request)
     {
         //
-            $valor1 = $request->punitario;
+             $valor1 = 0 /*Aqui ira el valor del precio unitario*/;
             $valor2 = $request->cantidad;
             $vptotal= $valor1 * $valor2;
 
-            $vpcimp=$vptotal*.16;
+            $imp=$vptotal*.16;
+            $vpcimp=$imp+$vptotal;
             
+            $fechaActual = Carbon::now(); 
+           
+
             $compra =Compra::create([
             'foliocompra'=> $request->folio,
-            'codigo_producto'=>$request->codigo,
-            'nombre_producto'=>$request->nombre,
-            'cantidad_producto'=>$request->cantidad,
-            'fecha_emision'=>$request->fechae,
+            'fecha_emision'=>$fechaActual,
             'prov_prod'=>$request->provprod,
-            'precio_u'=>$request->punitario,
             'precio_total'=>$vptotal,
             'id_resp'=>$request->resp,
             'embarc'=>$request->embarque,
             't_moneda'=>$request->tmoneda,
             'met_pago'=>$request->metPago,
+            'impuesto'=>$imp,
             'p_total_c_imp'=>$vpcimp,
             'cot_ref'=>$request->cref,
             'fecha_ref'=>$request->fref,
             'cuenta_cargo'=>$request->ccargo,
             'fecha_req'=> $request->freq,
+            'requisita'=>$request->requisita,
             ]);
 
-            return redirect()->route('compras.index');
+            
+            $compra1=Compra::where('foliocompra',$request->folio)->first();
+            return redirect()->route('compras.show', $compra1);
         ; 
 
 
@@ -87,6 +95,8 @@ class ComprasController extends Controller
     public function show($id)
     {
         //
+        $compra=Compra::find($id);
+        return view('Compras.show',compact('compra'));
     }
 
     /**
@@ -124,9 +134,6 @@ class ComprasController extends Controller
         $compra->delete();
         return redirect()->route('compras.index');
     }
-    public function operaciones()
-    {
-
-    }
+    
 
 }

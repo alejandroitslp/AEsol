@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Proveedor;
+use App\Models\ResponsableCompra;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,5 +16,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+        Proveedor::factory()->count(10)->create();
+        ResponsableCompra::factory()->count(10)->create();
     }
 }

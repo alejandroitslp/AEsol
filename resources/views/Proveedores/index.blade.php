@@ -53,7 +53,7 @@
     </div>
     
     <div class="mb-20 ml-8 mr-8">
-        @if (($proveedores->count())>10)
+        @if (($proveedor->count())>5)
         {{$proveedores->links()}}
         @else
         @endif

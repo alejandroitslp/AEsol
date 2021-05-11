@@ -15,22 +15,20 @@ class Compra extends Model
     protected $fillable = 
     [
         'foliocompra',
-        'codigo_producto',
-        'nombre_producto',
-        'cantidad_producto',
         'fecha_emision',
         'prov_prod',
-        'precio_u',
         'precio_total',
         'id_resp',
         'embarc',
         't_moneda',
         'met_pago',
+        'impuesto',
         'p_total_c_imp',
         'cot_ref',
         'fecha_ref',
         'cuenta_cargo',
         'fecha_req',
+        'requisita'
     ];
 
 }

@@ -15,7 +15,7 @@ class ProveedoresController extends Controller
     public function index()
     {
         //
-        $proveedores=Proveedor::orderBy('nombre_prov')->get();
+        $proveedores=Proveedor::orderBy('nombre_prov')->paginate(5);
         
         return view('Proveedores.index', compact('proveedores'));
     }

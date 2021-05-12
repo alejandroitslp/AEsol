@@ -128,7 +128,7 @@
                         <p class="styledivfont edivizq"><strong>Datos de facturacion</strong></p>
                     </div>
                     <div>
-                        <p class="stylepcab edivder" style="margin-right: .1cm;">Foliopredef000</p> {{-- Ingreso Contenido --}}
+                        <p class="stylepcab edivder" style="margin-right: .1cm;">{{$compra->foliocompra}}</p> {{-- Ingreso Contenido --}}
                     </div>
                     <div>
                         <p class="styledivfont edivder">OCC Folio</p>
@@ -139,7 +139,7 @@
 
             {{-- Segunda Division Nombre Empresa --}}
             <div style="height: 2.7cm;  ">
-                <div class="datosEmpContenedor" style="width: 10cm; ">
+                <div class="datosEmpContenedor" style="width: 10cm; margin-top:0.03cm">
                     <p class="pdatos">AE-SOL  S.A. DE C.V.</p>
                     <p class="pdatos">Circuito San Miguel #145, Col. San Francisco de los Pozos</p>
                     <p class="pdatos">San Luis Potosí, S.L.P., C.P. 78421</p>
@@ -148,14 +148,19 @@
                 </div>
 
                 {{-- Ingreso datos --}}
-                <div class="edivder" style="height: 2.7cm; margin-top:0.03cm ">
-                    <p class="stylepdatos">Fecha</p><br>
-                    <p class="stylepdatos">Cotizacion Ref</p><br>
-                    <p class="stylepdatos">01/01/2000</p><br>
-                    <p class="stylepdatos">5</p><br>
-                    <p class="stylepdatos">FechaReq</p>
+                <div class="edivder" style="height: 2.7cm; margin-top:0.03cm;">
+                    @php
+                        $newfecha_req = date("d/m/Y", strtotime($compra->fecha_req));
+                        $newfecha_emision = date("d/m/Y", strtotime($compra->fecha_emision));
+                        $newfecha_ref = date("d/m/Y", strtotime($compra->fecha_ref));
+                    @endphp
+                    <p class="stylepdatos">{{$newfecha_emision}}</p><br>
+                    <p class="stylepdatos">{{$compra->cot_ref}}</p><br>
+                    <p class="stylepdatos">{{$newfecha_ref}}</p><br>
+                    <p class="stylepdatos">{{$compra->cuenta_cargo}}</p><br>
+                    <p class="stylepdatos">{{$newfecha_req}}</p>
                 </div>
-                <div class=" edivder" style="height: 2.7cm; ">
+                <div class=" edivder" style="height: 2.7cm;">
                     <p class="pdatos">FECHA DE EMISIÓN: </p>
                     <p class="pdatos">COTIZACIÓN DE REFERENCIA: </p>
                     <p class="pdatos">FECHA DE REFERENCIA: </p>
@@ -183,11 +188,13 @@
                     <p class="pdatos" style="margin-left:.2cm">Telefono</p>
                 </div>
                 <div style="height:2.7cm ; width: 50% ; border-style: 0 solid 0 0;">
-                    <p class="pdatos" style="margin-left:.2cm">Nombre</p>
-                    <p class="pdatos" style="margin-left:.2cm">Nombre2</p>
-                    <p class="pdatos" style="margin-left:.2cm">Direccion</p>
-                    <p class="pdatos" style="margin-left:.2cm">Direccion</p>
-                    <p class="pdatos" style="margin-left:.2cm">Telefono</p>
+                    @foreach ($proveedor as $item)
+                    <p class="pdatos" style="margin-left:.2cm">{{$item->nombre_prov}}</p>
+                    <p class="pdatos" style="margin-left:.2cm"></p><br>
+                    <p class="pdatos" style="margin-left:.2cm">{{$item->dir_prov}}</p>
+                    <p class="pdatos" style="margin-left:.2cm">{{$item->loc_prov}}, {{$item->edo_prov}}, {{$item->cp_prov}}</p>
+                    <p class="pdatos" style="margin-left:.2cm">{{$item->telefono_prov}}</p>
+                    @endforeach
                 </div>
             </div>
 
@@ -201,10 +208,10 @@
                         <th>TERMINOS DE PAGO</th> 
                     </tr>
                     <tr style="height: .6cm">
-                        <td align="center" style="border-style: ridge; border-width: thin;">Texto</td>
-                        <td align="center" style="border-style: ridge; border-width: thin;">Texto</td>
-                        <td align="center" style="border-style: ridge; border-width: thin;">Texto</td>
-                        <td align="center" style="border-style: ridge; border-width: thin;">Texto</td>
+                        <td align="center" style="border-style: ridge; border-width: thin;">{{$compra->embarc}}</td>
+                        <td align="center" style="border-style: ridge; border-width: thin;">{{$compra->requisita}}</td>
+                        <td align="center" style="border-style: ridge; border-width: thin;">{{$compra->t_moneda}}</td>
+                        <td align="center" style="border-style: ridge; border-width: thin;">{{$compra->met_pago}}</td>
                     </tr>
                 </table>
             </div>
@@ -220,33 +227,55 @@
                         <th>p/u</th>
                         <th>Total</th>
                     </tr>
-                    <tr>
-                        <td align="center">Texto</td>
-                        <td align="center">Texto</td>
-                        <td align="center">Texto</td>
-                        <td align="center">Texto</td>
-                        <td align="center">Texto</td>
-                        <td align="center">Texto</td>
-                    </tr>
+                    
+                        @php
+                            $contador=0;
+                            $totales=0;
+                        @endphp
+                        @foreach ($comprasproducto as $item2)
+                        <tr>
+                            @php
+                               $var1=$item2->cantidad;
+                               $var2=$item2->precio;
+                               $var3=$var1*$var2; 
+                            @endphp
+                        <td align="center">{{$contador=$contador+1}}</td>
+                        <td align="center">{{$item2->codigo}}</td>
+                        <td align="center">{{$item2->nombre}}</td>
+                        <td align="center">{{$item2->cantidad}}</td>
+                        <td align="center">${{$item2->precio}}</td>
+                        <td align="center">${{$var3}}</td>
+                            @php
+                                $totales=$totales+$var3;    
+                            @endphp
+                        </tr>
+                        @endforeach
+                    
                 </table>
             </div>
             <div class="edivder">
                 <table>
                     <tr>
                         <th align="right">SUBTOTAL</th>
-                        <td align="right" style="width:2cm;">$Texto</td>
+                        <td align="right" style="width:2cm;">${{$totales}}</td>
                     </tr>
                     <tr>
                         <th align="right">IMPUESTO</th>
-                        <td align="right" style="">$Texto</td>
+                        @php
+                            $impuestos=$totales*0.16;
+                        @endphp
+                        <td align="right" style="">${{$impuestos}}</td>
                     </tr>
                     <tr>
                         <th align="right">OTRO</th>
-                        <td align="right" style="">$Texto</td>
+                        <td align="right" style="">$</td>
                     </tr>
                     <tr>
                         <th align="right">TOTAL</th>
-                        <td align="right" style="">$Texto</td>
+                        @php
+                            $resultado=$totales+$impuestos;   
+                        @endphp
+                        <td align="right" style="">${{$resultado}}</td>
                     </tr>
                 </table>
             </div>
@@ -260,7 +289,7 @@
                 </div>
                 <div>
                     <p class="styledivfont" style="font-size: .4cm, height: .7cm; background-color:#0070C0"><strong>AUTORIZÓ /AUTHORIZED</strong></p>
-                    <p style="font-size: .4cm">Este es un texto largo que va en observaciones, los productos enviados no corresponden a la compra</p>
+                    <p style="font-size: .4cm">Ing. Arturo Arévalo Escobar</p>
                 </div>
             </div>
 

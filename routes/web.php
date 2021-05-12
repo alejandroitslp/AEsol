@@ -31,5 +31,5 @@ Route::middleware(['auth:sanctum', 'verified'])->resource('Proveedores', Proveed
 Route::middleware(['auth:sanctum', 'verified'])->resource('Productoscompras', ProductoscomprasController::class)->names('productoscompras')->parameters(['Productoscompras'=>'productoscompra']);
 Route::get('Productoscompras/{productoscompra}', [ProductoscomprasController::class, 'agregar'])->name('productoscompras.agregar');
 
-Route::get('generate-pdf', [PDFController::class, 'generatePDF'])->name('generarPDF');
+Route::get('generate-pdf/{id}', [PDFController::class, 'generatePDF'])->name('generarPDF');
 

@@ -17,7 +17,7 @@ class CreateProductosComprasTable extends Migration
             $table->id();
             $table->string('folio');
             $table->foreign('folio')->references('foliocompra')->on('compras');
-            $table->integer('codigo');
+            $table->string('codigo');
             $table->string('nombre');
             $table->integer('cantidad');
             $table->decimal('precio',8,2);

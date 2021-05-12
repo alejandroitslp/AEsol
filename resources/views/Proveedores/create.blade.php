@@ -4,7 +4,7 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg grid grid-cols-3">
                     <div class="ml-14 mt-8">
-                        <form action="{{route('compras.store')}}" method="POST">
+                        <form action="{{route('proveedores.store')}}" method="POST">
 
                             @csrf
                     

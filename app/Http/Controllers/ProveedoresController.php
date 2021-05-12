@@ -40,6 +40,17 @@ class ProveedoresController extends Controller
     public function store(Request $request)
     {
         //
+        $proveedor=Proveedor::create([
+            'nombre_prov'=> $request->nombre,
+            'dir_prov'=>$request->direccion,
+            'loc_prov'=>$request->localidad,
+            'edo_prov'=>$request->estado,
+            'cp_prov'=>$request->cp,
+            'telefono_prov'=>$request->telefono,
+        ]);
+
+        return $proveedor;
+        
     }
 
     /**

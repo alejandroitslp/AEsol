@@ -3,7 +3,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8" ">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg grid  lg:grid-cols-3 sm:grid-cols-2">
-                <div class="ml-14 mt-8">
+                <div class="ml-14 mt-8 text-xs sm:text-base">
                     <form action="{{route('compras.store')}}" method="POST">
 
                         @csrf
@@ -12,7 +12,7 @@
                             folio de compra
                             <br>
                             <div class="ml-8 mt-3">
-                            <input type="text" name="folio" value={{old('folio')}} >
+                            <input class="py-0.5 px-0.5 sm:py-1 sm:px-1" type="text" name="folio" value={{old('folio')}} >
                             </div>
                         </label>
                 
@@ -74,7 +74,7 @@
                         Proveedor: 
                         <br>
                         <div class="ml-8 mt-3">
-                            <select  id="provprod" name="provprod" class="w-28">
+                            <select   id="provprod" name="provprod" class="w-28">
                                 @php
                                     $counter1=0;   
                                 @endphp
@@ -167,7 +167,7 @@
                     <br>
 
                 </div>
-                <div class="ml-14 mt-8">
+                <div class="ml-14 mt-8 text-xs sm:text-base">
                     
                     {{-- <label>
                         Tipo de Moneda:
@@ -218,7 +218,7 @@
                         Cotizacion referencia:
                         <br>
                         <div class="ml-8 mt-3">
-                        <input type="text" name="cref" value={{old('cref')}}>
+                        <input  class="py-0.5 px-0.5 sm:py-1 sm:px-1" type="text" name="cref" value={{old('cref')}}>
                         </div>
                     </label>
             
@@ -231,7 +231,7 @@
                     <br>
                     <label >Fecha referencia:</label>
                     <div class="ml-8 mt-3">
-                        <input type="date" id="fref" name="fref" value="{{old('fref')}}"min="2018-01-01" max="2022-12-31">
+                        <input class="py-0.5 px-0.5 sm:py-1 sm:px-1" type="date" id="fref" name="fref" value="{{old('fref')}}"min="2018-01-01" max="2022-12-31">
                     </div>
             
                     @error('fref')
@@ -242,12 +242,12 @@
                     <br>
 
                 </div>
-                <div class="ml-14 mt-8">
+                <div class="ml-14 mt-8 text-xs sm:text-base">
                     <label>
                         Cuenta cargo: 
                         <br>
                         <div class="ml-8 mt-3">
-                        <input type="text" name="ccargo" value={{old('ccargo')}}>
+                        <input  class="py-0.5 px-0.5 sm:py-1 sm:px-1" type="text" name="ccargo" value={{old('ccargo')}}>
                         </div>
                     </label>
             
@@ -260,7 +260,7 @@
                     <br>
                     <label >Fecha requerida:</label>
                     <div class="ml-8 mt-3">
-                        <input type="date" id="freq" name="freq" value="{{old('freq')}}"min="2018-01-01" max="2022-12-31">
+                        <input class="py-0.5 px-0.5 sm:py-1 sm:px-1" type="date" id="freq" name="freq" value="{{old('freq')}}"min="2018-01-01" max="2022-12-31">
                     </div>
 
                     @error('freq')
@@ -274,7 +274,7 @@
                         Requisita:
                         <br>
                         <div class="ml-8 mt-3">
-                        <input type="text" name="requisita" value={{old('requisita')}}>
+                        <input class="py-0.5 px-0.5 sm:py-1 sm:px-1" type="text" name="requisita" value={{old('requisita')}}>
                         </div>
                     </label>
             
@@ -291,7 +291,7 @@
 
 
                     <div class="ml-8 mt-2">
-                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-8"> Enviar formulario</button>
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-8 mb-8"> Enviar formulario</button>
                     </div>
                 </form>
                 </div>

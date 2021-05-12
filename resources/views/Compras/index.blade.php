@@ -13,7 +13,7 @@
                                     <th class="w-1/7">Folio</th>
                                     <th class="w-1/7">Fecha de emision</th>
                                     <th class="w-1/7">Precio total de compra</th>
-                                    <th class="w-1/7">Proveedor</th>
+                                    <th class="w-1/7">Cuenta cargo</th>
                                     <th class="w-1/7">Metodo de Pago</th>
                                     <th class="w-1/7">Requisitó</th>
                                     <th class="w-1/7">Botones</th>
@@ -26,12 +26,12 @@
                                     <tr class="text-center" >
                                         <td>{{$compra->foliocompra}}</td>
                                         <td>{{$compra->fecha_emision}}</td>
-                                        <td>$ {{$compra->p_total_c_imp}}</td>
-                                        <td>{{$compra->prov_prod}}</td>
+                                        <td>{{$compra->fecha_req}}</td>
+                                        <td>{{$compra->cuenta_cargo}}</td>
                                         <td>{{$compra->met_pago}}</td>
                                         <td>{{$compra->requisita}}</td>
                                         <th>
-                                            <a href="{{route('generarPDF', $compra->id)}}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-6 mt-4 mb-3">PDF</a>
+                                            <a href="{{route('generarPDF', $compra)}}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-6 mt-4 mb-3 py-0.2 px-0.5 sm:py-1 sm:px-1">PDF</a>
                                         </th>
                                     </tr>
                                     @endforeach

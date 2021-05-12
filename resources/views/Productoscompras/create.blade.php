@@ -27,7 +27,7 @@
                                 <br>
 
                             <label>
-                                Nombre
+                                Descripcion
                                 <br>
                                 <div class="ml-8 mt-3">
                                 <input class="py-0.5 px-0.5 sm:py-1 sm:px-1 " type="text" name="nombre" value={{old('nombre')}} >
@@ -72,8 +72,8 @@
     
                         
                             <div class="ml-8 mt-2 mb-8 grid grid-cols-2">
-                            <button type="submit" class="mr-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-8"> Agregar Otro</button>
-                            <a class="mr-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-8" href="{{route('compras.index')}}">Terminar</a>
+                            <button type="submit" class="mr-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-8"> Agregar</button>
+                            <a class="mr-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-8" href="{{route('compras.index')}}">Terminar</a>
                             </div>
                             
                         </form>

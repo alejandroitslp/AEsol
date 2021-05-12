@@ -28,7 +28,8 @@ class Compra extends Model
         'fecha_ref',
         'cuenta_cargo',
         'fecha_req',
-        'requisita'
+        'requisita',
+        'comentarios'
     ];
 
 }

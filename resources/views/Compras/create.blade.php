@@ -229,6 +229,20 @@
                     @enderror
                     <br>
 
+                    <label>
+                        Comentarios:
+                        <br> 
+                        <div class="ml-8 mt-3">
+                        <textarea name="comentarios" rows="5">{{old('comentarios')}}</textarea>
+                        </div>
+                    </label>
+            
+                    @error('comentarios')
+                        <br>
+                            <small>*{{$message}}</small>
+                        <br>
+                    @enderror
+
                     <div>
                         
                     </div>

@@ -236,17 +236,19 @@
                         <tr>
                             @php
                                $var1=$item2->cantidad;
-                               $var2=$item2->precio;
+                               $var2=number_format($item2->precio,2);
                                $var3=$var1*$var2; 
+                               $var4=number_format($var3,2);
                             @endphp
                         <td align="center">{{$contador=$contador+1}}</td>
                         <td align="center">{{$item2->codigo}}</td>
                         <td align="center">{{$item2->nombre}}</td>
                         <td align="center">{{$item2->cantidad}}</td>
-                        <td align="center">${{$item2->precio}}</td>
-                        <td align="center">${{$var3}}</td>
+                        <td align="center">${{$var2}}</td>
+                        <td align="center">${{$var4}}</td>
                             @php
-                                $totales=$totales+$var3;    
+                                $totales=$totales+$var3;   
+                                $totales1=number_format($totales,2); 
                             @endphp
                         </tr>
                         @endforeach
@@ -257,14 +259,15 @@
                 <table>
                     <tr>
                         <th align="right">SUBTOTAL</th>
-                        <td align="right" style="width:2cm;">${{$totales}}</td>
+                        <td align="right" style="width:2cm;">${{$totales1}}</td>
                     </tr>
                     <tr>
                         <th align="right">IMPUESTO</th>
                         @php
                             $impuestos=$totales*0.16;
+                            $impuestos1=number_format($impuestos,2);
                         @endphp
-                        <td align="right" style="">${{$impuestos}}</td>
+                        <td align="right" style="">${{$impuestos1}}</td>
                     </tr>
                     <tr>
                         <th align="right">OTRO</th>
@@ -274,8 +277,9 @@
                         <th align="right">TOTAL</th>
                         @php
                             $resultado=$totales+$impuestos;   
+                            $resultado1=number_format($resultado,2);
                         @endphp
-                        <td align="right" style="">${{$resultado}}</td>
+                        <td align="right" style="">${{$resultado1}}</td>
                     </tr>
                 </table>
             </div>
@@ -284,12 +288,12 @@
             {{-- Sexta Division Comentarios--}}
             <div class="edivizq" style="width: 65%; height: 4cm; margin-top:.7cm; border: solid; border-width: thin;">
                 <div>
-                    <p class="styledivfont" style="font-size: .4cm, height: .7cm; background-color:#0070C0">Comentarios o instrucciones especiales/ Special Comments</p>
-                    <p style="font-size: .4cm">Este es un texto largo que va en observaciones, los productos enviados no corresponden a la compra</p>
+                    <p class="styledivfont" style="font-size: .4cm, height: .7cm; background-color:#0070C0; ">Comentarios o instrucciones especiales/ Special Comments</p>
+                    <p style="font-size: .4cm; margin-left:.5cm">{{$compra->comentarios}}</p>
                 </div>
                 <div>
-                    <p class="styledivfont" style="font-size: .4cm, height: .7cm; background-color:#0070C0"><strong>AUTORIZÓ /AUTHORIZED</strong></p>
-                    <p style="font-size: .4cm">Ing. Arturo Arévalo Escobar</p>
+                    <p class="styledivfont" style="font-size: .4cm, height: .7cm; background-color:#0070C0; "><strong>AUTORIZÓ /AUTHORIZED</strong></p>
+                    <p style="font-size: .4cm; margin-left:.5cm">Ing. Arturo Arévalo Escobar</p>
                 </div>
             </div>
 

@@ -79,6 +79,7 @@ class ComprasController extends Controller
             'cuenta_cargo'=>$request->ccargo,
             'fecha_req'=> $request->freq,
             'requisita'=>$request->requisita,
+            'comentarios'=>$request->comentarios,
             ]);
 
             

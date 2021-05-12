@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StoreCompra;
 use App\Models\Proveedor;
 use App\Models\ResponsableCompra;
+use App\Models\Envio;
 use Carbon\Carbon;
 
 class ComprasController extends Controller
@@ -38,7 +39,8 @@ class ComprasController extends Controller
         //
         $proveedores= Proveedor::get();
         $responsables=ResponsableCompra::get();
-        return view('Compras.create', compact('proveedores', 'responsables'));
+        $envios=Envio::get();
+        return view('Compras.create', compact('proveedores', 'responsables', 'envios'));
     }
 
     /**

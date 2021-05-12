@@ -34,6 +34,7 @@ class CreateComprasTable extends Migration
             $table->date('fecha_req');
             $table->string('requisita');
             $table->text('comentarios');
+            $table->foreignId('id_envios')->constrained('envios');
 
             
 

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Envio;
 use Illuminate\Http\Request;
-use App\Models\Proveedor;
 
-class ProveedoresController extends Controller
+class EnviosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class ProveedoresController extends Controller
     public function index()
     {
         //
-        $proveedores=Proveedor::orderBy('nombre_prov')->paginate(5);
+        $envios=Envio::orderBy('id')->paginate(10);
         
-        return view('Proveedores.index', compact('proveedores'));
+        return view('Envios.index', compact('envios'));
     }
 
     /**
@@ -28,7 +28,7 @@ class ProveedoresController extends Controller
     public function create()
     {
         //
-        return view('Proveedores.create');
+        return view('Envios.create');
     }
 
     /**
@@ -40,17 +40,18 @@ class ProveedoresController extends Controller
     public function store(Request $request)
     {
         //
-        $proveedor=Proveedor::create([
-            'nombre_prov'=> $request->nombre,
-            'dir_prov'=>$request->direccion,
-            'loc_prov'=>$request->localidad,
-            'edo_prov'=>$request->estado,
-            'cp_prov'=>$request->cp,
-            'telefono_prov'=>$request->telefono,
+        $envio=Envio::create([
+            'nombre'=> $request->nombre,
+            'nombre_enc'=>$request->nombre_enc,
+            'dir_envio'=>$request->direccion,
+            'loc_envio'=>$request->localidad,
+            'cp_envio'=>$request->cp,
+            'edo_envio'=>$request->estado,
+            'telefono_envio'=>$request->telefono,
         ]);
 
-        $proveedor1=Proveedor::where('nombre_prov',$request->nombre)->first();
-        return redirect()->route('proveedores.index', $proveedor1);
+            $envio1=Envio::where('nombre',$request->nombre)->first();
+            return redirect()->route('envios.index', $envio1);
     }
 
     /**
@@ -93,10 +94,8 @@ class ProveedoresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Proveedor $proveedor)
+    public function destroy($id)
     {
         //
-        $proveedor->delete();
-        return redirect()->route('proveedores.index');
     }
 }

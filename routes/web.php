@@ -7,6 +7,7 @@ use App\Http\Controllers\PDFController;
 use App\Http\Controllers\ProveedoresController;
 use App\Http\Livewire\TablaCompras;
 use App\Http\Controllers\ProductoscomprasController;
+use App\Http\Controllers\EnviosController;
 use App\Models\Proveedor;
 
 /*
@@ -30,6 +31,7 @@ Route::middleware(['auth:sanctum', 'verified'])->resource('Compras', ComprasCont
 Route::middleware(['auth:sanctum', 'verified'])->resource('Proveedores', ProveedoresController::class)->names('proveedores')->parameters(['Proveedores'=>'proveedor']);
 Route::middleware(['auth:sanctum', 'verified'])->resource('Productoscompras', ProductoscomprasController::class)->names('productoscompras')->parameters(['Productoscompras'=>'productoscompra']);
 Route::get('Productoscompras/{productoscompra}', [ProductoscomprasController::class, 'agregar'])->name('productoscompras.agregar');
+Route::middleware(['auth:sanctum', 'verified'])->resource('Envios', EnviosController::class)->names('envios')->parameters(['Envios'=>'envio']);
 
 Route::get('generate-pdf/{id}', [PDFController::class, 'generatePDF'])->name('generarPDF');
 

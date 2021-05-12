@@ -185,6 +185,31 @@
                     @enderror
                     <br>
 
+                    <label>
+                        Envio a: 
+                        <br>
+                        <div class="ml-8 mt-3">
+                            <select   id="envio" name="envio" class="w-28">
+                                @php
+                                    $counter1=0;   
+                                @endphp
+                                @foreach ($envios as $envio)
+                                    @php
+                                        $counter1=$counter1+1;    
+                                    @endphp
+                                    <option value="{{$envio->id}}" {{old('envio')==$counter1 ? 'selected' : ''}}><p>{{$envio->nombre}} : {{$envio->dir_envio}}</p></option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </label>
+
+            
+                    @error('envio')
+                        <br>
+                            <small>*{{$message}}</small>
+                        <br>
+                    @enderror
+
                 </div>
                 <div class="ml-14 mt-8 text-xs sm:text-base">
                     <label>

@@ -18,7 +18,7 @@ class CreateComprasTable extends Migration
 
             /* campos agragados segun especificaciones */
 
-            $table->string('foliocompra')->index();
+            $table->string('foliocompra')->index()->unique();
             $table->date('fecha_emision');
             $table->foreignId('prov_prod')->constrained('proveedores');
             $table->decimal('precio_total', 8, 2);

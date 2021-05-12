@@ -50,27 +50,30 @@ class ComprasController extends Controller
     public function store(StoreCompra $request)
     {
         //
-             $valor1 = 0 /*Aqui ira el valor del precio unitario*/;
+             /* $valor1 = 0;
             $valor2 = $request->cantidad;
             $vptotal= $valor1 * $valor2;
 
             $imp=$vptotal*.16;
-            $vpcimp=$imp+$vptotal;
+            $vpcimp=$imp+$vptotal; */
+            $valor1=$request->tipo;
+            $valor2=$request->folio;
+            $valor3=$valor1.$valor2;
             
             $fechaActual = Carbon::now(); 
            
 
             $compra =Compra::create([
-            'foliocompra'=> $request->folio,
+            'foliocompra'=> $valor3,
             'fecha_emision'=>$fechaActual,
             'prov_prod'=>$request->provprod,
-            'precio_total'=>$vptotal,
+            'precio_total'=>0,
             'id_resp'=>$request->resp,
             'embarc'=>$request->embarque,
             't_moneda'=>$request->tmoneda,
             'met_pago'=>$request->metPago,
-            'impuesto'=>$imp,
-            'p_total_c_imp'=>$vpcimp,
+            'impuesto'=>0,
+            'p_total_c_imp'=>0,
             'cot_ref'=>$request->cref,
             'fecha_ref'=>$request->fref,
             'cuenta_cargo'=>$request->ccargo,
@@ -79,7 +82,7 @@ class ComprasController extends Controller
             ]);
 
             
-            $compra1=Compra::where('foliocompra',$request->folio)->first();
+            $compra1=Compra::where('foliocompra',$valor3)->first();
             return redirect()->route('compras.show', $compra1);
         ; 
 

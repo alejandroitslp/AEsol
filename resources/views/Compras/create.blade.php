@@ -7,7 +7,28 @@
                     <form action="{{route('compras.store')}}" method="POST">
 
                         @csrf
-                
+                        
+                        <label>
+                            Tipo de Folio: 
+                            <br>
+                            <div class="ml-8 mt-3">
+                                <select  id="embarque" name="tipo">
+                                    @php
+                                        $vardate=date("y");
+                                    @endphp
+                                    <option value="WO.{{$vardate}}" {{old('tipo')=="WO."."$vardate" ? 'selected' : ''}}>Work Order</option>
+                                    <option value="ALMA.{{$vardate}}" {{old('tipo')=="ALMA."."$vardate" ? 'selected' : ''}}>Almacen</option>
+                                    <option value="GAS.{{$vardate}}" {{old('tipo')=="GAS."."$vardate" ? 'selected' : ''}}>Gasolina</option>
+                                    <option value="LIMP.{{$vardate}}" {{old('tipo')=="LIMP."."$vardate" ? 'selected' : ''}}>Limpieza</option>
+                                    <option value="PAPE.{{$vardate}}" {{old('tipo')=="PAPE."."$vardate" ? 'selected' : ''}}>Papeleria</option>
+                                    <option value="SEG.{{$vardate}}" {{old('tipo')=="SEG."."$vardate" ? 'selected' : ''}}>Seguridad Industrial</option>
+                                    <option value="VEHIC.{{$vardate}}" {{old('tipo')=="VEHIC."."$vardate" ? 'selected' : ''}}>Vehiculos</option>
+                                </select>
+                            </div>
+                        </label>
+                        <br>
+
+
                         <label>
                             folio de compra
                             <br>
@@ -22,52 +43,6 @@
                             <br>
                         @enderror
                         <br>
-                
-                        {{-- <br>
-                        <label>
-                             Codigo del producto
-                             <br>
-                             <div class="ml-8 mt-3">
-                             <input type="text" name="codigo" value={{old('codigo')}}> 
-                             </div>
-                        </label>
-                
-                        @error('codigo')
-                            <br>
-                                <small>*{{$message}}</small>
-                            <br>
-                        @enderror --}}
-
-                        {{-- <br>
-                        <label>
-                             Nombre del producto
-                             <br>
-                             <div class="ml-8 mt-3">
-                             <input type="text" name="nombre" value={{old('nombre')}}> 
-                             </div>
-                        </label>
-                
-                        @error('nombre')
-                            <br>
-                                <small>*{{$message}}</small>
-                            <br>
-                        @enderror --}}
-                
-                        {{-- <br>
-                        <label>
-                            Cantidad de productos a ordenar
-                            <br>
-                            <div class="ml-8 mt-3">
-                            <input type="text" name="cantidad" value={{old('cantidad')}}> 
-                            </div>
-                        </label>
-                        <br>
-
-                        @error('cantidad')
-                            <br>
-                                <small>*{{$message}}</small>
-                            <br>
-                        @enderror --}}
                     
 
                     <label>
@@ -95,20 +70,6 @@
                         <br>
                     @enderror
             
-                    {{-- <br>
-                    <label>
-                        Precio unitario de producto
-                        <br>
-                        <div class="ml-8 mt-3">
-                        <input type="text" name="punitario" value={{old('punitario')}}>
-                        </div>
-                    </label>
-            
-                    @error('punitario')
-                        <br>
-                            <small>*{{$message}}</small>
-                        <br>
-                    @enderror --}}
 
                     <br>
 
@@ -138,15 +99,6 @@
                     @enderror
                     <br>
 
-                    {{-- <br>
-                    <label>
-                        Embarcar Via: 
-                        <br>
-                        <div class="ml-8 mt-3">
-                        <input type="text" name="embarque" value={{old('embarque')}}>
-                        </div>
-                    </label> --}}
-
                     <label>
                         Embarcar: 
                         <br>
@@ -168,14 +120,6 @@
 
                 </div>
                 <div class="ml-14 mt-8 text-xs sm:text-base">
-                    
-                    {{-- <label>
-                        Tipo de Moneda:
-                        <br>
-                        <div class="ml-8 mt-3">
-                        <input type="text" name="tmoneda" value={{old('tmoneda')}}>
-                        </div>
-                    </label> --}}
 
                     <label>
                         Tipo de moneda

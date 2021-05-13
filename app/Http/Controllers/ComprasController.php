@@ -82,6 +82,7 @@ class ComprasController extends Controller
             'fecha_req'=> $request->freq,
             'requisita'=>$request->requisita,
             'comentarios'=>$request->comentarios,
+            'id_envios'=>$request->envio,
             ]);
 
             

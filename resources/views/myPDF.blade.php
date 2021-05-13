@@ -181,11 +181,11 @@
                 {{-- Ingreso datos --}}
             <div style="height: 2.7cm; width: 100%">
                 <div class="edivizq" style="height:2.7cm ; width: 50% ; ">
-                    <p class="pdatos" style="margin-left:.2cm">Nombre</p>
-                    <p class="pdatos" style="margin-left:.2cm">Nombre2</p>
-                    <p class="pdatos" style="margin-left:.2cm">Direccion</p>
-                    <p class="pdatos" style="margin-left:.2cm">Direccion</p>
-                    <p class="pdatos" style="margin-left:.2cm">Telefono</p>
+                    <p class="pdatos" style="margin-left:.2cm">{{$envio->nombre}}</p>
+                    <p class="pdatos" style="margin-left:.2cm">{{$envio->nombre_enc}}</p>
+                    <p class="pdatos" style="margin-left:.2cm">{{$envio->dir_envio}}, {{$envio->loc_envio}}</p>
+                    <p class="pdatos" style="margin-left:.2cm">{{$envio->cp_envio}}, {{$envio->edo_envio}}</p>
+                    <p class="pdatos" style="margin-left:.2cm">{{$envio->telefono_envio}}</p>
                 </div>
                 <div style="height:2.7cm ; width: 50% ; border-style: 0 solid 0 0;">
                     @foreach ($proveedor as $item)

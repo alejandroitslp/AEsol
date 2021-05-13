@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Compra;
 use App\Models\Envio;
 use Illuminate\Http\Request;
 
@@ -94,8 +95,10 @@ class EnviosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Envio $envio)
     {
         //
+        $envio->delete();
+        return redirect()->route('envios.index');
     }
 }

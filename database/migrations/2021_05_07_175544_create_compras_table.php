@@ -33,7 +33,7 @@ class CreateComprasTable extends Migration
             $table->integer('cuenta_cargo');
             $table->date('fecha_req');
             $table->string('requisita');
-            $table->text('comentarios');
+            $table->text('comentarios')->nullable();
             $table->foreignId('id_envios')->constrained('envios');
 
             

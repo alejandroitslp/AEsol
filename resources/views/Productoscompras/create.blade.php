@@ -15,7 +15,7 @@
                                 Codigo
                                 <br>
                                 <div class="ml-8 mt-3">
-                                <input class="py-0.5 px-0.5 sm:py-1 sm:px-1 " type="text" name="codigo" value={{old('codigo')}} >
+                                <input class="py-0.5 px-0.5 sm:py-1 sm:px-1 rounded-lg" type="text" name="codigo" value={{old('codigo')}} >
                                 </div>
                             </label>
                     
@@ -30,7 +30,7 @@
                                 Descripcion
                                 <br>
                                 <div class="ml-8 mt-3">
-                                <input class="py-0.5 px-0.5 sm:py-1 sm:px-1 " type="text" name="nombre" value={{old('nombre')}} >
+                                <input class="py-0.5 px-0.5 sm:py-1 sm:px-1 rounded-lg" type="text" name="nombre" value={{old('nombre')}} >
                                 </div>
                             </label>
                     
@@ -45,7 +45,7 @@
                                 Cantidad
                                 <br>
                                 <div class="ml-8 mt-3">
-                                <input  class="py-0.5 px-0.5 sm:py-1 sm:px-1 " type="text" name="cantidad" value={{old('cantidad')}} >
+                                <input  class="py-0.5 px-0.5 sm:py-1 sm:px-1 rounded-lg" type="text" name="cantidad" value={{old('cantidad')}} >
                                 </div>
                             </label>
                     
@@ -60,7 +60,7 @@
                                     Precio:
                                     <br>
                                     <div class="ml-8 mt-3">
-                                    <input class="py-0.5 px-0.5 sm:py-1 sm:px-1 " type="text" name="precio" value={{old('precio')}}>
+                                    <input class="py-0.5 px-0.5 sm:py-1 sm:px-1 rounded-lg" type="text" name="precio" value={{old('precio')}}>
                                     </div>
                                 </label>
                         

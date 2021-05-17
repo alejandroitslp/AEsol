@@ -2,7 +2,7 @@
     <div>
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg grid grid-cols-3">
+                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg grid grid-cols-1 sm:grid-cols-3">
                     <div class="ml-14 mt-8">
                         <form action="{{route('proveedores.store')}}" method="POST">
 
@@ -12,7 +12,7 @@
                                 Nombre de Proveedor
                                 <br>
                                 <div class="ml-8 mt-3">
-                                <input type="text" name="nombre" value={{old('nombre')}} >
+                                <input class="rounded-lg" type="text" name="nombre" value={{old('nombre')}} >
                                 </div>
                             </label>
                     
@@ -28,7 +28,7 @@
                                 Direccion Proveedor
                                 <br>
                                 <div class="ml-8 mt-3">
-                                <input type="text" name="direccion" value={{old('direccion')}} >
+                                <input class="rounded-lg" type="text" name="direccion" value={{old('direccion')}} >
                                 </div>
                             </label>
                         
@@ -43,7 +43,7 @@
                                 Localidad 
                                 <br>
                                 <div class="ml-8 mt-3">
-                                <input type="text" name="localidad" value={{old('localidad')}} >
+                                <input class="rounded-lg" type="text" name="localidad" value={{old('localidad')}} >
                                 </div>
                             </label>
                         
@@ -55,13 +55,13 @@
                                 <br>
                             
                         </div>
-                        <div class="ml-8 mt-3">
+                        <div class="ml-14 mt-3">
                             <br>
                             <label>
                                 Estado
                                 <br>
                                 <div class="ml-8 mt-3">
-                                <input type="text" name="estado" value={{old('estado')}} >
+                                <input class="rounded-lg" type="text" name="estado" value={{old('estado')}} >
                                 </div>
                             </label>
                             
@@ -76,7 +76,7 @@
                                 Codigo Postal
                                 <br>
                                 <div class="ml-8 mt-3">
-                                <input type="text" name="cp" value={{old('cp')}} >
+                                <input class="rounded-lg" type="text" name="cp" value={{old('cp')}} >
                                 </div>
                             </label>
                         
@@ -91,7 +91,7 @@
                                 telefono
                                 <br>
                                 <div class="ml-8 mt-3">
-                                <input type="text" name="telefono" value={{old('telefono')}} >
+                                <input class="rounded-lg" type="text" name="telefono" value={{old('telefono')}} >
                                 </div>
                             </label>
                             
@@ -103,7 +103,7 @@
                                 <br>
                         </div>
                         <div class="ml-8 mt-10">
-                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-8"> Enviar formulario</button>
+                            <button  type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-8"> Enviar formulario</button>
                         </div>
                         </form>
                     </div>

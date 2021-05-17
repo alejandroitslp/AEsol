@@ -12,7 +12,7 @@
                             Tipo de Folio: 
                             <br>
                             <div class="ml-8 mt-3">
-                                <select  id="embarque" name="tipo">
+                                <select class="rounded-lg" id="embarque" name="tipo">
                                     @php
                                         $vardate=date("y");
                                     @endphp
@@ -33,7 +33,7 @@
                             folio de compra
                             <br>
                             <div class="ml-8 mt-3">
-                            <input class="py-0.5 px-0.5 sm:py-1 sm:px-1" type="text" name="folio" value={{old('folio')}} >
+                            <input class="py-0.5 px-0.5 sm:py-1 sm:px-1 rounded-lg" type="text" name="folio" value={{old('folio')}} >
                             </div>
                         </label>
                 
@@ -49,7 +49,7 @@
                         Proveedor: 
                         <br>
                         <div class="ml-8 mt-3">
-                            <select   id="provprod" name="provprod" class="w-28">
+                            <select   id="provprod" name="provprod" class="w-28 rounded-lg">
                                 @php
                                     $counter1=0;   
                                 @endphp
@@ -78,7 +78,7 @@
                         Responsable de Orden: 
                         <br>
                         <div class="ml-8 mt-3">
-                            <select  id="resp" name="resp" class="w-28">
+                            <select  id="resp" name="resp" class="w-28 rounded-lg">
                                 @php
                                     $counter=0;   
                                 @endphp
@@ -103,7 +103,7 @@
                         Embarcar: 
                         <br>
                         <div class="ml-8 mt-3">
-                            <select  id="embarque" name="embarque">
+                            <select class="rounded-lg" id="embarque" name="embarque">
                                 <option value="Terrestre" {{old('embarque')=="Terrestre" ? 'selected' : ''}}>Terrestre</option>
                                 <option value="Maritimo" {{old('embarque')=="Maritimo" ? 'selected' : ''}}>Maritimo</option>
                                 <option value="Aereo" {{old('embarque')=="Aereo" ? 'selected' : ''}}>Aereo</option>
@@ -125,7 +125,7 @@
                         Tipo de moneda
                         <br>
                         <div class="ml-8 mt-3">
-                            <select  id="tmoneda" name="tmoneda">
+                            <select class="rounded-lg" id="tmoneda" name="tmoneda">
                                 <option value="Pesos" {{old('embarque')=="Pesos" ? 'selected' : ''}}>Pesos MXN</option>
                                 <option value="Dolar" {{old('embarque')=="Dolar" ? 'selected' : ''}}>Dolar USD</option>
                             </select>
@@ -145,7 +145,7 @@
                         Método de pago: 
                         <br>
                         <div class="ml-8 mt-3">
-                            <select  id="metPago" name="metPago">
+                            <select class="rounded-lg" id="metPago" name="metPago">
                                 <option value="Transferencia">Transferencia</option>
                             </select>
                         </div>
@@ -162,7 +162,7 @@
                         Cotizacion referencia:
                         <br>
                         <div class="ml-8 mt-3">
-                        <input  class="py-0.5 px-0.5 sm:py-1 sm:px-1" type="text" name="cref" value={{old('cref')}}>
+                        <input  class="py-0.5 px-0.5 sm:py-1 sm:px-1 rounded-lg" type="text" name="cref" value={{old('cref')}}>
                         </div>
                     </label>
             
@@ -175,7 +175,7 @@
                     <br>
                     <label >Fecha referencia:</label>
                     <div class="ml-8 mt-3">
-                        <input class="py-0.5 px-0.5 sm:py-1 sm:px-1" type="date" id="fref" name="fref" value="{{old('fref')}}"min="2018-01-01" max="2022-12-31">
+                        <input class="rounded-lg py-0.5 px-0.5 sm:py-1 sm:px-1" type="date" id="fref" name="fref" value="{{old('fref')}}"min="2018-01-01" max="2022-12-31">
                     </div>
             
                     @error('fref')
@@ -189,7 +189,7 @@
                         Envio a: 
                         <br>
                         <div class="ml-8 mt-3">
-                            <select   id="envio" name="envio" class="w-28">
+                            <select   id="envio" name="envio" class="w-28 rounded-lg">
                                 @php
                                     $counter1=0;   
                                 @endphp
@@ -216,7 +216,7 @@
                         Cuenta cargo: 
                         <br>
                         <div class="ml-8 mt-3">
-                        <input  class="py-0.5 px-0.5 sm:py-1 sm:px-1" type="text" name="ccargo" value={{old('ccargo')}}>
+                        <input  class="py-0.5 px-0.5 sm:py-1 sm:px-1 rounded-lg" type="text" name="ccargo" value={{old('ccargo')}}>
                         </div>
                     </label>
             
@@ -229,7 +229,7 @@
                     <br>
                     <label >Fecha requerida:</label>
                     <div class="ml-8 mt-3">
-                        <input class="py-0.5 px-0.5 sm:py-1 sm:px-1" type="date" id="freq" name="freq" value="{{old('freq')}}"min="2018-01-01" max="2022-12-31">
+                        <input class="py-0.5 px-0.5 sm:py-1 sm:px-1 rounded-lg" type="date" id="freq" name="freq" value="{{old('freq')}}"min="2018-01-01" max="2022-12-31">
                     </div>
 
                     @error('freq')
@@ -243,7 +243,7 @@
                         Requisita:
                         <br>
                         <div class="ml-8 mt-3">
-                        <input class="py-0.5 px-0.5 sm:py-1 sm:px-1" type="text" name="requisita" value={{old('requisita')}}>
+                        <input class="py-0.5 px-0.5 sm:py-1 sm:px-1 rounded-lg" type="text" name="requisita" value={{old('requisita')}}>
                         </div>
                     </label>
             
@@ -258,7 +258,7 @@
                         Comentarios:
                         <br> 
                         <div class="ml-8 mt-3">
-                        <textarea name="comentarios" rows="5">{{old('comentarios')}}</textarea>
+                        <textarea class="rounded-lg" name="comentarios" rows="5">{{old('comentarios')}}</textarea>
                         </div>
                     </label>
             

@@ -27,7 +27,7 @@ class PDFController extends Controller
         
         $pdf = PDF::loadView('myPDF', compact('compra', 'comprasproducto', 'proveedor', 'envio'));
 
-        return $pdf->download('itsolutionstuff.pdf');
+        return $pdf->download(''.$vartemp.'.pdf');
 
         /* $data = [
             'title' => 'Welcome to IT',

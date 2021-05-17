@@ -12,7 +12,7 @@
                     <p>2. Asegurarse de que el proveedor se encuentra dentro de la lista proveedores, de lo contrario
                         añadirlo a la lista de proveedores existentes.
                     </p>
-                    <p>3. Crear orden de Compra</p>
+                    <p>3. Crear orden de Compra, podrá generar el PDF correspondiente, una vez terminado el llenado de la orden de Compra.</p>
                 </div>
             </div>
         </div>

@@ -13,7 +13,7 @@ class StoreProveedor extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,6 +25,12 @@ class StoreProveedor extends FormRequest
     {
         return [
             //
+            'nombre_prov'=>'required',
+            'dir_prov'=>'required',
+            'loc_prov'=>'required',
+            'edo_prov'=>'required',
+            'cp_prov'=>'required|numeric',
+            'telefono_prov'=>'required',
         ];
     }
 }

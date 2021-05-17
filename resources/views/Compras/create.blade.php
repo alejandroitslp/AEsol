@@ -126,8 +126,8 @@
                         <br>
                         <div class="ml-8 mt-3">
                             <select  id="tmoneda" name="tmoneda">
-                                <option value="Pesos" {{old('embarque')=="Pesos" ? 'selected' : ''}}>Pesos</option>
-                                <option value="Dolar" {{old('embarque')=="Dolar" ? 'selected' : ''}}>Dolar</option>
+                                <option value="Pesos" {{old('embarque')=="Pesos" ? 'selected' : ''}}>Pesos MXN</option>
+                                <option value="Dolar" {{old('embarque')=="Dolar" ? 'selected' : ''}}>Dolar USD</option>
                             </select>
                         </div>
                     </label>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreProveedor;
 use Illuminate\Http\Request;
 use App\Models\Proveedor;
 use App\Models\Compra;
@@ -52,7 +53,7 @@ class ProveedoresController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreProveedor $request)
     {
         //
         $proveedor=Proveedor::create([

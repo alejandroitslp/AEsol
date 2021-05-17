@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Proveedor;
+use App\Models\Compra;
 
 class ProveedoresController extends Controller
 {
@@ -12,12 +13,26 @@ class ProveedoresController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-        $proveedores=Proveedor::orderBy('nombre_prov')->paginate(5);
-        
-        return view('Proveedores.index', compact('proveedores'));
+
+        if(($request->nombreprov)!=null)
+        {
+            $proveedores=Proveedor::where('nombre_prov', 'LIKE', '%'.$request->nombreprov.'%')->get();
+            //('nombre_producto', 'LIKE', '%'.$search.'%')->get();
+            //('cod_producto', '=' ,$request->codigo)->get();
+        }
+        else
+        {
+            $proveedores = Proveedor::orderBy('nombre_prov','asc')->paginate(5);
+        }
+
+
+
+        /* $proveedores=Proveedor::orderBy('nombre_prov')->paginate(5); */
+        $compras=Compra::get();
+        return view('Proveedores.index', compact('proveedores', 'compras'));
     }
 
     /**

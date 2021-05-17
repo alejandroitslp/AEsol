@@ -9,6 +9,7 @@ use App\Http\Requests\StoreCompra;
 use App\Models\Proveedor;
 use App\Models\ResponsableCompra;
 use App\Models\Envio;
+use App\Models\Productoscompra;
 use Carbon\Carbon;
 
 class ComprasController extends Controller
@@ -25,8 +26,9 @@ class ComprasController extends Controller
         //
         
         $compras=Compra::orderBy('fecha_emision')->paginate(10);
+        $productoscompras= Productoscompra::get();
         
-        return view('Compras.index', compact('compras'));
+        return view('Compras.index', compact('compras', 'productoscompras'));
     }
 
     /**

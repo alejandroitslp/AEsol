@@ -15,11 +15,11 @@
                     {{-- <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-jet-nav-link> --}}
-                    <x-jet-nav-link href="{{ route('proveedores.index') }}" :active="request()->routeIs('proveedores.index')">
-                        Proveedores
-                    </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('envios.index') }}" :active="request()->routeIs('envios.index')">
                         Envios
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('proveedores.index') }}" :active="request()->routeIs('proveedores.index')">
+                        Proveedores
                     </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('compras.index') }}" :active="request()->routeIs('compras.index')">
                         Compras
@@ -150,11 +150,11 @@
             {{-- <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link> --}}
-            <x-jet-responsive-nav-link href="{{ route('proveedores.index') }}" :active="request()->routeIs('proveedores.index')">
-                Proveedores
-            </x-jet-responsive-nav-link>
             <x-jet-responsive-nav-link href="{{ route('envios.index') }}" :active="request()->routeIs('envios.index')">
                 Envios
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('proveedores.index') }}" :active="request()->routeIs('proveedores.index')">
+                Proveedores
             </x-jet-responsive-nav-link>
             <x-jet-responsive-nav-link href="{{ route('compras.index') }}" :active="request()->routeIs('compras.index')">
                 Compras

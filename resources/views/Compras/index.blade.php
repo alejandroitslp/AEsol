@@ -30,9 +30,32 @@
                                         <td>{{$compra->cuenta_cargo}}</td>
                                         <td>{{$compra->met_pago}}</td>
                                         <td>{{$compra->requisita}}</td>
-                                        <th>
+                                        @php
+                                            $ctrlcount=0;
+                                        @endphp
+                                        @foreach ($productoscompras as $productoscompra)
+                                        @if (($productoscompra->folio==$compra->foliocompra)&&$ctrlcount==0)
+                                        <td>
                                             <a href="{{route('generarPDF', $compra)}}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-6 mt-4 mb-3 py-0.2 px-0.5 sm:py-1 sm:px-1">PDF</a>
-                                        </th>
+                                        </td>
+                                        @php
+                                            $ctrlcount=1;
+                                        @endphp
+                                        @endif
+                                        @if ((($productoscompra->folio!=$compra->foliocompra)&&$ctrlcount==0) || $productoscompra->folio==null)
+                                        <td><form action="{{route('compras.destroy', $compra)}}" method="POST">
+                                            @csrf
+                                            @method('delete')
+                        
+                                            <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-6 mt-4 mb-3">Eliminar</button>
+                                       
+                                        </form>
+                                        @php
+                                             $ctrlcount=1;
+                                         @endphp
+                                        @endif
+                                        @endforeach
+                                        
                                     </tr>
                                     @endforeach
                                   </tr>

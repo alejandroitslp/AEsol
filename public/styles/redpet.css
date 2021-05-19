@@ -1,0 +1,139 @@
+/*===========================
+  theme: Red Pet
+============================ */
+
+/* loader */
+
+.spinner > div {background-color: #E26659;}
+
+/* general typography */
+
+a:hover,
+a:focus {color: #AA180F;}
+
+a {color: #E26659;}
+
+/* Dividers */
+
+hr {color:#AA180F;}
+
+.section-heading hr {border-color: #AA180F;}
+
+.section-heading hr:before {background: #AA180F;}
+
+/* icons */
+
+.glyphicon{color: #E26659;}
+
+/* logo */
+
+.navbar-brand span{color:#E26659;}
+
+/* Top bar */
+
+.top-bar {background: #E26659;}
+
+ul.social-list li a:hover {background-color:#AA180F;}
+
+/* navbar */
+
+.navbar-toggle {background-color: #E26659;}
+
+.navbar-custom .navbar-toggle:hover,
+.navbar-custom .navbar-toggle:focus {background-color: #AA180F;}
+
+.navbar-custom .nav li a:hover{color: #E26659;}
+	 
+.navbar-custom .nav li a:focus{color: #AA180F;}
+
+.navbar-custom .nav li.active {color: #E26659;}
+
+.navbar-custom .nav > .active > a {color: #E26659;}
+
+.navbar-brand:hover,
+.navbar-brand:focus {color:#E26659;}
+
+#gallery .nav > li > a:focus {color: #AA180F;}
+ 
+#gallery .nav > li > a:hover {color: #E26659;}
+
+/* nav pills */
+
+.nav-pills> li.active:after {border-top-color: #AA180F;}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {background-color: #AA180F;}
+
+.nav-pills>li>a:hover {background-color: #E26659;}
+
+.nav-pills .nav > li > a:hover{background-color: #AA180F;}
+
+/* Light buttons */
+
+.light-btn .btn:before{color: #E26659;}
+
+.light-btn .btn:hover{color: #E26659;}
+
+.light-btn .btn:focus{color: #E26659;}
+
+/* Default buttons */
+
+.btn-default {background-color: #AA180F;}
+
+.btn-default:hover ,
+.btn-default:focus {background-color:#AA180F;}
+
+.btn:before {background: #E26659;}
+
+/* Social Media icons */
+
+.social-media a:hover {background-color: #E26659;}
+
+/* carousel & Sliders */
+
+.slider-pagi__elem {border: 2px solid #AA180F;}
+
+/* Sections Backgrounds */
+
+#stats {background-color:#E26659;}
+
+#testimonials {background-color:#E26659;}
+
+#call-to-action{background-color: #E26659;}
+
+#offers{background-color: #E26659;}
+
+/* About us - icons */
+
+.box > .icon > .image{border: 2px dotted #AA180F;}
+
+.box > .icon:hover > .image{background: #AA180F;}
+
+/* team */
+
+.team span {color: #E26659;}
+
+/* Gallery Overlay */
+
+.gallery-thumb .overlay-mask{background:#AA180F;}
+
+/* Prices */
+
+.pricing-tables .pricing-table.highlight-plan .plan-name {background-color: #E26659;}
+
+/* Offers */
+
+#offers span{color:#E26659;}
+
+/* Owl-slider */
+
+.owl-prev:hover, .owl-next:hover {background-color:#AA180F;}
+
+/* Contact & Footer */
+
+#contact .form-control:focus {box-shadow: 0 4px 0px #AA180F;}
+
+footer {background-color:#E26659;}
+
+/* Go to top icon */
+
+.back-to-top i:hover {background-color:#AA180F;}

@@ -1,0 +1,142 @@
+/*===========================
+  theme: Clean Brown
+============================ */
+
+/* loader */
+
+.spinner > div {background-color: #8e6341;}
+
+/* general typography */
+
+a:hover,
+a:focus {color: #DEB35D;}
+
+a {color: #8e6341;}
+
+/* Dividers */
+
+hr {color:#DEB35D;}
+
+.section-heading hr {border-color: #DEB35D;}
+
+.section-heading hr:before {background: #DEB35D;}
+
+/* icons */
+
+.glyphicon{color: #8e6341;}
+
+/* logo */
+
+.navbar-brand span{color:#8e6341;}
+
+/* Top bar */
+
+.top-bar {background: #8e6341;}
+
+ul.social-list li a:hover {background-color:#DEB35D;}
+
+/* navbar */
+
+.navbar-toggle {background-color: #8e6341;}
+
+.navbar-custom .navbar-toggle:hover,
+.navbar-custom .navbar-toggle:focus {background-color: #DEB35D;}
+
+.navbar-custom .nav li a:hover{color: #8e6341;}
+	 
+.navbar-custom .nav li a:focus{color: #DEB35D;}
+
+.navbar-custom .nav li.active {color: #8e6341;}
+
+.navbar-custom .nav > .active > a {color: #8e6341;}
+
+.navbar-brand:hover,
+.navbar-brand:focus {color:#8e6341;}
+
+#gallery .nav > li > a:focus {color: #DEB35D;}
+ 
+#gallery .nav > li > a:hover {color: #8e6341;}
+
+/* nav pills */
+
+.nav-pills> li.active:after {border-top-color: #DEB35D;}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {background-color: #DEB35D;}
+
+.nav-pills>li>a:hover {background-color: #8e6341;}
+
+.nav-pills .nav > li > a:hover {background-color: #DEB35D;}
+
+/* Light buttons */
+
+.light-btn .btn:before{color: #8e6341;}
+
+.light-btn .btn:hover{color: #8e6341;}
+
+.light-btn .btn:focus{color: #8e6341;}
+
+/* Default buttons */
+
+.btn-default {
+ background-color: #DEB35D;
+ color:#000
+}
+
+.btn-default:hover ,
+.btn-default:focus {background-color:#DEB35D;}
+
+.btn:before {background: #8e6341;}
+
+/* Social Media icons */
+
+.social-media a:hover {background-color: #8e6341;}
+
+/* carousel & Sliders */
+
+.slider-pagi__elem {border: 2px solid #DEB35D;}
+
+/* Sections Backgrounds */
+
+#stats {background-color:#8e6341;}
+
+#testimonials {background-color:#8e6341;}
+
+#call-to-action{background-color: #8e6341;}
+
+#offers{background-color: #8e6341;}
+
+/* About us - icons */
+
+.box > .icon > .image{border: 2px dotted #DEB35D;}
+
+.box > .icon:hover > .image{background: #DEB35D;}
+
+/* team */
+
+.team span {color: #8e6341;}
+
+/* Gallery Overlay */
+
+.gallery-thumb .overlay-mask{background:#DEB35D;}
+
+/* Prices */
+
+.pricing-tables .pricing-table.highlight-plan .plan-name {background-color: #8e6341;}
+
+/* Offers */
+
+#offers span{color:#8e6341;}
+
+/* Owl-slider */
+
+.owl-prev:hover, .owl-next:hover {background-color:#DEB35D;}
+
+/* Contact & Footer */
+
+#contact .form-control:focus {box-shadow: 0 4px 0px #DEB35D;}
+
+footer {background-color:#8e6341;}
+
+/* Go to top icon */
+
+.back-to-top i:hover {background-color:#DEB35D;}

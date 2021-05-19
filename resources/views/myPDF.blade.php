@@ -236,8 +236,9 @@
                         <tr>
                             @php
                                $var1=$item2->cantidad;
-                               $var2=number_format($item2->precio,2);
-                               $var3=$var1*$var2; 
+                               $itemprecio=$item2->precio;
+                               $var2=number_format($itemprecio,2);
+                               $var3=$var1*$itemprecio; 
                                $var4=number_format($var3,2);
                             @endphp
                         <td align="center">{{$contador=$contador+1}}</td>

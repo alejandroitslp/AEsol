@@ -22,6 +22,7 @@ use App\Models\Proveedor;
 */
 
 Route::get('/', [HomeController::class, 'isHome'])->name('home');
+Route::get('/english', [HomeController::class, 'isHome2'])->name('home2');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

@@ -12,11 +12,11 @@
                                 Nombre de Proveedor
                                 <br>
                                 <div class="ml-8 mt-3">
-                                <input class="rounded-lg" type="text" name="nombre" value={{old('nombre')}} >
+                                <input class="rounded-lg" type="text" name="nombre_prov" value={{old('nombre_prov')}} >
                                 </div>
                             </label>
                     
-                            @error('nombre')
+                            @error('nombre_prov')
                                 <br>
                                     <small>*{{$message}}</small>
                                 <br>
@@ -28,11 +28,11 @@
                                 Direccion Proveedor
                                 <br>
                                 <div class="ml-8 mt-3">
-                                <input class="rounded-lg" type="text" name="direccion" value={{old('direccion')}} >
+                                <input class="rounded-lg" type="text" name="dir_prov" value={{old('dir_prov')}} >
                                 </div>
                             </label>
                         
-                            @error('direccion')
+                            @error('dir_prov')
                                 <br>
                                     <small>*{{$message}}</small>
                                 <br>
@@ -43,11 +43,11 @@
                                 Localidad 
                                 <br>
                                 <div class="ml-8 mt-3">
-                                <input class="rounded-lg" type="text" name="localidad" value={{old('localidad')}} >
+                                <input class="rounded-lg" type="text" name="loc_prov" value={{old('loc_prov')}} >
                                 </div>
                             </label>
                         
-                            @error('localidad')
+                            @error('loc_prov')
                                 <br>
                                     <small>*{{$message}}</small>
                                 <br>
@@ -61,11 +61,11 @@
                                 Estado
                                 <br>
                                 <div class="ml-8 mt-3">
-                                <input class="rounded-lg" type="text" name="estado" value={{old('estado')}} >
+                                <input class="rounded-lg" type="text" name="edo_prov" value={{old('edo_prov')}} >
                                 </div>
                             </label>
                             
-                            @error('estado')
+                            @error('edo_prov')
                                 <br>
                                     <small>*{{$message}}</small>
                                 <br>
@@ -76,31 +76,31 @@
                                 Codigo Postal
                                 <br>
                                 <div class="ml-8 mt-3">
-                                <input class="rounded-lg" type="text" name="cp" value={{old('cp')}} >
+                                <input class="rounded-lg" type="text" name="cp_prov" value={{old('cp_prov')}} >
                                 </div>
                             </label>
                         
-                            @error('cp')
+                             @error('cp_prov')
                                 <br>
                                     <small>*{{$message}}</small>
                                 <br>
                             @enderror
-                                <br>
+                                <br> 
 
                             <label>
                                 telefono
                                 <br>
                                 <div class="ml-8 mt-3">
-                                <input class="rounded-lg" type="text" name="telefono" value={{old('telefono')}} >
+                                <input class="rounded-lg" type="text" name="telefono_prov" value={{old('telefono_prov')}} >
                                 </div>
                             </label>
                             
-                            @error('telefono')
+                           @error('telefono_prov')
                                 <br>
                                     <small>*{{$message}}</small>
                                 <br>
                             @enderror
-                                <br>
+                                <br> 
                         </div>
                         <div class="ml-8 mt-10">
                             <button  type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-8"> Enviar formulario</button>

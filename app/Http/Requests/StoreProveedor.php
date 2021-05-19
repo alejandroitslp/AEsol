@@ -29,8 +29,6 @@ class StoreProveedor extends FormRequest
             'dir_prov'=>'required',
             'loc_prov'=>'required',
             'edo_prov'=>'required',
-            'cp_prov'=>'required|numeric',
-            'telefono_prov'=>'required',
         ];
     }
 }

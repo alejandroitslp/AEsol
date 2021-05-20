@@ -24,6 +24,8 @@ class CreateProveedoresTable extends Migration
             $table->string('edo_prov');
             $table->integer('cp_prov')->nullable();
             $table->string('telefono_prov')->nullable();
+            $table->string('nombre_prov_suc')->nullable();
+            $table->string('RFC')->nullable();
 
             /////////////////////////////////////////////
 

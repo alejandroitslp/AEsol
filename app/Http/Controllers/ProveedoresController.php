@@ -65,6 +65,8 @@ class ProveedoresController extends Controller
             'edo_prov'=>$request->edo_prov,
             'cp_prov'=>$request->cp_prov,
             'telefono_prov'=>$request->telefono_prov,
+            'nombre_prov_suc'=>$request->nombre_prov_suc,
+            'RFC'=>$request->RFC,
         ]);
 
         $proveedor1=Proveedor::where('nombre_prov',$request->nombre)->first();

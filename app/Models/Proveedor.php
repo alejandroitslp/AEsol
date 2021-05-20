@@ -20,6 +20,8 @@ class Proveedor extends Model
         'edo_prov',
         'cp_prov',
         'telefono_prov',
+        'nombre_prov_suc',
+        'RFC',
         
     ];
 }

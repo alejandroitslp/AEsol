@@ -96,15 +96,6 @@
 
 </head>
     <body>
-        {{-- <h1>Contenido de medicamentos Pharmaplus</h1>
-        <ol>
-        @foreach ($productos as $producto)
-            <li><p> Nombre: {{ $producto->nombre_producto }} </p>
-            <p> Descripcion: {{ $producto->descripcion_producto }} </p>
-            <p> Precio al publico: {{$producto->precio_producto}} </p>
-            <p> Stock: {{$producto->stock_producto}}</p></li>
-        @endforeach
-        </ol> --}}
 
         <div>
             {{-- Cabecera principal --}}
@@ -190,7 +181,7 @@
                 <div style="height:2.7cm ; width: 50% ; border-style: 0 solid 0 0;">
                     @foreach ($proveedor as $item)
                     <p class="pdatos" style="margin-left:.2cm">{{$item->nombre_prov}}</p>
-                    <p class="pdatos" style="margin-left:.2cm"></p><br>
+                    <p class="pdatos" style="margin-left:.2cm">{{$item->nombre_prov_suc}} ,RFC: {{$item->RFC}}</p>
                     <p class="pdatos" style="margin-left:.2cm">{{$item->dir_prov}}</p>
                     <p class="pdatos" style="margin-left:.2cm">{{$item->loc_prov}}, {{$item->edo_prov}}, {{$item->cp_prov}}</p>
                     <p class="pdatos" style="margin-left:.2cm">{{$item->telefono_prov}}</p>

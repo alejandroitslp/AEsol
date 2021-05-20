@@ -103,6 +103,36 @@
                                 <br> 
                         </div>
                         <div class="ml-8 mt-10">
+                            <label>
+                                Nombre de encargado sucursal
+                                <br>
+                                <div class="ml-8 mt-3">
+                                <input class="rounded-lg" type="text" name="nombre_prov_suc" value={{old('nombre_prov_suc')}} >
+                                </div>
+                            </label>
+                            
+                           @error('nombre_prov_suc')
+                                <br>
+                                    <small>*{{$message}}</small>
+                                <br>
+                            @enderror
+                                <br> 
+
+                            <label>
+                                RFC
+                                <br>
+                                <div class="ml-8 mt-3">
+                                <input class="rounded-lg" type="text" name="RFC" value={{old('RFC')}} >
+                                </div>
+                            </label>
+                            
+                           @error('RFC')
+                                <br>
+                                    <small>*{{$message}}</small>
+                                <br>
+                            @enderror
+                                <br> 
+
                             <button  type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-8"> Enviar formulario</button>
                         </div>
                         </form>

@@ -31,28 +31,34 @@
                                         <td>{{$compra->met_pago}}</td>
                                         <td>{{$compra->requisita}}</td>
                                         @php
-                                            $ctrlcount=0;
+                                           $contador=0;
+                                           $contador2=0;
                                         @endphp
                                         @foreach ($productoscompras as $productoscompra)
-                                        @if (($productoscompra->folio==$compra->foliocompra)&&$ctrlcount==0)
+                                        @if (($productoscompra->folio==$compra->foliocompra)&&$contador==0)
                                         <td>
-                                            <a href="{{route('generarPDF', $compra)}}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-6 mt-4 mb-3 py-0.2 px-0.5 sm:py-1 sm:px-1">PDF</a>
+                                            <a href="{{route('generarPDF', $compra)}}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-6 mt-4 mb-3 py-0.2  sm:py-1 sm:px-1">PDF</a>
                                         </td>
                                         @php
-                                            $ctrlcount=1;
+                                            $contador=1;
                                         @endphp
                                         @endif
-                                        @if ((($productoscompra->folio!=$compra->foliocompra)&&$ctrlcount==0) || $productoscompra->folio==null)
+                                        @if (($productoscompra->folio!=$compra->foliocompra))
+                                        @php
+                                            $contador2=$contador2+1;
+                                        @endphp
+                                        @if ($contador2==(count($productoscompras)))
+                                        
                                         <td><form action="{{route('compras.destroy', $compra)}}" method="POST">
                                             @csrf
                                             @method('delete')
                         
                                             <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-6 mt-4 mb-3">Eliminar</button>
                                        
-                                        </form>
-                                        @php
-                                             $ctrlcount=1;
-                                         @endphp
+                                        </form></td>
+                                           
+                                        @endif
+                                        
                                         @endif
                                         @endforeach
                                         

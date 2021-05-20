@@ -27,7 +27,7 @@
                                         <td>$ {{$productoscompra->nombre}}</td>
                                         <td>{{$productoscompra->cantidad}}</td>
                                         <td>{{$productoscompra->precio}}</td>
-                                        <th><form action="{{'productoscompras.destroy', $productoscompra)}}" method="POST">
+                                        <th><form action="{{route('productoscompras.destroy', $productoscompra)}}" method="POST">
                                             @csrf
                                             @method('delete')
                         

@@ -15,4 +15,11 @@ class Tablacompras extends Component
         $this->data = Productoscompra::where('folio', $this->item2)->get();
         return view('livewire.tablacompras');
     }
+    public function destruir($id)
+    {
+        if ($id) {
+            $record = Productoscompra::where('id', $id);
+            $record->delete();
+        }
+    }
 }

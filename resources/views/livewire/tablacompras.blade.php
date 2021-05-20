@@ -19,6 +19,9 @@
                 <td>{{$item->nombre}}</td>
                 <td>{{$item->cantidad}}</td>
                 <td>{{$item->precio}}</td>
+                <td>
+                  <button wire:click="destruir({{ $item->id }})" class="px-2 py-1 bg-red-200 text-red-500 hover:bg-red-500 hover:text-white rounded">Borrar</button>
+                </td>
             </tr>
             @empty
             

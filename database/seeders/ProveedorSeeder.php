@@ -35,7 +35,7 @@ class ProveedorSeeder extends Seeder
                 'cp_prov'=>null,
                 'telefono_prov'=>null,
                 'nombre_prov_suc'=>null,
-                'RFC',
+                'RFC'=>null,
             ],
             [
                 'nombre_prov'=>'Clinica de la Rosa',
@@ -45,7 +45,7 @@ class ProveedorSeeder extends Seeder
                 'cp_prov'=>'78422',
                 'telefono_prov'=>null,
                 'nombre_prov_suc'=>null,
-                'RFC',
+                'RFC'=>null,
             ]
         ]);
     }

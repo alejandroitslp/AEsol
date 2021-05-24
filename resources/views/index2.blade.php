@@ -75,7 +75,8 @@
    </head> 
    
    <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
-    @if (Route::has('login'))
+         <div>
+            @if (Route::has('login'))
                 <div class=" top-0 right-0" style="z-index: 1000; position: fixed; margin-right: 0px">
                     @auth
                         <a href="{{ url('/dashboard') }}" style="margin-left:10px;">Dashboard</a>
@@ -88,6 +89,7 @@
                     @endauth
                 </div>
             @endif
+         </div>
     <!-- Start Switcher -->
 		
     <!-- End Switcher -->	
@@ -135,7 +137,7 @@
                       <center>
                   	<a href="index.html"> 
                        <img src="img/mexico-01.png" class="img-responsive" alt="Responsive image" style="margin-top: 25px; margin-left: 40px;">
-                      México
+                      MÃ©xico
                   	</a>
                       </center>
 
@@ -152,8 +154,8 @@
                </ul>
 
                <ul style="margin-left: 65px;" class="nav navbar-nav page-scroll pull-rigth">
-                <li><a href="{{route('home')}}">Español</a></li>
-                <li><a href="{{route('home2')}}">English</a></li>
+                  <li><a href="{{route('home')}}">Espa&ntilde;ol</a></li>
+                  <li><a href="{{route('home2')}}">English</a></li>
                   <li><a href="http://www.facebook.com/pages/AESolutions/116445135184447" target="_blank"> <img src="img/fb1.png" class="img-responsive" alt="Responsive image" >
                   	</a></li>
                   <li><a href="https://www.linkedin.com/company/ae-solutions" target="_blank"> <img src="img/in1.png" class="img-responsive" alt="Responsive image" >
@@ -464,7 +466,7 @@
 					  <div class="col-md-12 col-sm-12">
 						 <div class="col-lg-6 col-sm-12 res-margin wow fadeInRight" data-wow-delay="0.2s">
 							<h3>Committed to the quality of our services</h3>
-							<p class="text-justify">Company founded in 2012 in the city of San Luis Potosí, S.L.P. starting operations with long experience in the industrial automation field.
+							<p class="text-justify">Company founded in 2012 in the city of San Luis PotosÃ­, S.L.P. starting operations with long experience in the industrial automation field.
 								<br>AE Solutions starts to get a place in the national and international industry, and stands as a solid and growing company being synonymous with trust because of our customer development focus.</p>
 						 </div>					 
 						 <div class="col-lg-6 col-md-12 col-lg-offset-0 col-md-offset-1 col-sm-12 wow fadeInLeft" data-wow-delay="0.2s">
@@ -731,18 +733,18 @@
 			 
 			 <p>Address:</p><hr>
 
-             <p>  Almanzora 530 <br>
-                     Cantoría Residencial<br>
+             <p>  I. Zaragoza 151 <br>
+                     Cuartel Aguilares<br>
                     Deleg. Villa de Pozos<br>
-                    San Luis Potosí, S.L.P., México<br>
+                    San Luis PotosÃ­, S.L.P., MÃ©xico<br>
                     Zip code 78421
              </p><hr>
 
 			 <p><a href="mailto:contacto@ae-sol.net">contacto@ae-sol.net</a></p>
 			 <hr>
 			 <p>Office Phone: <br>+52 (444) 353 2787</p><hr>
-<p>San Luis Potosí, Sales Phone: <br> +52 1 (444) 444 6028</p><hr>
-<p>Saltillo, Coah., Sales Phone: <br> +52 1 (844) 278 1007 </p>
+<p>San Luis PotosÃ­, Sales Phone: <br> +52 1 (444) 444 6028</p><hr>
+
 
 			   
 			 <!-- Adress info -->
@@ -850,7 +852,7 @@
 			 </div>
 			 <!-- Bottom Credits -->
 			 <div class="col-sm-6 col-md-offset-5 col-md-3 text-center">
-				<p>COPYRIGHT © 2016 AE Solutions</p>
+				<p>COPYRIGHT Â© 2016 AE Solutions</p>
 			 </div>			 
 		  </div><!-- /row-->
 	   </div><!-- /container -->
@@ -968,7 +970,7 @@ We follow all norms and recommendations applicable to ensure the correct operati
        <p>Installation, configuration, programming and commissioning of safety systems to protect the operator. 
        <br>
        <br>
-        <img src="img/vineta-14.png">  Safety PLC’s<br>
+        <img src="img/vineta-14.png">  Safety PLCâ€™s<br>
      <img src="img/vineta-14.png">  Light curtains<br>
        <img src="img/vineta-14.png">  Emergency stops<br>
        <img src="img/vineta-14.png">  Redundant systems<br>

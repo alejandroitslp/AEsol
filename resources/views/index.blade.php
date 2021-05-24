@@ -97,1074 +97,1072 @@
                 </div>
             @endif
       </div>
-            <!-- Start Switcher -->
+  <!-- Start Switcher -->
 		
     <!-- End Switcher -->	
             <!-- Preloader -->
-		<div id="preloader">
-			<div class="spinner">
-				<div class="rect1"></div>
-				<div class="rect2"></div>
-				<div class="rect3"></div>
-				<div class="rect4"></div>
-				<div class="rect5"></div>
-			</div>
-		</div>					
-	<!-- Navbar -->	  
-      <nav class="navbar navbar-custom navbar-fixed-top" style=" z-index: 100">
-	  		
-			
-         <div class="container" >
-         <!-- navbar -->		 
-            <div class="navbar-header page-scroll">
-               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-               <i class="fa fa-bars"></i>
-               </button>
-               <!-- Logo -->
-               <div class="page-scroll">
-                  <a class="navbar-brand" href="#page-top">
-				  <!--Font Icon logo and text -->
-                     <img src="img/logw.jpg">
-                  </a>
-               </div>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-               <ul class="nav navbar-nav page-scroll">
-                  <li class="active"><a href="#page-top">Inicio</a></li>
-                  <li><a href="#services">Servicios</a></li>
-                  <li><a href="#about">Nosotros</a></li>
-                  
-                  <li><a href="#clientes">Clientes</a></li>
-                  
-				  
-                  <li><a href="#contact">Contacto</a></li>
-                  <li><a href="#policy">Calidad</a></li>
-
-
-
-                    <!--<li>
-                      <center>
-                  	<a href="index.html"> 
-                       <img src="img/mexico-01.png" class="img-responsive" alt="Responsive image" style="margin-top: 25px; margin-left: 40px;">
-                      México
-                  	</a>
-                      </center>
-
-                  </li>	
-                  
-                  	<li>
-                  		<center>
-                  		<a href="index2.html"><img src="img/usa-02.png" class="img-responsive" alt="Responsive image" style="margin-top: 25px; margin-left: 40px;">
-                        </a>
-                        </center>
-                   </li> -->
-                   
-
-               </ul>
-
-               <ul style="margin-left: 65px;" class="nav navbar-nav page-scroll pull-rigth">
-                  <li><a href="{{route('home')}}">Español</a></li>
-                  <li><a href="{{route('home2')}}">English</a></li>
-                  <li><a href="http://www.facebook.com/pages/AESolutions/116445135184447" target="_blank"> <img src="img/fb1.png" class="img-responsive" alt="Responsive image" >
-                    </a></li>
-                  <li><a href="https://www.linkedin.com/company/ae-solutions" target="_blank"> <img src="img/in1.png" class="img-responsive" alt="Responsive image" >
-                    </a></li>
-                </ul>
-
-            </div>
-         </div>
-      </nav><!-- Navbar ends -->
-	<!-- Full Page Image Background Slider -->
-	<div class="slider-container" style="z-index: -1;">
-	<!-- Controls -->
-	   <div class="slider-control left inactive"></div>
-	   <div class="slider-control right"></div>
-		   <ul class="slider-pagi"></ul>
-	   <!--Slider -->
-	   <div class="slider">
-	   <!-- Slide 1 -->
-		  
-
-      <div class="slide slide-0 active">
-			 <div class="slide__bg"></div>
-			 <div class="slide__content">
-				<svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
-				   <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
-				</svg>
-				<div class="slide__text">
-				   <img src="img/visuales-01.png" class="img-responsive">
-				   <div class="hidden-sm hidden-xs">
-					  <p class="lead">Ofrecemos soluciones <br>en automatización de maquinaria</p>
-
-					  
-				   </div>
-				</div>
-			 </div>
-		  </div>
-		 <!-- Slide 2 -->
-		  <div class="slide slide-1">
-			 <div class="slide__bg"></div>
-			 <div class="slide__content">
-				<svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
-				   <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
-				</svg>
-				<div class="slide__text">
-           <img src="img/visuales-02.png" class="img-responsive">
-				   <div class="hidden-sm hidden-xs">
-					  <p class="lead">Contamos con servicio y disponibilidad<br> 24x7 los 365 días del año</p>
-					 
-				   </div>
-				</div>
-			 </div>
-		  </div>
-		  <!-- Slide 3-->
-		  <div class="slide slide-2">
-			 <div class="slide__bg"></div>
-			 <div class="slide__content">
-				<svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
-				   <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
-				</svg>
-				<div class="slide__text">
-				  <img src="img/visuales-03.png" class="img-responsive">
-				   <div class="hidden-sm hidden-xs">
-					  <p class="lead">Tecnología y especialización en soluciones </p>
-					  
-				   </div>
-				</div>
-			 </div>
-		  </div>
-		 
-	   </div>
-	</div>	
-	<!--/ Slider ends -->
-				
-    <!-- Section services -->
-	<section id="services" class="home-section">
-
-
-	   <div class="col-lg-8 col-lg-offset-2">
-
-
-		 <!-- Section heading -->
-		  <div class="section-heading">
-		  <img src="img/rayo-11.png"><br><br>
-			 <h2>Somos especialistas</h2>
-			 
-		  </div>
-	   </div>
-	   <div class="container">
-		  <div class="row">
-			 <!-- item 1-->
-			 <div class="col-md-4 col-sm-12 wow fadeInLeft" data-wow-delay="0.2s">
-				<div class="img-wrapper">
-				   <img src="img/circulos-08.png" alt="" class="img-responsive"/>
-				</div>
-				<h4>Automatización</h4>
-				<p class="margin">Profesionales en integración de sistemas de automatización para hacer más eficiente cualquier proceso industrial. 
-				</p>
-			 </div><!-- /col-md-4-->
-			 
-			 <!-- item 2-->
-			 <div class="col-md-4 col-sm-12 wow fadeInUp" data-wow-delay="0.2s">
-				<div class="img-wrapper">
-				   <img src="img/circulos-09.png" alt="" class="img-responsive"/>
-				</div>
-				<h4>Consultoría</h4>
-				<p class="margin">Ingenieros y técnicos capaces de trabajar en equipo con usted para proponer soluciones innovadoras y efectivas que permitan alcanzar sus objetivos.
-				</p>
-			 </div><!-- /col-md-4-->
-			 
-			 <!-- item 3-->
-			 <div class="col-md-4 col-sm-12 wow fadeInRight" data-wow-delay="0.2s">
-				<div class="img-wrapper">
-				   <img src="img/circulos-10.png" alt="" class="img-responsive"/>
-				</div>
-				<h4>Programación</h4>
-				<p>Especialistas en programación de las principales marcas de equipos de automatización industrial.
-				</p>
-			 </div><!-- /col-md-4-->
-		  </div>
-	   </div>
-	</section>
-	<!-- /Section ends -->	  
-	
-    <!-- Section Stats -->	
-    <section id="stats" class="home-section">
-		<div class="col-lg-8 col-lg-offset-2">
-		   <!-- Section Heading -->	
-			<div class="section-heading">
-			<h2>Nuestros servicios</h2>
-			
-		 </div>
-		</div>
-         <div class="container">
-            <div class="row">
-               <div class="text-center wow fadeInUp" data-wow-delay="0.2s">
-                  <div class="col-md-3 col-sm-6 res-margin" style="margin-bottom:50px">
-                     
-                     <!-- Number 1 -->
-                     <center>
-                     <a href="#" data-toggle="modal" data-target="#myModal">
-                     <img src="img/icono-01.png" class="img-responsive">
-                     </a></center>  
-				   <h6>Programación de PLC's</h6>
-                  </div>
-                  <div class="col-md-3 col-sm-6 res-margin" style="margin-bottom:50px">
-                     
-                     <!-- Number 2 -->
-                      <center>
-                        <a href="#" data-toggle="modal" data-target="#myModal2">
-                      	<img src="img/icono-02.png" class="img-responsive">
-                      </a>
-                      </center>
-					 <h6>Diagramas eléctricos de potencia y de control</h6>
-                  </div>
-                  <div class="col-md-3 col-sm-6 res-margin" style="margin-bottom:50px">
-                     
-                     <!-- Number 3 -->
-                      <center>
-                      	<a href="#" data-toggle="modal" data-target="#myModal3">
-                      	<img src="img/icono-03.png" class="img-responsive">
-                      </a>
-                      </center>
-                    
-                     <h6>Diseño y programación de HMI</h6>
-                  </div>
-                  <div class="col-md-3 col-sm-6" style="margin-bottom:50px">
-                     
-                     <!-- Number 4 -->
-                      <center>
-                      	<a href="#" data-toggle="modal" data-target="#myModal4">
-                      	<img src="img/icono-04.png" class="img-responsive">
-                      </a>
-                      </center>
-                    
-					 <h6>Redes industriales</h6>
-                  </div>
-               </div>
-            </div>
-
-
-            <div class="row">
-               <div class="text-center wow fadeInUp" data-wow-delay="0.2s">
-                  <div class="col-md-3 col-sm-6 res-margin" style="margin-bottom:50px">
-                     
-                     <!-- Number 1 -->
-                     <center>
-                     	<a href="#" data-toggle="modal" data-target="#myModal5">
-                     	<img src="img/icono-05.png" class="img-responsive">
-                     </a>
-                     </center>
-                     
-					 <h6>Sistemas de seguridad</h6>
-                  </div>
-                  <div class="col-md-3 col-sm-6 res-margin" style="margin-bottom:50px">
-                     
-                     <!-- Number 2 -->
-                      <center>
-                      	<a href="#" data-toggle="modal" data-target="#myModal6">
-                      	<img src="img/icono-06.png" class="img-responsive">
-                      </a>
-                      </center>
-                     
-					 <h6>Control de motores</h6>
-                  </div>
-                  <div class="col-md-3 col-sm-6 res-margin" style="margin-bottom:50px">
-                     <!-- Number 3 -->
-                      <center>
-                      	<a href="#" data-toggle="modal" data-target="#myModal7">
-                      	<img src="img/icono-07.png" class="img-responsive">
-                      </a>
-                      </center>
-                     
-                     <h6>Outsourcing</h6>
-                  </div>
-                  <div class="col-md-3 col-sm-6" style="margin-bottom:50px">
-                     <!-- Number 4 -->
-                      <center>
-                      	<a href="#" data-toggle="modal" data-target="#myModal8">
-                      	<img src="img/icono-08.png" class="img-responsive">
-                      </a>
-                      </center>
-                     
-					 <h6>Solución de problemas</h6>
-                  </div>
-               </div>
-            </div>
-
-
-
-<div class="row">
-               <div class="text-center wow fadeInUp" data-wow-delay="0.2s">
-                  <div class="col-md-3 col-sm-6 res-margin">
-                     <!-- Number 1 -->
-                     <center>
-                     	<a href="#" data-toggle="modal" data-target="#myModal9">
-                     	<img src="img/icono-09.png" class="img-responsive">
-                     </a>
-                     </center>
-                     
-					 <h6>Armado de tableros eléctricos</h6>
-                  </div>
-                  <div class="col-md-3 col-sm-6 res-margin">
-                     <!-- Number 2 -->
-                      <center>
-                      	<a href="#" data-toggle="modal" data-target="#myModal10">
-                      	<img src="img/icono-10.png" class="img-responsive">
-                      </a>
-                      </center>
-                     
-					 <h6>Instalaciones eléctricas</h6>
-                  </div>
-                  <div class="col-md-3 col-sm-6 res-margin">
-                     <!-- Number 3 -->
-                      <center>
-                      	<a href="#" data-toggle="modal" data-target="#myModal11">
-                      	<img src="img/icono-11.png" class="img-responsive">
-                      </a>
-                      </center>
-                     
-                     <h6>Entrenamiento en sistemas de automatización </h6>
-                  </div>
-                  <div class="col-md-3 col-sm-6">
-                     <!-- Number 4 -->
-                      <center>
-                      	<a href="#" data-toggle="modal" data-target="#myModal12">
-                      	<img src="img/icono-13.png" class="img-responsive">
-                      </a>
-                      </center>
-                     
-					 <h6>Fabricación de Etiquetas Lamicoid</h6>
-                  </div>
-               </div>
-            </div>
-
-
-
-
-
-
-
-         </div>
-    </section>
-	<!-- Section Ends-->
-	  
-    <!-- Section About -->	
-	<section id="about" class="home-section" style="background-image: url('img/fondo1.png');">
-	   <div class="col-lg-8 col-lg-offset-2">
-	   	<!-- Section Heading -->	
-		  <div class="section-heading">
-			 <h2>Nosotros</h2>
-			 
-		  </div>
-	   </div>
-		  <!--
-      <div class="col-md-12 col-sm-12 col-centered">
-			 <div class="centered-pills">
-				
-				<ul class="nav nav-pills">
-				   <li class="active"><a href="#pane1" data-toggle="tab">Nosotros</a></li>
-				   <li><a href="#pane2" data-toggle="tab">Experiencia</a></li>
-				   
-				</ul>
-			 </div>
-		  </div>
-      -->
-		 <div class="container">
-		  <!-- Panels start -->	
-		  <div class="tabbable">
-			 <div class="tab-content">
-				<!-- Panel  1 -->
-				<div id="pane1" class="paneltab tab-pane fade active in">
-				   <div class="row">
-					  <div class="col-md-12 col-sm-12">
-						 <div class="col-lg-6 col-sm-12 res-margin wow fadeInRight" data-wow-delay="0.2s">
-							<h3>Comprometidos con la calidad de nuestros servicios</h3>
-							<p class="text-justify">Empresa fundada en el año 2012 en la ciudad de San Luis Potosí, S.L.P. que comienza operaciones con personal de larga experiencia en el ramo de la automatización industrial. AE Solutions comienza a hacerse un lugar en la industria nacional e internacional y se coloca como una empresa sólida y en desarrollo siendo sinónimo de confianza por nuestro enfoque en el desarrollo de nuestros clientes.</p>
-						 </div>					 
-						 <div class="col-lg-6 col-md-12 col-lg-offset-0 col-md-offset-1 col-sm-12 wow fadeInLeft" data-wow-delay="0.2s">
-							<center><img src="img/foto-nosotros.jpg" alt="" class="img-responsive"/></center>
-						 </div>
-					  </div>
-					  <!-- icons -->
-					
-					
-					  
-				   </div>
-				 </div> 
-				<!-- Panel 1 ends -->
-				
-				<!-- Panel 2 -->
-				<div id="pane2" class="paneltab tab-pane fade active in">
-				  <div class="row">
-				   <div class="col-lg-6 col-sm-12 res-margin">
-					  <h3>Especialistas en Estampado y Prensas</h3>
-					  <p><img src="img/vineta-azul-08.png"> Carrocerías<br>
-              <img src="img/vineta-azul-08.png"> Soldaduras<br>
-              <img src="img/vineta-azul-08.png"> Especialistas en Estampado y Prensas<br>
-              <img src="img/vineta-azul-08.png"> Transportadores<br>
-              <img src="img/vineta-azul-08.png"> Error proofing (pokayokes)<br>
-              <img src="img/vineta-azul-08.png"> Sistema de seguridad<br>
-              <img src="img/vineta-azul-08.png"> Sistemas de visión<br>
-              <img src="img/vineta-azul-08.png"> Ahorro de energía<br>
-              <img src="img/vineta-azul-08.png"> Control de motores<br>
-              <img src="img/vineta-azul-08.png"> Servo motores<br>
-              <img src="img/vineta-azul-08.png"> Pintura<br>
-              <img src="img/vineta-azul-08.png"> Alimentos y bebidas<br>
-				   </div>
-				   <div class="col-lg-6 col-sm-12" style="margin-top: 90px">
-				   	<!-- Responsive video -->
-					  <div class="embed-responsive embed-responsive-16by9">
-						 
-						 <video controls muted> <source src="img/ae.mp4" type="video/mp4" ></video>
-					  </div>
-				   </div>
-				  </div>
-				</div><!-- / Panel 2 ends -->
-				
-				
-			</div><!-- /.tab-content -->
-		  </div><!-- /.tabbable -->
-
-
-
-
-
-
-
-
-
-
-         <!-- <div class="col-md-12 col-sm-12 col-centered">
-       <div class="centered-pills">
-        
-        <ul class="nav nav-pills">
-         
-          <li><a href="#pane2" data-toggle="tab">Experiencia</a></li>
-           
-        </ul>
-       </div>
-      </div>-->
-     <div class="container">
-      <!-- Panels start --> 
-      <div class="tabbable">
-       <div class="tab-content">
-       
-        
-        <!-- Panel 2 -->
-        <div id="pane2" class="paneltab tab-pane fade">
-          <div class="row">
-           <div class="col-lg-6 col-sm-12 res-margin">
-            <h3>Especialistas en Estampado y Prensas</h3>
-            <p><img src="img/vineta-azul-08.png"> Carrocerías<br>
-              <img src="img/vineta-azul-08.png"> Soldaduras<br>
-              <img src="img/vineta-azul-08.png"> Especialistas en Estampado y Prensas<br>
-              <img src="img/vineta-azul-08.png"> Transportadores<br>
-              <img src="img/vineta-azul-08.png"> Error proofing (pokayokes)<br>
-              <img src="img/vineta-azul-08.png"> Sistema de seguridad<br>
-              <img src="img/vineta-azul-08.png"> Sistemas de visión<br>
-              <img src="img/vineta-azul-08.png"> Ahorro de energía<br>
-              <img src="img/vineta-azul-08.png"> Control de motores<br>
-              <img src="img/vineta-azul-08.png"> Servo motores<br>
-              <img src="img/vineta-azul-08.png"> Pintura<br>
-              <img src="img/vineta-azul-08.png"> Alimentos y bebidas<br>
-           </div>
-           <div class="col-lg-6 col-sm-12" style="margin-top: 90px">
-            <!-- Responsive video -->
-            <div class="embed-responsive embed-responsive-16by9">
-             
-             <video controls muted> <source src="img/ae.mp4" type="video/mp4" ></video>
-            </div>
-           </div>
-          </div>
-        </div><!-- / Panel 2 ends -->
-        
-        
-      </div><!-- /.tab-content -->
-      </div><!-- /.tabbable -->
-
-
-
-
-
-
-
-	   </div><!-- /container-->
-	</section>
-	<!-- Section ends-->
-	
-		
-	
-	<!-- Section Offers -->
-	<section id="testimonials" class="home-section" style="background: url('img/fondo5.jpg') center fixed; min-height: 900px;height: auto;">
-	   <div class="col-lg-8 col-lg-offset-2">
-	   	<!-- Section Heading -->
-		  <div class="section-heading">
-
-              <div class="row" id="clientes">
-                <h2>Clientes</h2>
-                <br><br>
-
-                  <div class="col-md-3" >
-                     <img src="img/logotipos-01.png" >
-                  </div>
-
-
-                  <div class="col-md-3">
-                     <img src="img/logotipos-02.png" >
-                  </div>
-                  
-                  <div class="col-md-3 ">
-                     <img src="img/logotipos-03.png" >
-                  </div>
-                  <div class="col-md-3 ">
-                     <img src="img/logotipos-04.png" >
-                  </div>
-                  
+            <div id="preloader">
+              <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
               </div>
-
-              <div class="row">
-                <div class="col-md-3 ">
-                   <img src="img/logotipos-07.png" >
-                </div>
-                <div class="col-md-3 ">
-                   <img src="img/aa.png" >
-                </div>
-                <div class="col-md-3 ">
-                   <img src="img/bb.png" >
-                </div>
-                 <div class="col-md-3 ">
-                   <img src="img/faureci.png" >
-                </div>
-              </div>
-
-              <div class="row">
-              <div class="col-md-3 ">
-                     &nbsp;
-                  </div>
-
-                  <div class="col-md-3 ">
-                     <img src="img/logotipos-05.png" >
-                  </div>
-
-                  <div class="col-md-3 ">
-                     <img src="img/logotipos-06.png" >
-                  </div>
-                  <div class="col-md-3 ">
-                     &nbsp;
-                  </div>
-
-              </div>
-
-
-
+            </div>					
+          <!-- Navbar -->	  
+              <nav class="navbar navbar-custom navbar-fixed-top">
+                
               
+                 <div class="container">
+                 <!-- navbar -->		 
+                    <div class="navbar-header page-scroll">
+                       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                       <i class="fa fa-bars"></i>
+                       </button>
+                       <!-- Logo -->
+                       <div class="page-scroll">
+                          <a class="navbar-brand" href="#page-top">
+                  <!--Font Icon logo and text -->
+                             <img src="img/logw.jpg">
+                          </a>
+                       </div>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                       <ul class="nav navbar-nav page-scroll">
+                          <li class="active"><a href="#page-top">Inicio</a></li>
+                          <li><a href="#services">Servicios</a></li>
+                          <li><a href="#about">Nosotros</a></li>
+                          
+                          <li><a href="#clientes">Clientes</a></li>
+                          
+                  
+                          <li><a href="#contact">Contacto</a></li>
+                          <li><a href="#policy">Calidad</a></li>
+        
+        
+        
+                            <!--<li>
+                              <center>
+                            <a href="index.html"> 
+                               <img src="img/mexico-01.png" class="img-responsive" alt="Responsive image" style="margin-top: 25px; margin-left: 40px;">
+                              MÃ©xico
+                            </a>
+                              </center>
+        
+                          </li>	
+                          
+                            <li>
+                              <center>
+                              <a href="index2.html"><img src="img/usa-02.png" class="img-responsive" alt="Responsive image" style="margin-top: 25px; margin-left: 40px;">
+                                </a>
+                                </center>
+                           </li> -->
+                           
+        
+                       </ul>
+        
+                       <ul style="margin-left: 65px;" class="nav navbar-nav page-scroll pull-rigth">
+                          <li><a href="index.html">Espa&ntilde;ol</a></li>
+                          <li><a href="index2.html">English</a></li>
+                          <li><a href="http://www.facebook.com/pages/AESolutions/116445135184447" target="_blank"> <img src="img/fb1.png" class="img-responsive" alt="Responsive image" >
+                            </a></li>
+                          <li><a href="https://www.linkedin.com/company/ae-solutions" target="_blank"> <img src="img/in1.png" class="img-responsive" alt="Responsive image" >
+                            </a></li>
+                        </ul>
+        
+                    </div>
+                 </div>
+              </nav><!-- Navbar ends -->
+          <!-- Full Page Image Background Slider -->
+          <div class="slider-container">
+          <!-- Controls -->
+             <div class="slider-control left inactive"></div>
+             <div class="slider-control right"></div>
+               <ul class="slider-pagi"></ul>
+             <!--Slider -->
+             <div class="slider">
+             <!-- Slide 1 -->
+              
+        
+              <div class="slide slide-0 active">
+               <div class="slide__bg"></div>
+               <div class="slide__content">
+                <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+                   <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+                </svg>
+                <div class="slide__text">
+                   <img src="img/visuales-01.png" class="img-responsive">
+                   <div class="hidden-sm hidden-xs">
+                    <p class="lead">Ofrecemos soluciones <br>en automatizaci&oacute;n de maquinaria</p>
+        
+                    
+                   </div>
+                </div>
+               </div>
+              </div>
+             <!-- Slide 2 -->
+              <div class="slide slide-1">
+               <div class="slide__bg"></div>
+               <div class="slide__content">
+                <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+                   <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+                </svg>
+                <div class="slide__text">
+                   <img src="img/visuales-02.png" class="img-responsive">
+                   <div class="hidden-sm hidden-xs">
+                    <p class="lead">Contamos con servicio y disponibilidad<br> 24x7 los 365 d&iacute;­as del a&ntilde;o</p>
+                   
+                   </div>
+                </div>
+               </div>
+              </div>
+              <!-- Slide 3-->
+              <div class="slide slide-2">
+               <div class="slide__bg"></div>
+               <div class="slide__content">
+                <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+                   <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+                </svg>
+                <div class="slide__text">
+                  <img src="img/visuales-03.png" class="img-responsive">
+                   <div class="hidden-sm hidden-xs">
+                    <p class="lead">Tecnolog&iacute;a y especializaci&oacute;n en soluciones </p>
+                    
+                   </div>
+                </div>
+               </div>
+              </div>
              
-		  </div>
-	   </div>
-	</section>
-	<!-- Section ends -->  
-	
-	
-	
-    <!--
-	<section id="brands" class="home-section">
-	   <div class="col-lg-8 col-lg-offset-2">
-	   
-		  <div class="section-heading">
-			 <h2>Brands we work with</h2>
-			 <hr>
-		  </div>
-	   </div>
-	   <div class="container text-center">
-	   	 <div class="row">
-		
-		 <div class="col-sm-6 col-md-3 res-margin">
-			<div class="well well-sm wow fadeInLeft">
-			   <a href="#"><img src="img/client1.png" alt="client" class="col-centered img-responsive"/></a>
-			</div>
-		 </div>
-		 
-		 <div class="col-sm-6 col-md-3 res-margin">
-			<div class="well well-sm wow fadeInLeft">
-			   <a href="#"><img src="img/client2.png" alt="client" class="col-centered img-responsive"/></a>
-			</div>
-		 </div>
-		
-		 <div class="col-sm-6 col-md-3 res-margin">
-			<div class="well well-sm wow fadeInRight">
-			   <a href="#"><img src="img/client3.png" alt="client" class="col-centered img-responsive"/></a>
-			</div>
-		 </div>
-		
-		 <div class="col-sm-6 col-md-3">
-			<div class="well well-sm wow fadeInRight">
-			   <a href="#"><img src="img/client4.png" alt="client" class="col-centered img-responsive"/></a>
-			</div>
-		  </div>
-		</div>  
-	   </div>
-	</section>
--->
-     
-	<!-- Section Contact -->
-	<section id="contact" class="home-section">
-	   <div class="col-lg-8 col-lg-offset-2">
-
-
- <center>
-<script language="JavaScript" src="https://dunsregistered.dnb.com" type="text/javascript"></script> 
-                  <!--
-                   <a href="img/sello-electronico.pdf" target="_blank"> <img src="img/d&b.png" class="img-responsive" style="">
-                   </a>-->
-                   </center>
-              <br><br>
-
-
-		  <!-- Section heading -->
-		  <div class="section-heading">
-			 <h2>Contacto</h2>
-			
-		  </div>
-	   </div>
-	   <div class="container">
-	   	<div class="row">
-		  <div class="margin col-md-4 col-sm-6 wow fadeInLeft" data-wow-delay="0.2s">
-			 <!-- Contact info -->
-			 
-			 <p>Para más información:</p><hr>
-
-             <p> Calle. Almanzora No.530<br>
-                    Colonia. Cantoría Residencial<br>
-                    Delegación. Villa de Pozos,<br>
-                    San Luis Potosí, S.L.P.<br>
-                    C.P. 78421
-             </p><hr>
-
-			 <p><a href="mailto:contacto@ae-sol.net">contacto@ae-sol.net</a></p>
-			 <hr>
-			 <p>Teléfono oficina matriz: <br>+52 (444) 353 2787</p><hr>
-<p>Ventas, S.L.P: <br> +52 1 (444) 444 6028</p><hr>
-<p>Ventas Saltillo, Coah.: <br> +52 1 (844) 278 1007 </p>
-
-			   
-			 <!-- Adress info -->
-			 
-		  </div>
-		  <div class="col-md-7 col-md-offset-1 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-delay="0.2s">
-			 <!-- Contact form -->
-			 <div class="form-style" id="contact_form">
-				<div id="contact_results"></div>
-				<div class="form-group">
-				   <input type="text" name="name" class="form-control input-field" placeholder="Nombre" required>
-				</div>
-				<div class="form-group">
-				   <input type="email" name="email" class="form-control input-field"  placeholder="Correo" required>
-				</div>
-				<div class="form-group">
-				   <input type="text" name="subject" class="form-control input-field" placeholder="Asunto" required>
-				</div>
-				<div class="form-group">
-				   <textarea name="message" id="message" class="textarea-field form-control" rows="4" placeholder="Información" required></textarea>
-				</div>
-				<div class="form-group">
-				   <button type="submit" id="submit_btn" value="Submit" class="btn btn-default pull-right">Enviar</button>
-				</div>				
-			 </div><!--/Contact form -->	
-		  </div><!-- /col-md-6 -->
-		</div><!-- /row -->		  
-	   </div><!-- /container-->	   
-	</section>
-	<!--Map -->
-	<div class="wow fadeInTop" data-wow-delay="0.2s">
-	   <div id="map-canvas">
-       <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3696.5411938478014!2d-100.8670177!3d22.1053322!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDA2JzE4LjEiTiAxMDDCsDUxJzU0LjIiVw!5e0!3m2!1ses-419!2smx!4v1459979862804" style="width: 1900px; height: 400px;" frameborder="0" style="border:0" class="img-responsive"  ></iframe>
-  
-     </div>
-	</div>
-	<!-- Section ends -->
-			  
-   <!-- Policy -->
-   <section id="policy" class="home-section">
-	   <div class="col-lg-8 col-lg-offset-2 cuadroTextoPoliticas tamanoCuadroPoliticas"  >
-		  <div class="section-heading" >
-           <br>
-			 <h2>Politica de Calidad AE Solutions </h2>
-          <br>
-          <div class="paneltab tab-pane fade active in textoPoliticas" align="justify" style="margin-left: 30px; margin-right: 30px;">
-            <div class="row" style="float: left; height: 400px ">
-             <p style="color:white"><strong>AE Solutions:</strong> Organizaci&oacute;n dedicada a la Automatizaci&oacute;n Industrial 
-               ubicada en Calle I. Zaragoza 151, Col. Cuartel Aguilares, San Luis Potos&iacute;, M&eacute;xico, ha decidido implantar un 
-               Sistema de Gesti&oacute;n de la Calidad basado en la norma ISO 9001 para mejorar el servicio que presta a sus clientes.</p>
-            <br><br>
-            <p style="color:white">La Direcci&oacute;n de AE SOLUTIONS enfoca el Sistema de la Calidad como una manera de organizar 
-               el funcionamiento, partiendo de uno de los pilares b&aacute;sicos como son la Calidad de sus servicios, la 
-               Satisfacci&oacute;n del cliente y la Mejora continua de la eficacia del Sistema. Para ello, su Sistema de Gesti&oacute;n de 
-               la Calidad se basa en: 
-            </p>
-            <Ul>
-               <li style="color:white"><p style="color:white">La Calidad y su mejora son responsabilidad de todos los integrantes de AE SOLUTIONS 
-                  empezando desde arriba.</p></li>
-               <li style="color:white"><p style="color:white">La Calidad se obtiene planificando, ejecutando, revisando y 
-                  mejorando el Sistema de Gesti&oacute;n, teniendo presente en todo momento el contexto de la Organizaci&oacute;n, tanto 
-                  interno como externo.</p></li>
-               <li style="color:white"><p style="color:white">La Calidad est&aacute; orientada hacia la satisfacci&oacute;n de todos nuestros 
-                  clientes (y partes interesadas) mediante el compromiso de toda la Organizaci&oacute;n en el cumplimiento de sus 
-                  necesidades y requisitos, as&iacute; como los requisitos legales y reglamentarios.</p></li>
-               <li style="color:white"><p style="color:white">La Calidad nos dirige al incremento de la productividad de nuestros clientes.</p></li>
-               <li style="color:white"><p style="color:white">La Calidad se apoya en la Mejora Continua tanto de los procesos 
-                  productivos y de prestaci&oacute;n del servicio, como de la eficacia del Sistema de Gesti&oacute;n de la Calidad en el que 
-                  prevenir los errores sea un aspecto fundamental.</p></li>
-               <li style="color:white"><p style="color:white">La Calidad nos lleva a prestar la m&aacute;xima atenci&oacute;n a la 
-                  evoluci&oacute;n tecnol&oacute;gica y a las posibles mejoras que las nuevas tecnolog&iacute;as pusieran a nuestra disposici&oacute;n.</p></li>
-               <li style="color:white"><p style="color:white">Mantener actualizados tanto el Manual como los Procedimientos 
-                  de Calidad, de acuerdo con la realidad cambiante de la Compa&ntilde;&iacute;a y el mercado.</p></li>
-               <li style="color:white"><p style="color:white">La Calidad requiere de la participaci&oacute;n y colaboraci&oacute;n de todos 
-                  por lo que esta Pol&iacute;tica es difundida a todo el personal de AE SOLUTIONS para su conocimiento y comprensi&oacute;n.</p></li>
-            </Ul>
-            <br><br>
-            <p style="color:white">La presente politica es el marco para generar los objetivos de calidad de AE SOLUTIONS</p>
-            <br>
-            <p style="color:white">Para la aplicaci&oacute;n efectiva de estos principios, es absolutamente necesario el apoyo a los mismos tanto del equipo directivo como de la plantilla.</p>
+             </div>
+          </div>	
+          <!--/ Slider ends -->
+                
+            <!-- Section services -->
+          <section id="services" class="home-section">
+        
+        
+             <div class="col-lg-8 col-lg-offset-2">
+        
+        
+             <!-- Section heading -->
+              <div class="section-heading">
+              <img src="img/rayo-11.png"><br><br>
+               <h2>Somos especialistas</h2>
+               
+              </div>
+             </div>
+             <div class="container">
+              <div class="row">
+               <!-- item 1-->
+               <div class="col-md-4 col-sm-12 wow fadeInLeft" data-wow-delay="0.2s">
+                <div class="img-wrapper">
+                   <img src="img/circulos-08.png" alt="" class="img-responsive"/>
+                </div>
+                <h4>Automatizaci&oacute;n</h4>
+                <p class="margin">Profesionales en integraci&oacute;n de sistemas de automatizaci&oacute;n para hacer m&aacute;s eficiente cualquier proceso industrial. 
+                </p>
+               </div><!-- /col-md-4-->
+               
+               <!-- item 2-->
+               <div class="col-md-4 col-sm-12 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="img-wrapper">
+                   <img src="img/circulos-09.png" alt="" class="img-responsive"/>
+                </div>
+                <h4>Consultor&iacute;a</h4>
+                <p class="margin">Ingenieros y t&eacute;cnicos capaces de trabajar en equipo con usted para proponer soluciones innovadoras y efectivas que permitan alcanzar sus objetivos.
+                </p>
+               </div><!-- /col-md-4-->
+               
+               <!-- item 3-->
+               <div class="col-md-4 col-sm-12 wow fadeInRight" data-wow-delay="0.2s">
+                <div class="img-wrapper">
+                   <img src="img/circulos-10.png" alt="" class="img-responsive"/>
+                </div>
+                <h4>Programaci&oacute;n</h4>
+                <p>Especialistas en programaci&oacute;n de las principales marcas de equipos de automatizaci&oacute;n industrial.
+                </p>
+               </div><!-- /col-md-4-->
+              </div>
+             </div>
+          </section>
+          <!-- /Section ends -->	  
+          
+            <!-- Section Stats -->	
+            <section id="stats" class="home-section">
+            <div class="col-lg-8 col-lg-offset-2">
+               <!-- Section Heading -->	
+              <div class="section-heading">
+              <h2>Nuestros servicios</h2>
+              
+             </div>
+            </div>
+                 <div class="container">
+                    <div class="row">
+                       <div class="text-center wow fadeInUp" data-wow-delay="0.2s">
+                          <div class="col-md-3 col-sm-6 res-margin" style="margin-bottom:50px">
+                             
+                             <!-- Number 1 -->
+                             <center>
+                             <a href="#" data-toggle="modal" data-target="#myModal">
+                             <img src="img/icono-01.png" class="img-responsive">
+                             </a></center>  
+                   <h6>Programaci&oacute;n de PLC's</h6>
+                          </div>
+                          <div class="col-md-3 col-sm-6 res-margin" style="margin-bottom:50px">
+                             
+                             <!-- Number 2 -->
+                              <center>
+                                <a href="#" data-toggle="modal" data-target="#myModal2">
+                                <img src="img/icono-02.png" class="img-responsive">
+                              </a>
+                              </center>
+                   <h6>Diagramas el&eacute;ctricos de potencia y de control</h6>
+                          </div>
+                          <div class="col-md-3 col-sm-6 res-margin" style="margin-bottom:50px">
+                             
+                             <!-- Number 3 -->
+                              <center>
+                                <a href="#" data-toggle="modal" data-target="#myModal3">
+                                <img src="img/icono-03.png" class="img-responsive">
+                              </a>
+                              </center>
+                            
+                             <h6>Dise&ntilde;o y programaci&oacute;n de HMI</h6>
+                          </div>
+                          <div class="col-md-3 col-sm-6" style="margin-bottom:50px">
+                             
+                             <!-- Number 4 -->
+                              <center>
+                                <a href="#" data-toggle="modal" data-target="#myModal4">
+                                <img src="img/icono-04.png" class="img-responsive">
+                              </a>
+                              </center>
+                            
+                   <h6>Redes industriales</h6>
+                          </div>
+                       </div>
+                    </div>
+        
+        
+                    <div class="row">
+                       <div class="text-center wow fadeInUp" data-wow-delay="0.2s">
+                          <div class="col-md-3 col-sm-6 res-margin" style="margin-bottom:50px">
+                             
+                             <!-- Number 1 -->
+                             <center>
+                               <a href="#" data-toggle="modal" data-target="#myModal5">
+                               <img src="img/icono-05.png" class="img-responsive">
+                             </a>
+                             </center>
+                             
+                   <h6>Sistemas de seguridad</h6>
+                          </div>
+                          <div class="col-md-3 col-sm-6 res-margin" style="margin-bottom:50px">
+                             
+                             <!-- Number 2 -->
+                              <center>
+                                <a href="#" data-toggle="modal" data-target="#myModal6">
+                                <img src="img/icono-06.png" class="img-responsive">
+                              </a>
+                              </center>
+                             
+                   <h6>Control de motores</h6>
+                          </div>
+                          <div class="col-md-3 col-sm-6 res-margin" style="margin-bottom:50px">
+                             <!-- Number 3 -->
+                              <center>
+                                <a href="#" data-toggle="modal" data-target="#myModal7">
+                                <img src="img/icono-07.png" class="img-responsive">
+                              </a>
+                              </center>
+                             
+                             <h6>Outsourcing</h6>
+                          </div>
+                          <div class="col-md-3 col-sm-6" style="margin-bottom:50px">
+                             <!-- Number 4 -->
+                              <center>
+                                <a href="#" data-toggle="modal" data-target="#myModal8">
+                                <img src="img/icono-08.png" class="img-responsive">
+                              </a>
+                              </center>
+                             
+                   <h6>Soluci&oacute;n de problemas</h6>
+                          </div>
+                       </div>
+                    </div>
+        
+        
+        
+        <div class="row">
+                       <div class="text-center wow fadeInUp" data-wow-delay="0.2s">
+                          <div class="col-md-3 col-sm-6 res-margin">
+                             <!-- Number 1 -->
+                             <center>
+                               <a href="#" data-toggle="modal" data-target="#myModal9">
+                               <img src="img/icono-09.png" class="img-responsive">
+                             </a>
+                             </center>
+                             
+                   <h6>Armado de tableros el&eacute;ctricos</h6>
+                          </div>
+                          <div class="col-md-3 col-sm-6 res-margin">
+                             <!-- Number 2 -->
+                              <center>
+                                <a href="#" data-toggle="modal" data-target="#myModal10">
+                                <img src="img/icono-10.png" class="img-responsive">
+                              </a>
+                              </center>
+                             
+                   <h6>Instalaciones el&eacute;ctricas</h6>
+                          </div>
+                          <div class="col-md-3 col-sm-6 res-margin">
+                             <!-- Number 3 -->
+                              <center>
+                                <a href="#" data-toggle="modal" data-target="#myModal11">
+                                <img src="img/icono-11.png" class="img-responsive">
+                              </a>
+                              </center>
+                             
+                             <h6>Entrenamiento en sistemas de automatizaci&oacute;n </h6>
+                          </div>
+                          <div class="col-md-3 col-sm-6">
+                             <!-- Number 4 -->
+                              <center>
+                                <a href="#" data-toggle="modal" data-target="#myModal12">
+                                <img src="img/icono-13.png" class="img-responsive">
+                              </a>
+                              </center>
+                             
+                   <h6>Fabricaci&oacute;n de Etiquetas Lamicoid</h6>
+                          </div>
+                       </div>
+                    </div>
+        
+        
+        
+        
+        
+        
+        
+                 </div>
+            </section>
+          <!-- Section Ends-->
+            
+            <!-- Section About -->	
+          <section id="about" class="home-section" style="background-image: url('img/fondo1.png');">
+             <div class="col-lg-8 col-lg-offset-2">
+               <!-- Section Heading -->	
+              <div class="section-heading">
+               <h2>Nosotros</h2>
+               
+              </div>
+             </div>
+              <!--
+              <div class="col-md-12 col-sm-12 col-centered">
+               <div class="centered-pills">
+                
+                <ul class="nav nav-pills">
+                   <li class="active"><a href="#pane1" data-toggle="tab">Nosotros</a></li>
+                   <li><a href="#pane2" data-toggle="tab">Experiencia</a></li>
+                   
+                </ul>
+               </div>
+              </div>
+              -->
+             <div class="container">
+              <!-- Panels start -->	
+              <div class="tabbable">
+               <div class="tab-content">
+                <!-- Panel  1 -->
+                <div id="pane1" class="paneltab tab-pane fade active in">
+                   <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                     <div class="col-lg-6 col-sm-12 res-margin wow fadeInRight" data-wow-delay="0.2s">
+                      <h3>Comprometidos con la calidad de nuestros servicios</h3>
+                      <p class="text-justify">Empresa fundada en el a&ntilde;o 2012 en la ciudad de San Luis Potos&iacute;, S.L.P. que comienza operaciones con personal de larga experiencia en el ramo de la automatizaci&oacute;n industrial. AE Solutions comienza a hacerse un lugar en la industria nacional e internacional y se coloca como una empresa s&oacute;lida y en desarrollo siendo sin&oacute;nimo de confianza por nuestro enfoque en el desarrollo de nuestros clientes.</p>
+                     </div>					 
+                     <div class="col-lg-6 col-md-12 col-lg-offset-0 col-md-offset-1 col-sm-12 wow fadeInLeft" data-wow-delay="0.2s">
+                      <center><img src="img/foto-nosotros.jpg" alt="" class="img-responsive"/></center>
+                     </div>
+                    </div>
+                    <!-- icons -->
+                  
+                  
+                    
+                   </div>
+                 </div> 
+                <!-- Panel 1 ends -->
+                
+                <!-- Panel 2 -->
+                <div id="pane2" class="paneltab tab-pane fade active in">
+                  <div class="row">
+                   <div class="col-lg-6 col-sm-12 res-margin">
+                    <h3>Especialistas en Estampado y Prensas</h3>
+                    <p><img src="img/vineta-azul-08.png"> Carrocer&iacute;­as<br>
+                      <img src="img/vineta-azul-08.png"> Soldaduras<br>
+                      <img src="img/vineta-azul-08.png"> Especialistas en Estampado y Prensas<br>
+                      <img src="img/vineta-azul-08.png"> Transportadores<br>
+                      <img src="img/vineta-azul-08.png"> Error proofing (pokayokes)<br>
+                      <img src="img/vineta-azul-08.png"> Sistema de seguridad<br>
+                      <img src="img/vineta-azul-08.png"> Sistemas de visi&oacute;n<br>
+                      <img src="img/vineta-azul-08.png"> Ahorro de energ&iacute;a<br>
+                      <img src="img/vineta-azul-08.png"> Control de motores<br>
+                      <img src="img/vineta-azul-08.png"> Servo motores<br>
+                      <img src="img/vineta-azul-08.png"> Pintura<br>
+                      <img src="img/vineta-azul-08.png"> Alimentos y bebidas<br>
+                   </div>
+                   <div class="col-lg-6 col-sm-12" style="margin-top: 90px">
+                     <!-- Responsive video -->
+                    <div class="embed-responsive embed-responsive-16by9">
+                     
+                     <video controls muted> <source src="img/ae.mp4" type="video/mp4" ></video>
+                    </div>
+                   </div>
+                  </div>
+                </div><!-- / Panel 2 ends -->
+                
+                
+              </div><!-- /.tab-content -->
+              </div><!-- /.tabbable -->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                 <!-- <div class="col-md-12 col-sm-12 col-centered">
+               <div class="centered-pills">
+                
+                <ul class="nav nav-pills">
+                 
+                  <li><a href="#pane2" data-toggle="tab">Experiencia</a></li>
+                   
+                </ul>
+               </div>
+              </div>-->
+             <div class="container">
+              <!-- Panels start --> 
+              <div class="tabbable">
+               <div class="tab-content">
+               
+                
+                <!-- Panel 2 -->
+                <div id="pane2" class="paneltab tab-pane fade">
+                  <div class="row">
+                   <div class="col-lg-6 col-sm-12 res-margin">
+                    <h3>Especialistas en Estampado y Prensas</h3>
+                    <p><img src="img/vineta-azul-08.png"> CarrocerÃ­as<br>
+                      <img src="img/vineta-azul-08.png"> Soldaduras<br>
+                      <img src="img/vineta-azul-08.png"> Especialistas en Estampado y Prensas<br>
+                      <img src="img/vineta-azul-08.png"> Transportadores<br>
+                      <img src="img/vineta-azul-08.png"> Error proofing (pokayokes)<br>
+                      <img src="img/vineta-azul-08.png"> Sistema de seguridad<br>
+                      <img src="img/vineta-azul-08.png"> Sistemas de visiÃ³n<br>
+                      <img src="img/vineta-azul-08.png"> Ahorro de energÃ­a<br>
+                      <img src="img/vineta-azul-08.png"> Control de motores<br>
+                      <img src="img/vineta-azul-08.png"> Servo motores<br>
+                      <img src="img/vineta-azul-08.png"> Pintura<br>
+                      <img src="img/vineta-azul-08.png"> Alimentos y bebidas<br>
+                   </div>
+                   <div class="col-lg-6 col-sm-12" style="margin-top: 90px">
+                    <!-- Responsive video -->
+                    <div class="embed-responsive embed-responsive-16by9">
+                     
+                     <video controls muted> <source src="img/ae.mp4" type="video/mp4" ></video>
+                    </div>
+                   </div>
+                  </div>
+                </div><!-- / Panel 2 ends -->
+                
+                
+              </div><!-- /.tab-content -->
+              </div><!-- /.tabbable -->
+        
+        
+        
+        
+        
+        
+        
+             </div><!-- /container-->
+          </section>
+          <!-- Section ends-->
+          
+            
+          
+          <!-- Section Offers -->
+          <section id="testimonials" class="home-section" style="background: url('img/fondo5.jpg') center fixed; min-height: 900px;height: auto;">
+             <div class="col-lg-8 col-lg-offset-2">
+               <!-- Section Heading -->
+              <div class="section-heading">
+        
+                      <div class="row" id="clientes">
+                        <h2>Clientes</h2>
+                        <br><br>
+        
+                          <div class="col-md-3" >
+                             <img src="img/logotipos-01.png" >
+                          </div>
+        
+        
+                          <div class="col-md-3">
+                             <img src="img/logotipos-02.png" >
+                          </div>
+                          
+                          <div class="col-md-3 ">
+                             <img src="img/logotipos-03.png" >
+                          </div>
+                          <div class="col-md-3 ">
+                             <img src="img/logotipos-04.png" >
+                          </div>
+                          
+                      </div>
+        
+                      <div class="row">
+                        <div class="col-md-3 ">
+                           <img src="img/logotipos-07.png" >
+                        </div>
+                        <div class="col-md-3 ">
+                           <img src="img/aa.png" >
+                        </div>
+                        <div class="col-md-3 ">
+                           <img src="img/bb.png" >
+                        </div>
+                         <div class="col-md-3 ">
+                           <img src="img/faureci.png" >
+                        </div>
+                      </div>
+        
+                      <div class="row">
+                      <div class="col-md-3 ">
+                             &nbsp;
+                          </div>
+        
+                          <div class="col-md-3 ">
+                             <img src="img/logotipos-05.png" >
+                          </div>
+        
+                          <div class="col-md-3 ">
+                             <img src="img/logotipos-06.png" >
+                          </div>
+                          <div class="col-md-3 ">
+                             &nbsp;
+                          </div>
+        
+                      </div>
+        
+        
+        
+                      
+                     
+              </div>
+             </div>
+          </section>
+          <!-- Section ends -->  
+          
+          
+          
+            <!--
+          <section id="brands" class="home-section">
+             <div class="col-lg-8 col-lg-offset-2">
+             
+              <div class="section-heading">
+               <h2>Brands we work with</h2>
+               <hr>
+              </div>
+             </div>
+             <div class="container text-center">
+                <div class="row">
+            
+             <div class="col-sm-6 col-md-3 res-margin">
+              <div class="well well-sm wow fadeInLeft">
+                 <a href="#"><img src="img/client1.png" alt="client" class="col-centered img-responsive"/></a>
+              </div>
+             </div>
+             
+             <div class="col-sm-6 col-md-3 res-margin">
+              <div class="well well-sm wow fadeInLeft">
+                 <a href="#"><img src="img/client2.png" alt="client" class="col-centered img-responsive"/></a>
+              </div>
+             </div>
+            
+             <div class="col-sm-6 col-md-3 res-margin">
+              <div class="well well-sm wow fadeInRight">
+                 <a href="#"><img src="img/client3.png" alt="client" class="col-centered img-responsive"/></a>
+              </div>
+             </div>
+            
+             <div class="col-sm-6 col-md-3">
+              <div class="well well-sm wow fadeInRight">
+                 <a href="#"><img src="img/client4.png" alt="client" class="col-centered img-responsive"/></a>
+              </div>
+              </div>
+            </div>  
+             </div>
+          </section>
+        -->
+             
+          <!-- Section Contact -->
+          <section id="contact" class="home-section">
+             <div class="col-lg-8 col-lg-offset-2">
+        
+        
+         <center>
+        <script language="JavaScript" src="https://dunsregistered.dnb.com" type="text/javascript"></script> 
+                          <!--
+                           <a href="img/sello-electronico.pdf" target="_blank"> <img src="img/d&b.png" class="img-responsive" style="">
+                           </a>-->
+                           </center>
+                      <br><br>
+        
+        
+              <!-- Section heading -->
+              <div class="section-heading">
+               <h2>Contacto</h2>
+              
+              </div>
+             </div>
+             <div class="container">
+               <div class="row">
+              <div class="margin col-md-4 col-sm-6 wow fadeInLeft" data-wow-delay="0.2s">
+               <!-- Contact info -->
+               
+               <p>Para m&aacute;s informaci&oacute;n:</p><hr>
+        
+                     <p> Calle. I. Zaragoza No.151<br>
+                            Colonia. Cuartel Aguilares<br>
+                            Delegaci&oacute;n. Villa de Pozos,<br>
+                            San Luis Potos&iacute;, S.L.P.<br>
+                            C.P. 78421
+                     </p><hr>
+        
+               <p><a href="mailto:contacto@ae-sol.net">contacto@ae-sol.net</a></p>
+               <hr>
+               <p>Tel&eacutefono oficina matriz: <br>+52 (444) 353 2787</p><hr>
+        <p>Ventas, S.L.P: <br> +52 1 (444) 444 6028</p><hr>
+        <p></p>
+        
+                 
+               <!-- Adress info -->
+               
+              </div>
+              <div class="col-md-7 col-md-offset-1 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-delay="0.2s">
+               <!-- Contact form -->
+               <div class="form-style" id="contact_form">
+                <div id="contact_results"></div>
+                <div class="form-group">
+                   <input type="text" name="name" class="form-control input-field" placeholder="Nombre" required>
+                </div>
+                <div class="form-group">
+                   <input type="email" name="email" class="form-control input-field"  placeholder="Correo" required>
+                </div>
+                <div class="form-group">
+                   <input type="text" name="subject" class="form-control input-field" placeholder="Asunto" required>
+                </div>
+                <div class="form-group">
+                   <textarea name="message" id="message" class="textarea-field form-control" rows="4" placeholder="Informaci&oacute;n" required></textarea>
+                </div>
+                <div class="form-group">
+                   <button type="submit" id="submit_btn" value="Submit" class="btn btn-default pull-right">Enviar</button>
+                </div>				
+               </div><!--/Contact form -->	
+              </div><!-- /col-md-6 -->
+            </div><!-- /row -->		  
+             </div><!-- /container-->	   
+          </section>
+          <!--Map -->
+          <div class="wow fadeInTop" data-wow-delay="0.2s">
+             <div id="map-canvas">
+               <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3696.5411938478014!2d-100.8670177!3d22.1053322!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDA2JzE4LjEiTiAxMDDCsDUxJzU0LjIiVw!5e0!3m2!1ses-419!2smx!4v1459979862804" style="width: 1900px; height: 400px;" frameborder="0" style="border:0" class="img-responsive"  ></iframe>
+          
+             </div>
+          </div>
+          <!-- Section ends -->
+                
+           <!-- Policy -->
+           <section id="policy" class="home-section">
+             <div class="col-lg-8 col-lg-offset-2 cuadroTextoPoliticas tamanoCuadroPoliticas"  >
+              <div class="section-heading" >
+                   <br>
+               <h2>Politica de Calidad AE Solutions </h2>
+                  <br>
+                  <div class="paneltab tab-pane fade active in textoPoliticas" align="justify" style="margin-left: 30px; margin-right: 30px;">
+                    <div class="row" style="float: left; height: 400px ">
+                     <p style="color:white"><strong>AE Solutions:</strong> Organizaci&oacute;n dedicada a la Automatizaci&oacute;n Industrial 
+                       ubicada en Calle I. Zaragoza 151, Col. Cuartel Aguilares, San Luis Potos&iacute;, M&eacute;xico, ha decidido implantar un 
+                       Sistema de Gesti&oacute;n de la Calidad basado en la norma ISO 9001 para mejorar el servicio que presta a sus clientes.</p>
+                    <br><br>
+                    <p style="color:white">La Direcci&oacute;n de AE SOLUTIONS enfoca el Sistema de la Calidad como una manera de organizar 
+                       el funcionamiento, partiendo de uno de los pilares b&aacute;sicos como son la Calidad de sus servicios, la 
+                       Satisfacci&oacute;n del cliente y la Mejora continua de la eficacia del Sistema. Para ello, su Sistema de Gesti&oacute;n de 
+                       la Calidad se basa en: 
+                    </p>
+                    <Ul>
+                       <li style="color:white"><p style="color:white">La Calidad y su mejora son responsabilidad de todos los integrantes de AE SOLUTIONS 
+                          empezando desde arriba.</p></li>
+                       <li style="color:white"><p style="color:white">La Calidad se obtiene planificando, ejecutando, revisando y 
+                          mejorando el Sistema de Gesti&oacute;n, teniendo presente en todo momento el contexto de la Organizaci&oacute;n, tanto 
+                          interno como externo.</p></li>
+                       <li style="color:white"><p style="color:white">La Calidad est&aacute; orientada hacia la satisfacci&oacute;n de todos nuestros 
+                          clientes (y partes interesadas) mediante el compromiso de toda la Organizaci&oacute;n en el cumplimiento de sus 
+                          necesidades y requisitos, as&iacute; como los requisitos legales y reglamentarios.</p></li>
+                       <li style="color:white"><p style="color:white">La Calidad nos dirige al incremento de la productividad de nuestros clientes.</p></li>
+                       <li style="color:white"><p style="color:white">La Calidad se apoya en la Mejora Continua tanto de los procesos 
+                          productivos y de prestaci&oacute;n del servicio, como de la eficacia del Sistema de Gesti&oacute;n de la Calidad en el que 
+                          prevenir los errores sea un aspecto fundamental.</p></li>
+                       <li style="color:white"><p style="color:white">La Calidad nos lleva a prestar la m&aacute;xima atenci&oacute;n a la 
+                          evoluci&oacute;n tecnol&oacute;gica y a las posibles mejoras que las nuevas tecnolog&iacute;as pusieran a nuestra disposici&oacute;n.</p></li>
+                       <li style="color:white"><p style="color:white">Mantener actualizados tanto el Manual como los Procedimientos 
+                          de Calidad, de acuerdo con la realidad cambiante de la Compa&ntilde;&iacute;a y el mercado.</p></li>
+                       <li style="color:white"><p style="color:white">La Calidad requiere de la participaci&oacute;n y colaboraci&oacute;n de todos 
+                          por lo que esta Pol&iacute;tica es difundida a todo el personal de AE SOLUTIONS para su conocimiento y comprensi&oacute;n.</p></li>
+                    </Ul>
+                    <br><br>
+                    <p style="color:white">La presente politica es el marco para generar los objetivos de calidad de AE SOLUTIONS</p>
+                    <br>
+                    <p style="color:white">Para la aplicaci&oacute;n efectiva de estos principios, es absolutamente necesario el apoyo a los mismos tanto del equipo directivo como de la plantilla.</p>
+                    </div>
+                  </div>
+              </div>
+             </div>
+          </section>
+        
+            <!-- Footer -->	
+          <footer>
+             <div class="container">
+              <div class="row wow fadeInUp" data-wow-delay="0.2s">
+               <div class="col-sm-6 col-md-4">
+               <!-- Social Media icons -->  
+                
+               </div>
+               <!-- Bottom Credits -->
+               <div class="col-sm-6 col-md-offset-5 col-md-3 text-center">
+                <p>COPYRIGHT © 2016 AE Solutions</p>
+               </div>			 
+              </div><!-- /row-->
+             </div><!-- /container -->
+             <!-- Go To Top Link -->
+             <div class="page-scroll hidden-sm hidden-xs">
+              <a href="#page-top" class="back-to-top"><i class="fas fa-angle-up" ></i></a>
+             </div>
+          </footer>
+        
+        
+        
+        <!--modal1-->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Programaci&oacute;n PLC's</h4>
+              </div>
+              <div class="modal-body">
+               <p>Manejo de las principales marcas del mercado:
+              <br>
+              <br>
+               <img src="img/vineta-14.png"> Programaci&oacute;n de PLC&rsquo;S 
+                 <br>
+                   <img src="img/vineta-14.png">  Allen Bradley
+                   <br>
+                   <img src="img/vineta-14.png">  Siemens
+                   <br>
+                  <img src="img/vineta-14.png">  Mitsubishi
+                   <br>
+                  <img src="img/vineta-14.png">  Koyo</p>
+                  <center>
+                  <img src="img/foto-01.png" class="img-responsive">
+                  </center>
+              </div>
             </div>
           </div>
-		  </div>
-	   </div>
-	</section>
-
-    <!-- Footer -->	
-  <footer>
-     <div class="container">
-      <div class="row wow fadeInUp" data-wow-delay="0.2s">
-       <div class="col-sm-6 col-md-4">
-       <!-- Social Media icons -->  
+        </div>
         
-       </div>
-			 <!-- Bottom Credits -->
-			 <div class="col-sm-6 col-md-offset-5 col-md-3 text-center">
-				<p>COPYRIGHT © 2016 AE Solutions</p>
-			 </div>			 
-		  </div><!-- /row-->
-	   </div><!-- /container -->
-	   <!-- Go To Top Link -->
-	   <div class="page-scroll hidden-sm hidden-xs">
-		  <a href="#page-top" class="back-to-top"><i class="fas fa-angle-up" ></i></a>
-	   </div>
-	</footer>
-
-
-
-<!--modal1-->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Programación PLC's</h4>
-      </div>
-      <div class="modal-body">
-       <p>Manejo de las principales marcas del mercado:
-      <br>
-      <br>
-       <img src="img/vineta-14.png"> Programación de PLC’S 
-       	<br>
-           <img src="img/vineta-14.png">  Allen Bradley
-           <br>
-           <img src="img/vineta-14.png">  Siemens
-           <br>
-          <img src="img/vineta-14.png">  Mitsubishi
-           <br>
-          <img src="img/vineta-14.png">  Koyo</p>
-          <center>
-          <img src="img/foto-01.png" class="img-responsive">
-          </center>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--modal2-->
-<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Diagramas eléctricos de potencial y de control </h4>
-      </div>
-      <div class="modal-body">
-       <p>Realizamos sus diagramas eléctricos de potencia y de control bajo los estándares especificados y normas internacionales.</p>
-       <center>
-          <img src="img/foto-02.png" class="img-responsive">
-          </center>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--modal3-->
-<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Diseño y programación de HMI</h4>
-      </div>
-      <div class="modal-body">
-       <p>Diseñamos y programamos Interfaces Humano - Máquina (IHM o HMI por sus siglas en inglés) para la visualización y correcta operación de su máquina de una manera amigable y entendible para el operador.</p>
-       <center>
-          <img src="img/foto-03.png" class="img-responsive">
-          </center>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--modal4-->
-<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Redes industriales</h4>
-      </div>
-      <div class="modal-body">
-       <p>Instalamos, configuramos, comisionamos y programamos las principales redes industriales del mercado:<br>
-        <br>
-<img src="img/vineta-14.png">  Ethernet
-<br>
-<img src="img/vineta-14.png">  DeviceNet
-<br>
-<img src="img/vineta-14.png">  ControlNet
-<br>
-Entre otras
-<br>
-<br>
-Seguimos todas las normas y recomendaciones aplicables para asegurar el correcto funcionamiento de su red evitando problemas de comunicación que generan tiempos muertos en su máquina.
-       </p>
-       <center>
-          <img src="img/foto-04.png" class="img-responsive">
-          </center>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--modal5-->
-<div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Sistemas de seguridad</h4>
-      </div>
-      <div class="modal-body">
-       <p>Instalación, configuración, programación y puesta en marcha de sistemas de seguridad para proteger al operador: 
-       <br>
-       <br>
-        <img src="img/vineta-14.png">  PLCs de seguridad<br>
-     <img src="img/vineta-14.png">  Cortinas de luz<br>
-       <img src="img/vineta-14.png">  Paros de emergencia<br>
-       <img src="img/vineta-14.png">  Sistemas redundantes<br>
-       <img src="img/vineta-14.png">  Detectores de presencia con programación de área<br>
-       <img src="img/vineta-14.png">  Control de acceso a la máquina o celda<br>
-          Etc.</p>
-       <center>
-          <img src="img/foto-06.png" class="img-responsive">
-          </center>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--modal6-->
-<div class="modal fade" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Control de Motores</h4>
-      </div>
-      <div class="modal-body">
-       <p>Selección, configuración, solución de fallas de variadores de velocidad (VFDs) y servos.</p>
-       <center>
-          <img src="img/foto-05.png" class="img-responsive">
-          </center>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--modal7-->
-<div class="modal fade" id="myModal7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Outsourcing</h4>
-      </div>
-      <div class="modal-body">
-      <p>Asignación de personal calificado para atención de tiempo completo a sus necesidades de automatización para:<br>
-       	<br>
-        <img src="img/vineta-14.png">  Solución de problemas<br>
-        <img src="img/vineta-14.png">  Creación de estándares<br>
-        <img src="img/vineta-14.png">  Revisión de máquinas existentes<br>
-        <img src="img/vineta-14.png">  Revisión adecuada de máquinas a comprar<br>
-        <img src="img/vineta-14.png">  Reducción de tiempo de ciclo<br>
-        <img src="img/vineta-14.png">  Mejoras a sus líneas de producción<br>
-        Etc.<br>
-
-       <br>Personal asignado por horas, días, semanas, meses, o como se necesite.</p>
-         <center>
-          <img src="img/foto-07.png" class="img-responsive">
-          </center>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--modal8-->
-<div class="modal fade" id="myModal8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Solución de Problemas</h4>
-      </div>
-      <div class="modal-body">
-       <p>Porque sabemos que la producción continúa día y noche y los tiempos muertos tienen un alto impacto, <b>estamos disponibles 24x7 los 365 días del año</b> para ayudarlo a resolver sus problemas de automatización de cualquiera de sus máquinas.</p>
-       <center>
-          <img src="img/foto-08.png" class="img-responsive">
-          </center>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--modal9-->
-<div class="modal fade" id="myModal9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Armado de Tableros Eléctricos</h4>
-      </div>
-      <div class="modal-body">
-       <p>Armamos tableros eléctricos de potencia y de control de acuerdo a las normas de calidad más estrictas:<br>
-        <br>
-       	<img src="img/vineta-14.png">  Centros de Control de Motores<br>
-        <img src="img/vineta-14.png">  Tableros de Control con PLC<br>
-        <img src="img/vineta-14.png">  Gabinetes de I/O remoto<br>
-        <img src="img/vineta-14.png">  Botoneras<br>
-         Etc.</p>
-          <center>
-          <img src="img/foto-09.png" class="img-responsive">
-          </center>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--modal10-->
-<div class="modal fade" id="myModal10" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Instalaciones Eléctricas</h4>
-      </div>
-      <div class="modal-body">
-       <p>Instalación de sistemas eléctricos bajo normas internacionales:<br>
-       <img src="img/vineta-14.png">  Tableros eléctricos<br>
-       <img src="img/vineta-14.png">  Tubería conduit<br>
-       <img src="img/vineta-14.png">  Charola<br>
-       <img src="img/vineta-14.png">  Ruteo de cableado<br>
-       <img src="img/vineta-14.png">  Etiquetado<br>
-       <img src="img/vineta-14.png">  Redes industriales <br>
-       <img src="img/vineta-14.png">  Conexión de equipos
-       <br>Etc.</p>
-       <center>
-          <img src="img/foto-10.png" class="img-responsive">
-          </center>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--modal11-->
-<div class="modal fade" id="myModal11" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Entrenamiento en Sistemas de Automatización</h4>
-      </div>
-      <div class="modal-body">
-       <p>Ofrecemos cursos estándar de:<br>
-      <img src="img/vineta-14.png">  Programación de PLCs de diversas marcas<br>
-       <img src="img/vineta-14.png">  Redes Industriales<br>
-       <img src="img/vineta-14.png">  IHM <br>
-       <img src="img/vineta-14.png">  AutoCad<br>
-       <img src="img/vineta-14.png">  Diagramas eléctricos (norma americana y europea)</p>
-        <center>
-          <img src="img/foto-11.png" class="img-responsive">
-          </center>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--modal12-->
-<div class="modal fade" id="myModal12" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Fabricación de etiquetas lamicoid</h4>
-      </div>
-      <div class="modal-body">
-        <p>Fabricación de etiquetas para la identificación y marcaje de equipo en campo y gabinetes de fuerza y control.</p>
-        <center>
-          <img src="img/foto-12.png" class="img-responsive">
-          </center>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-	<!-- /footer ends -->
-	  	  	
-	<!-- Core JavaScript Files -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/main.js"></script>
-
-	<!-- Counter -->	  
-	<script src="js/numscroller.js"></script>
-
-	<!-- WOW animations -->
-	<script src="js/wow.min.js"></script>
-
-	<!-- Prettyphoto Lightbox -->
-	<script src="js/jquery.prettyPhoto.js"></script>
-	
-	<!-- Owl Carousel -->
-	<script src="js/owl.carousel.min.js"></script>
-		
-	<!-- Contact form -->	  
-	<script src="js/contact.js"></script>
-
-	<!-- Isotope -->	  
-	<script src="js/jquery.isotope.js"></script>
-
-	<!-- Google maps -->	  
-	
-    <!-- All Scripts & Plugins -->
-	<script src="switcher/js/dmss.js"></script>
-	  
-
+        <!--modal2-->
+        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Diagramas elÃ©ctricos de potencial y de control </h4>
+              </div>
+              <div class="modal-body">
+               <p>Realizamos sus diagramas el&eacute;ctricos de potencia y de control bajo los est&aacute;ndares especificados y normas internacionales.</p>
+               <center>
+                  <img src="img/foto-02.png" class="img-responsive">
+                  </center>
+              </div>
+            </div>
+          </div>
+        </div>
         
-    </body>
+        <!--modal3-->
+        <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Dise&ntilde;o y programaci&oacute;n de HMI</h4>
+              </div>
+              <div class="modal-body">
+               <p>Dise&ntilde;amos y programamos Interfaces Humano - M&aacute;quina (IHM o HMI por sus siglas en ingl&eacute;s) para la visualizaci&oacute;n y correcta operaci&oacute;n de su m&aacute;quina de una manera amigable y entendible para el operador.</p>
+               <center>
+                  <img src="img/foto-03.png" class="img-responsive">
+                  </center>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!--modal4-->
+        <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Redes industriales</h4>
+              </div>
+              <div class="modal-body">
+               <p>Instalamos, configuramos, comisionamos y programamos las principales redes industriales del mercado:<br>
+                <br>
+        <img src="img/vineta-14.png">  Ethernet
+        <br>
+        <img src="img/vineta-14.png">  DeviceNet
+        <br>
+        <img src="img/vineta-14.png">  ControlNet
+        <br>
+        Entre otras
+        <br>
+        <br>
+        Seguimos todas las normas y recomendaciones aplicables para asegurar el correcto funcionamiento de su red evitando problemas de comunicaci&oacute;n que generan tiempos muertos en su m&aacute;quina.
+               </p>
+               <center>
+                  <img src="img/foto-04.png" class="img-responsive">
+                  </center>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!--modal5-->
+        <div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Sistemas de seguridad</h4>
+              </div>
+              <div class="modal-body">
+               <p>Instalaci&oacute;n, configuraci&oacute;n, programaci&oacute;n y puesta en marcha de sistemas de seguridad para proteger al operador: 
+               <br>
+               <br>
+                <img src="img/vineta-14.png">  PLCs de seguridad<br>
+             <img src="img/vineta-14.png">  Cortinas de luz<br>
+               <img src="img/vineta-14.png">  Paros de emergencia<br>
+               <img src="img/vineta-14.png">  Sistemas redundantes<br>
+               <img src="img/vineta-14.png">  Detectores de presencia con programaci&oacute;n de &Aacute;rea<br>
+               <img src="img/vineta-14.png">  Control de acceso a la m&aacute;quina o celda<br>
+                  Etc.</p>
+               <center>
+                  <img src="img/foto-06.png" class="img-responsive">
+                  </center>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!--modal6-->
+        <div class="modal fade" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Control de Motores</h4>
+              </div>
+              <div class="modal-body">
+               <p>Selecci&oacute;n, configuraci&oacute;n, soluci&oacute;n de fallas de variadores de velocidad (VFDs) y servos.</p>
+               <center>
+                  <img src="img/foto-05.png" class="img-responsive">
+                  </center>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!--modal7-->
+        <div class="modal fade" id="myModal7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Outsourcing</h4>
+              </div>
+              <div class="modal-body">
+              <p>Asignaci&oacute;n de personal calificado para atenci&oacute;n de tiempo completo a sus necesidades de automatizaci&oacute;n para:<br>
+                 <br>
+                <img src="img/vineta-14.png">  Soluci&oacute;n de problemas<br>
+                <img src="img/vineta-14.png">  Creaci&oacute;n de est&aacute;ndares<br>
+                <img src="img/vineta-14.png">  Revisi&oacute;n de m&aacute;quinas existentes<br>
+                <img src="img/vineta-14.png">  Revisi&oacute;n adecuada de m&aacute;quinas a comprar<br>
+                <img src="img/vineta-14.png">  Reducci&oacute;n de tiempo de ciclo<br>
+                <img src="img/vineta-14.png">  Mejoras a sus l&iacute;­neas de producci&oacute;n<br>
+                Etc.<br>
+        
+               <br>Personal asignado por horas, d&iacute;­as, semanas, meses, o como se necesite.</p>
+                 <center>
+                  <img src="img/foto-07.png" class="img-responsive">
+                  </center>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!--modal8-->
+        <div class="modal fade" id="myModal8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">SoluciÃ³n de Problemas</h4>
+              </div>
+              <div class="modal-body">
+               <p>Porque sabemos que la producci&oacute;n contin&uacute;a d&iacute;­a y noche y los tiempos muertos tienen un alto impacto, <b>estamos disponibles 24x7 los 365 d&iacute;as del a&ntilde;o</b> para ayudarlo a resolver sus problemas de automatizaci&oacute;n de cualquiera de sus m&aacute;quinas.</p>
+               <center>
+                  <img src="img/foto-08.png" class="img-responsive">
+                  </center>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!--modal9-->
+        <div class="modal fade" id="myModal9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Armado de Tableros ElÃ©ctricos</h4>
+              </div>
+              <div class="modal-body">
+               <p>Armamos tableros el&eacute;ctricos de potencia y de control de acuerdo a las normas de calidad m&aacute;s estrictas:<br>
+                <br>
+                 <img src="img/vineta-14.png">  Centros de Control de Motores<br>
+                <img src="img/vineta-14.png">  Tableros de Control con PLC<br>
+                <img src="img/vineta-14.png">  Gabinetes de I/O remoto<br>
+                <img src="img/vineta-14.png">  Botoneras<br>
+                 Etc.</p>
+                  <center>
+                  <img src="img/foto-09.png" class="img-responsive">
+                  </center>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!--modal10-->
+        <div class="modal fade" id="myModal10" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Instalaciones El&eacute;ctricas</h4>
+              </div>
+              <div class="modal-body">
+               <p>Instalaci&oacute;n de sistemas el&eacute;ctricos bajo normas internacionales:<br>
+               <img src="img/vineta-14.png">  Tableros el&eacute;ctricos<br>
+               <img src="img/vineta-14.png">  Tuber&iacute;a conduit<br>
+               <img src="img/vineta-14.png">  Charola<br>
+               <img src="img/vineta-14.png">  Ruteo de cableado<br>
+               <img src="img/vineta-14.png">  Etiquetado<br>
+               <img src="img/vineta-14.png">  Redes industriales <br>
+               <img src="img/vineta-14.png">  Conexi&oacute;n de equipos
+               <br>Etc.</p>
+               <center>
+                  <img src="img/foto-10.png" class="img-responsive">
+                  </center>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!--modal11-->
+        <div class="modal fade" id="myModal11" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Entrenamiento en Sistemas de Automatizaci&oacute;n</h4>
+              </div>
+              <div class="modal-body">
+               <p>Ofrecemos cursos est&aacute;ndar de:<br>
+              <img src="img/vineta-14.png">  Programaci&oacute;n de PLCs de diversas marcas<br>
+               <img src="img/vineta-14.png">  Redes Industriales<br>
+               <img src="img/vineta-14.png">  IHM <br>
+               <img src="img/vineta-14.png">  AutoCad<br>
+               <img src="img/vineta-14.png">  Diagramas el&eacute;ctricos (norma americana y europea)</p>
+                <center>
+                  <img src="img/foto-11.png" class="img-responsive">
+                  </center>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!--modal12-->
+        <div class="modal fade" id="myModal12" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Fabricaci&oacute;n de etiquetas lamicoid</h4>
+              </div>
+              <div class="modal-body">
+                <p>Fabricaci&oacute;n de etiquetas para la identificaci&oacute;n y marcaje de equipo en campo y gabinetes de fuerza y control.</p>
+                <center>
+                  <img src="img/foto-12.png" class="img-responsive">
+                  </center>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+        
+          <!-- /footer ends -->
+                  
+          <!-- Core JavaScript Files -->
+          <script src="js/jquery.min.js"></script>
+          <script src="js/bootstrap.min.js"></script>
+          <script src="js/main.js"></script>
+        
+          <!-- Counter -->	  
+          <script src="js/numscroller.js"></script>
+        
+          <!-- WOW animations -->
+          <script src="js/wow.min.js"></script>
+        
+          <!-- Prettyphoto Lightbox -->
+          <script src="js/jquery.prettyPhoto.js"></script>
+          
+          <!-- Owl Carousel -->
+          <script src="js/owl.carousel.min.js"></script>
+            
+          <!-- Contact form -->	  
+          <script src="js/contact.js"></script>
+        
+          <!-- Isotope -->	  
+          <script src="js/jquery.isotope.js"></script>
+        
+          <!-- Google maps -->	  
+          
+            <!-- All Scripts & Plugins -->
+          <script src="switcher/js/dmss.js"></script>
+            
+           </body>
 </html>

@@ -24,7 +24,7 @@
                                     <tr class="text-center" >
                                         <td>{{$productoscompra->folio}}</td>
                                         <td>{{$productoscompra->codigo}}</td>
-                                        <td>$ {{$productoscompra->nombre}}</td>
+                                        <td>{{$productoscompra->nombre}}</td>
                                         <td>{{$productoscompra->cantidad}}</td>
                                         <td>{{$productoscompra->precio}}</td>
                                         <th><form action="{{route('productoscompras.destroy', $productoscompra)}}" method="POST">

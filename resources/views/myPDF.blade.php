@@ -191,8 +191,12 @@
                         @endif
                     </p>
                     <p class="pdatos2" style="margin-left:.2cm">{{$item->dir_prov}}</p>
-                    <p class="pdatos2" style="margin-left:.2cm">{{$item->loc_prov}}, {{$item->edo_prov}}, {{$item->cp_prov}} 78120</p>
-                    <p class="pdatos2" style="margin-left:.2cm">{{$item->telefono_prov}}8182281</p>
+                    <p class="pdatos2" style="margin-left:.2cm">{{$item->loc_prov}}, {{$item->edo_prov}}, 
+                        @if ($item->cp_prov!=null)
+                            ,CP {{$item->cp_prov}}
+                        @endif
+                        </p>
+                    <p class="pdatos2" style="margin-left:.2cm">{{$item->telefono_prov}}</p>
                     @endforeach
                 </div>
             </div>

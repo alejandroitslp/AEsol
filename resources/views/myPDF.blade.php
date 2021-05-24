@@ -88,6 +88,10 @@
             font-size: .4cm;
             margin:0;
         }
+        .pdatos2{
+            font-size: .35cm;
+            margin:0;
+        }
         .alineacionderecha{
             text-align: right;
         }
@@ -180,11 +184,15 @@
                 </div>
                 <div style="height:2.7cm ; width: 50% ; border-style: 0 solid 0 0;">
                     @foreach ($proveedor as $item)
-                    <p class="pdatos" style="margin-left:.2cm">{{$item->nombre_prov}}</p>
-                    <p class="pdatos" style="margin-left:.2cm">{{$item->nombre_prov_suc}} ,RFC: {{$item->RFC}}</p>
-                    <p class="pdatos" style="margin-left:.2cm">{{$item->dir_prov}}</p>
-                    <p class="pdatos" style="margin-left:.2cm">{{$item->loc_prov}}, {{$item->edo_prov}}, {{$item->cp_prov}}</p>
-                    <p class="pdatos" style="margin-left:.2cm">{{$item->telefono_prov}}</p>
+                    <p class="pdatos2" style="margin-left:.2cm">{{$item->nombre_prov}}</p>
+                    <p class="pdatos2" style="margin-left:.2cm">{{$item->nombre_prov_suc}} 
+                        @if ($item->RFC!=null)
+                        ,RFC: {{$item->RFC}}
+                        @endif
+                    </p>
+                    <p class="pdatos2" style="margin-left:.2cm">{{$item->dir_prov}}</p>
+                    <p class="pdatos2" style="margin-left:.2cm">{{$item->loc_prov}}, {{$item->edo_prov}}, {{$item->cp_prov}} 78120</p>
+                    <p class="pdatos2" style="margin-left:.2cm">{{$item->telefono_prov}}8182281</p>
                     @endforeach
                 </div>
             </div>

@@ -43,6 +43,7 @@
                                         <td>{{$proveedor->telefono_prov}}</td>
                                         @php
                                             $ctrlcount=0;
+                                            $ctrlcount2=0;
                                         @endphp
                                         @foreach ($compras as $compra)
                                         @if (($proveedor->id==$compra->prov_prod)&&$ctrlcount==0)
@@ -51,20 +52,22 @@
                                              $ctrlcount=1;
                                          @endphp
                                         @endif
-                                        @if (($proveedor->id!=$compra->prov_prod)&&$ctrlcount==0)
+                                        @if (($proveedor->id!=$compra->prov_prod))
+                                            @php
+                                            $ctrlcount2=$ctrlcount2+1;
+                                            @endphp
+                                        @if($ctrlcount2==count($compras))
                                         <td><form action="{{route('proveedores.destroy', $proveedor)}}" method="POST">
                                             @csrf
                                             @method('delete')
                         
                                             <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-6 mt-4 mb-3">Eliminar</button>
-                                       
-                                        </form>
-                                        @php
-                                             $ctrlcount=1;
-                                         @endphp
+                                            
+                                        </form></td>
+                                        @endif
                                         @endif
                                         @endforeach
-                                        </td>
+                                        
                                     @endforeach
                                 
                                         </tr>

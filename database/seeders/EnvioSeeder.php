@@ -26,13 +26,13 @@ class EnvioSeeder extends Seeder
                 'telefono_envio'=>'4443532787',
         ],
         /* [
-                'nombre'=> 'Pharmaplus',
-                'nombre_enc'=>'Alejandro Pérez Rodríguez',
-                'dir_envio'=>'Sinaloa 42B',
-                'loc_envio'=>'San Luis Potosi',
-                'cp_envio'=>'78120',
-                'edo_envio'=>'San Luis Potosi',
-                'telefono_envio'=>'4443812863',
+                'nombre'=> '',
+                'nombre_enc'=>'',
+                'dir_envio'=>'',
+                'loc_envio'=>'',
+                'cp_envio'=>'',
+                'edo_envio'=>'',
+                'telefono_envio'=>'',
         ]  */
         ]);
     }

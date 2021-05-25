@@ -45,6 +45,15 @@
                                             $ctrlcount=0;
                                             $ctrlcount2=0;
                                         @endphp
+                                        @if (count($compras)==0)
+                                        <td><form action="{{route('proveedores.destroy', $proveedor)}}" method="POST">
+                                            @csrf
+                                            @method('delete')
+                        
+                                            <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-6 mt-4 mb-3">Eliminar</button>
+                                            
+                                        </form></td>
+                                        @endif
                                         @foreach ($compras as $compra)
                                         @if (($proveedor->id==$compra->prov_prod)&&$ctrlcount==0)
                                          <td><p>Presente en orden</p></td>   

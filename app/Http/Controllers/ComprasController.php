@@ -28,7 +28,6 @@ class ComprasController extends Controller
         $compras=Compra::orderBy('fecha_emision')->paginate(10);
         $productoscompras= Productoscompra::get();
         
-        
         return view('Compras.index', compact('compras', 'productoscompras'));
     }
 

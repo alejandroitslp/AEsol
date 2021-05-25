@@ -136,7 +136,7 @@
             <div style="height: 2.7cm;  ">
                 <div class="datosEmpContenedor" style="width: 10cm; margin-top:0.03cm">
                     <p class="pdatos">AE-SOL  S.A. DE C.V.</p>
-                    <p class="pdatos">Circuito San Miguel #145, Col. San Francisco de los Pozos</p>
+                    <p class="pdatos">I. Zaragoza #151, Col. Cuartel Aguilares</p>
                     <p class="pdatos">San Luis Potosí, S.L.P., C.P. 78421</p>
                     <p class="pdatos">(444) 3.53.27.87</p>
                     <p class="pdatos">RFC: AES120903M16</p>

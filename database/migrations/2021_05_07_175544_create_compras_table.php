@@ -28,9 +28,9 @@ class CreateComprasTable extends Migration
             $table->string('met_pago');
             $table->decimal('impuesto',8,2);
             $table->decimal('p_total_c_imp',8,2);
-            $table->integer('cot_ref');
+            $table->string('cot_ref');
             $table->date('fecha_ref');
-            $table->integer('cuenta_cargo');
+            $table->string('cuenta_cargo');
             $table->date('fecha_req');
             $table->string('requisita');
             $table->text('comentarios')->nullable();

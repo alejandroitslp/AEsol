@@ -62,7 +62,7 @@
             margin-left: .3cm;
             margin-top: 0cm;
             color: black;
-            font-size:.4cm;
+            font-size:.35cm;
             height: .7cm;
             width: 3cm;
             text-align: center;

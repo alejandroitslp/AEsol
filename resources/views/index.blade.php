@@ -90,9 +90,9 @@
                     @else
                         <a href="{{ route('login') }}" style="margin-left:10px; ">Log in</a>
 
-                        @if (Route::has('register'))
+                        {{-- @if (Route::has('register'))
                             <a href="{{ route('register') }}" style="margin-right:10px; margin-left:10px">Register</a>
-                        @endif
+                        @endif --}}
                     @endauth
                 </div>
             @endif
@@ -164,8 +164,8 @@
                        </ul>
         
                        <ul style="margin-left: 65px;" class="nav navbar-nav page-scroll pull-rigth">
-                          <li><a href="index.html">Espa&ntilde;ol</a></li>
-                          <li><a href="index2.html">English</a></li>
+                          <li><a href="{{route('home')}}">Espa&ntilde;ol</a></li>
+                          <li><a href="{{route('home2')}}">English</a></li>
                           <li><a href="http://www.facebook.com/pages/AESolutions/116445135184447" target="_blank"> <img src="img/fb1.png" class="img-responsive" alt="Responsive image" >
                             </a></li>
                           <li><a href="https://www.linkedin.com/company/ae-solutions" target="_blank"> <img src="img/in1.png" class="img-responsive" alt="Responsive image" >

@@ -81,11 +81,15 @@
                                         @endif
                                         
                                         @endif
-                                        <td>
-                                            @livewire('aprobar-compras', ['compra'=>$compra])
-                                        </td>
+                                        
                                         @endforeach
                                     @endif
+                                    @if ($compra->autorizado==0)
+                                    <td>
+                                        @livewire('aprobar-compras', ['compra'=>$compra])
+                                    </td>
+                                    @endif
+                                    
                                     @endforeach
                                   </tr>
                                 </tbody>

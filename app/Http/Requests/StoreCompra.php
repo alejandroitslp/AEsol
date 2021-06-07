@@ -27,6 +27,7 @@ class StoreCompra extends FormRequest
             //
             'folio'=>'required',
             
+            'desc_orden'=> 'required',
             'provprod'=>'required',
             
             'resp'=>'required',
@@ -38,6 +39,7 @@ class StoreCompra extends FormRequest
             'fref'=>'required',
             'ccargo'=>'required',
             'freq'=> 'required',
+            
         ];
     }
 

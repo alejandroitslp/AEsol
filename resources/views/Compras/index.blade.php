@@ -6,17 +6,28 @@
                 <div class="container">
                     <div class="row" >
                         <div class="grid col-md-1">
+                            <div class="mt-8 ml-6">
+                                <a href="{{route('compras.index')}}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-1 mt-2">Recargar pagina</a>
+                            </div>
+                            <div>
+                                <form action="{{route('compras.index')}}" method="GET" role="search">
+                                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-6 mt-2" type="submit">Buscar por Descripci&oacute;n</button>
+                                    <input  class="rounded mt-4 mb-4" type="text" value="" name="desCompra">
+                                </form>
+                            </div>
 
                             <table class="table-fixed ml-8 mt-8 mr-8" cellspacing="10">
                                 <thead>
                                   <tr class="">
-                                    <th class="w-1/7">Folio</th>
-                                    <th class="w-1/7">Fecha de emision</th>
-                                    <th class="w-1/7">Precio total de compra</th>
-                                    <th class="w-1/7">Cuenta cargo</th>
-                                    <th class="w-1/7">Metodo de Pago</th>
-                                    <th class="w-1/7">Requisitó</th>
-                                    <th class="w-1/7">Botones</th>
+                                    <th class="w-1/9">Folio</th>
+                                    <th class="w-1/9">Fecha de emision</th>
+                                    <th class="w-1/9">Descripcion</th>
+                                    <th class="w-1/9">Precio total de compra</th>
+                                    <th class="w-1/9">Cuenta cargo</th>
+                                    <th class="w-1/9">Metodo de Pago</th>
+                                    <th class="w-1/9">Requisitó</th>
+                                    <th class="w-1/9">Botones</th>
+                                    <th class="w-1/9">Autorizado</th>
                                     <th></th>
                                   </tr>
                                 </thead>
@@ -26,6 +37,7 @@
                                     <tr class="text-center" >
                                         <td>{{$compra->foliocompra}}</td>
                                         <td>{{$compra->fecha_emision}}</td>
+                                        <td>{{$compra->desc_orden}}</td>
                                         <td>{{$compra->fecha_req}}</td>
                                         <td>{{$compra->cuenta_cargo}}</td>
                                         <td>{{$compra->met_pago}}</td>
@@ -69,9 +81,12 @@
                                         @endif
                                         
                                         @endif
+                                        <td>
+                                            <input type="checkbox" id="cbox2" value="second_checkbox"> <label for="cbox2">Aprobar</label>
+                                        </td>
                                         @endforeach
                                         
-                                    </tr>
+                                    
                                     @endforeach
                                   </tr>
                                 </tbody>

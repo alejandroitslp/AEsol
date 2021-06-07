@@ -16,6 +16,7 @@ class Compra extends Model
     [
         'foliocompra',
         'fecha_emision',
+        'desc_orden',
         'prov_prod',
         'precio_total',
         'id_resp',
@@ -30,7 +31,8 @@ class Compra extends Model
         'fecha_req',
         'requisita',
         'comentarios',
-        'id_envios'
+        'id_envios',
+        'autorizado',
     ];
 
 }

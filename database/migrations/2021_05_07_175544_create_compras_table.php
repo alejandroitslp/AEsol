@@ -20,6 +20,7 @@ class CreateComprasTable extends Migration
 
             $table->string('foliocompra')->index()->unique();
             $table->date('fecha_emision');
+            $table->string('desc_orden');//nuevo
             $table->foreignId('prov_prod')->onDelete('SET NULL')->constrained('proveedores');
             $table->decimal('precio_total', 8, 2);
             $table->foreignId('id_resp')->constrained('responsables_compras');
@@ -35,6 +36,7 @@ class CreateComprasTable extends Migration
             $table->string('requisita');
             $table->text('comentarios')->nullable();
             $table->foreignId('id_envios')->constrained('envios');
+            $table->boolean('autorizado')->default(false);//nuevo
 
             
 

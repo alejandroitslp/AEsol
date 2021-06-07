@@ -118,9 +118,6 @@
                     @enderror
                     <br>
 
-                </div>
-                <div class="ml-14 mt-8 text-xs sm:text-base">
-
                     <label>
                         Tipo de moneda
                         <br>
@@ -139,8 +136,10 @@
                     @enderror
 
                     <br>
-                    
 
+                </div>
+                <div class="ml-14 mt-8 text-xs sm:text-base">
+                    
                     <label>
                         Método de pago: 
                         <br>
@@ -210,8 +209,8 @@
                         <br>
                     @enderror
 
-                </div>
-                <div class="ml-14 mt-8 text-xs sm:text-base">
+                    <br>
+
                     <label>
                         Cuenta cargo: 
                         <br>
@@ -239,6 +238,9 @@
                     @enderror
                     <br>
 
+                </div>
+                <div class="ml-14 mt-8 text-xs sm:text-base">
+
                     <label>
                         Requisita:
                         <br>
@@ -255,7 +257,7 @@
                     <br>
 
                     <label>
-                        Comentarios:
+                        Comentarios: Puede omitirlos
                         <br> 
                         <div class="ml-8 mt-3">
                         <textarea class="rounded-lg" name="comentarios" rows="5">{{old('comentarios')}}</textarea>
@@ -268,6 +270,21 @@
                         <br>
                     @enderror
 
+                    <br>
+
+                    <label>
+                        Descripcion de la Orden:
+                        <br> 
+                        <div class="ml-8 mt-3">
+                        <textarea class="rounded-lg" name="desc_orden" rows="2">{{old('desc_orden')}}</textarea>
+                        </div>
+                    </label>
+            
+                    @error('desc_orden')
+                        <br>
+                            <small>*{{$message}}</small>
+                        <br>
+                    @enderror
                     <div>
                         
                     </div>

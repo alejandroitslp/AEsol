@@ -21,11 +21,18 @@ class ComprasController extends Controller
      */
     public $variable;
 
-    public function index()
+    public function index(Request $request)
     {
         //
+        if(($request->desCompra)!=null){
+            $compras=Compra::where('desc_orden', 'LIKE', '%'.$request->desCompra.'%')->get();
+        }
+        else
+        {
+            $compras = Compra::orderBy('fecha_emision','asc')->paginate(5);
+        }
         
-        $compras=Compra::orderBy('fecha_emision')->paginate(10);
+
         $productoscompras= Productoscompra::get();
         
         return view('Compras.index', compact('compras', 'productoscompras'));
@@ -70,6 +77,7 @@ class ComprasController extends Controller
             $compra =Compra::create([
             'foliocompra'=> $valor3,
             'fecha_emision'=>$fechaActual,
+            'desc_orden'=>$request->desc_orden,
             'prov_prod'=>$request->provprod,
             'precio_total'=>0,
             'id_resp'=>$request->resp,

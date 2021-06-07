@@ -35,5 +35,6 @@ class AprobarCompras extends Component
                 'autorizado'=> false
             ]);
         }
+        redirect()->route('compras.index');
     }
 }

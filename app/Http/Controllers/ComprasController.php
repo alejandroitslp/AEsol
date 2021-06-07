@@ -122,9 +122,13 @@ class ComprasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Compra $compra)
     {
         //
+        $proveedores= Proveedor::get();
+        $responsables=ResponsableCompra::get();
+        $envios=Envio::get();
+        return view('Compras.edit', compact('proveedores', 'responsables', 'envios','compra'));
     }
 
     /**
@@ -134,9 +138,42 @@ class ComprasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Compra $compra)
     {
-        //
+        $request->validate([
+            'tipo'=>'required',
+            'folio'=>'required',
+            'provprod'=>'required',
+            'resp'=>'required',
+            'embarque'=>'required',
+            'tmoneda'=>'required',
+            'metPago'=>'required',
+            'cref'=>'required',
+            'fref'=>'required',
+            'envio'=>'required',
+            'ccargo'=>'required',
+            'freq'=>'required',
+            'requisita'=>'required',
+            'desc_orden'=>'required'
+        ]);
+
+        $compra->foliocompra=$request->tipo.$request->folio;
+        $compra->desc_orden=$request->desc_orden;
+        $compra->prov_prod=$request->provprod;
+        $compra->id_resp=$request->resp;
+        $compra->embarc=$request->embarque;
+        $compra->t_moneda=$request->tmoneda;
+        $compra->met_pago=$request->metPago;
+        $compra->cot_ref=$request->cref;
+        $compra->fecha_ref=$request->fref;
+        $compra->fecha_req=$request->freq;
+        $compra->requisita=$request->requisita;
+        $compra->comentarios=$request->comentarios;
+        $compra->id_envios=$request->envio;
+        $compra->save();
+
+
+        return redirect()->route('compras.show', $compra);
     }
 
     /**

@@ -16,7 +16,7 @@ class CreateProductosComprasTable extends Migration
         Schema::create('productos_compras', function (Blueprint $table) {
             $table->id();
             $table->string('folio');
-            $table->foreign('folio')->references('foliocompra')->on('compras');
+            $table->foreign('folio')->references('foliocompra')->on('compras')->onUpdate('cascade');
             $table->string('codigo');
             $table->string('nombre');
             $table->integer('cantidad');

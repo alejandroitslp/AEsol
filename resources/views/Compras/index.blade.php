@@ -15,7 +15,7 @@
                                     <input  class="rounded mt-4 mb-4" type="text" value="" name="desCompra">
                                 </form>
                             </div>
-
+                            <div class="text-lg mt-8 ml-6"> <strong> Ordenes en revisión</strong></div>
                             <table class="table-fixed ml-8 mt-8 mr-8" cellspacing="10" >
                                 <thead>
                                   <tr class="">
@@ -61,7 +61,7 @@
                                         @foreach ($productoscompras as $productoscompra)
                                         @if (($productoscompra->folio==$compra->foliocompra)&&$contador==0)
                                         <td>
-                                             <a href="{{route('generarPDF', $compra)}}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-6 mt-4 mb-3 py-0.2  sm:py-1 sm:px-1">PDF</a> 
+                                             <a href="{{route('compras.edit', $compra)}}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-6 mt-4 mb-3 py-0.2  sm:py-1 sm:px-1">Modificar</a> 
                                         </td>
                                         @php
                                             $contador=1;
@@ -103,7 +103,7 @@
                         <div class="h-20 mt-8">
                             <a href="{{route('compras.create')}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-6 mt-48">Crear Orden de Compra</a>
                         </div>
-
+                        <div class="text-lg mt-8 ml-6"> <strong> Ordenes Aprobadas</strong></div>
                         @livewire('tabla-aprov', ['compras'=>$compras, 'productoscompras'=>$productoscompras])
 
                     </div>

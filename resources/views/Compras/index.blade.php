@@ -45,6 +45,7 @@
                                         @php
                                            $contador=0;
                                            $contador2=0;
+                                           $errPDF=false;
                                         @endphp
                                         @if (count($productoscompras)==0)
                                             <td><form action="{{route('compras.destroy', $compra)}}" method="POST">
@@ -52,7 +53,9 @@
                                                 @method('delete')
                             
                                                 <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-6 mt-4 mb-3">Eliminar</button>
-                                        
+                                                @php
+                                                    $errPDF=true;
+                                                @endphp
                                             </form></td>
                                         @endif
                                         @foreach ($productoscompras as $productoscompra)
@@ -75,7 +78,9 @@
                                             @method('delete')
                         
                                             <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-6 mt-4 mb-3">Eliminar</button>
-                                       
+                                            @php
+                                                $errPDF=true;
+                                            @endphp
                                         </form></td>
                                            
                                         @endif
@@ -84,7 +89,7 @@
                                         
                                         @endforeach
                                     @endif
-                                    @if ($compra->autorizado==0)
+                                    @if ($compra->autorizado==0&&$errPDF==false)
                                     <td>
                                         @livewire('aprobar-compras', ['compra'=>$compra])
                                     </td>

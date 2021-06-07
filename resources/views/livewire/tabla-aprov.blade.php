@@ -1,4 +1,4 @@
-<div>
+<div class="grid col-md-1">
     {{-- The Master doesn't talk, he acts. --}}
     <table class="table-fixed ml-8 mt-8 mr-8" cellspacing="10">
         <thead>

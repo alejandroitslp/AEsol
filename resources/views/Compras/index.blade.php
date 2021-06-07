@@ -16,7 +16,7 @@
                                 </form>
                             </div>
 
-                            <table class="table-fixed ml-8 mt-8 mr-8" cellspacing="10">
+                            <table class="table-fixed ml-8 mt-8 mr-8" cellspacing="10" >
                                 <thead>
                                   <tr class="">
                                     <th class="w-1/9">Folio</th>
@@ -61,7 +61,7 @@
                                         @foreach ($productoscompras as $productoscompra)
                                         @if (($productoscompra->folio==$compra->foliocompra)&&$contador==0)
                                         <td>
-                                            <a href="{{route('generarPDF', $compra)}}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-6 mt-4 mb-3 py-0.2  sm:py-1 sm:px-1">PDF</a>
+                                             <a href="{{route('generarPDF', $compra)}}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-6 mt-4 mb-3 py-0.2  sm:py-1 sm:px-1">PDF</a> 
                                         </td>
                                         @php
                                             $contador=1;

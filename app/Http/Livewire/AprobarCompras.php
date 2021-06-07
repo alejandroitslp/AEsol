@@ -34,6 +34,6 @@ class AprobarCompras extends Component
             $record->update([
                 'autorizado'=> false
             ]);
-        } 
+        }
     }
 }

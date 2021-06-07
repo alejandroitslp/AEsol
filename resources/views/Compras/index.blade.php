@@ -28,12 +28,12 @@
                                     <th class="w-1/9">Requisitó</th>
                                     <th class="w-1/9">Botones</th>
                                     <th class="w-1/9">Autorizado</th>
-                                    <th></th>
                                   </tr>
                                 </thead>
 
                                 <tbody class="">
                                     @foreach ($compras as $compra)
+                                    @if ($compra->autorizado==false)
                                     <tr class="text-center" >
                                         <td>{{$compra->foliocompra}}</td>
                                         <td>{{$compra->fecha_emision}}</td>
@@ -82,11 +82,10 @@
                                         
                                         @endif
                                         <td>
-                                            <input type="checkbox" id="cbox2" value="second_checkbox"> <label for="cbox2">Aprobar</label>
+                                            @livewire('aprobar-compras', ['compra'=>$compra])
                                         </td>
                                         @endforeach
-                                        
-                                    
+                                    @endif
                                     @endforeach
                                   </tr>
                                 </tbody>
@@ -95,6 +94,9 @@
                         <div class="h-20 mt-8">
                             <a href="{{route('compras.create')}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-6 mt-48">Crear Orden de Compra</a>
                         </div>
+
+                        @livewire('tabla-aprov', ['compras'=>$compras, 'productoscompras'=>$productoscompras])
+
                     </div>
                 </div> 
             </div>

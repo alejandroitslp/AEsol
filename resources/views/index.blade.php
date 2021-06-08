@@ -779,7 +779,8 @@
           <!--Map -->
           <div class="wow fadeInTop" data-wow-delay="0.2s">
              <div id="map-canvas">
-               <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3696.5411938478014!2d-100.8670177!3d22.1053322!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDA2JzE4LjEiTiAxMDDCsDUxJzU0LjIiVw!5e0!3m2!1ses-419!2smx!4v1459979862804" style="width: 1900px; height: 400px;" frameborder="0" style="border:0" class="img-responsive"  ></iframe>
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1848.482866272183!2d-100.87590143693457!3d22.08912560694689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842aa55dfe32dac3%3A0xdf7b6fe57f530ee6!2sAE%20Solutions!5e0!3m2!1ses-419!2smx!4v1623190157526!5m2!1ses-419!2smx" style="width: 1900px; height: 400px;" frameborder="0" style="border:0" class="img-responsive"  ></iframe>
+
           
              </div>
           </div>

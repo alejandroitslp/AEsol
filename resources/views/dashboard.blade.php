@@ -12,7 +12,8 @@
                         añadirlo a la lista de proveedores existentes.
                     </p>
                     <br>
-                    <p>3. Crear orden de Compra, podrá generar el PDF correspondiente, una vez terminado el llenado de la orden de Compra.</p>
+                    <p>3. Crear orden de Compra, podrá generar el PDF correspondiente, una vez terminado el llenado de la orden de Compra y autorizada la Compra</p><br>
+
                 </div>
             </div>
         </div>

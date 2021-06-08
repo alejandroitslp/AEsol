@@ -466,7 +466,7 @@
 					  <div class="col-md-12 col-sm-12">
 						 <div class="col-lg-6 col-sm-12 res-margin wow fadeInRight" data-wow-delay="0.2s">
 							<h3>Committed to the quality of our services</h3>
-							<p class="text-justify">Company founded in 2012 in the city of San Luis PotosÃ­, S.L.P. starting operations with long experience in the industrial automation field.
+							<p class="text-justify">Company founded in 2012 in the city of San Luis Potos&iacute;­, S.L.P. starting operations with long experience in the industrial automation field.
 								<br>AE Solutions starts to get a place in the national and international industry, and stands as a solid and growing company being synonymous with trust because of our customer development focus.</p>
 						 </div>					 
 						 <div class="col-lg-6 col-md-12 col-lg-offset-0 col-md-offset-1 col-sm-12 wow fadeInLeft" data-wow-delay="0.2s">
@@ -736,14 +736,14 @@
              <p>  I. Zaragoza 151 <br>
                      Cuartel Aguilares<br>
                     Deleg. Villa de Pozos<br>
-                    San Luis PotosÃ­, S.L.P., MÃ©xico<br>
+                    San Luis Potos&iacute;­, S.L.P., M&eacute;xico<br>
                     Zip code 78421
              </p><hr>
 
 			 <p><a href="mailto:contacto@ae-sol.net">contacto@ae-sol.net</a></p>
 			 <hr>
 			 <p>Office Phone: <br>+52 (444) 353 2787</p><hr>
-<p>San Luis PotosÃ­, Sales Phone: <br> +52 1 (444) 444 6028</p><hr>
+<p>San Luis Potos&iacute;­­, Sales Phone: <br> +52 1 (444) 444 6028</p><hr>
 
 
 			   
@@ -777,7 +777,7 @@
 	<!--Map -->
 	<div class="wow fadeInTop" data-wow-delay="0.2s">
 	   <div id="map-canvas">
-         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3696.5411938478014!2d-100.8670177!3d22.1053322!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDA2JzE4LjEiTiAxMDDCsDUxJzU0LjIiVw!5e0!3m2!1ses-419!2smx!4v1459979862804" style="width: 1900px; height: 400px;" frameborder="0" style="border:0" class="img-responsive"  ></iframe>
+         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1848.482866272183!2d-100.87590143693457!3d22.08912560694689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842aa55dfe32dac3%3A0xdf7b6fe57f530ee6!2sAE%20Solutions!5e0!3m2!1ses-419!2smx!4v1623190157526!5m2!1ses-419!2smx" style="width: 1900px; height: 400px;" frameborder="0" style="border:0" class="img-responsive"  ></iframe>
 	   </div>
 	</div>
 	<!-- Section ends -->
@@ -792,7 +792,7 @@
           <div class="paneltab tab-pane fade active in textoPoliticas" align="justify" style="margin-left: 30px; margin-right: 30px;">
             <div class="row" style="float: left; height: 400px ">
              <p style="color:white"><strong>AE Solutions:</strong> Organization dedicated to industrial 
-               automation located at I. Zaragoza 151 Col. Cuartel Aguilares, San Luis Potosi, Mexico, has decided to 
+               automation located at I. Zaragoza 151 Col. Cuartel Aguilares, San Luis Potos&iacute;, M&eacute;xico, has decided to 
                implement a Quality Management System based on the ISO 9001 standard to improve the service it provides to 
                its clients.</p>
             <br><br>

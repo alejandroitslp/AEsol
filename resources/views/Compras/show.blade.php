@@ -17,13 +17,13 @@
                    {{--  <p><a href="{{route('productos.edit', $producto)}}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-6 rounded ml-6 mt-4 ">Editar</a></p> --}}
                    
                    
-                   <form action="{{route('compras.destroy', $compra)}}" method="POST">
+                   {{-- <form action="{{route('compras.destroy', $compra)}}" method="POST">
                     @csrf
                     @method('delete')
 
                     <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-6 mt-4 mb-3">Eliminar</button>
                
-                </form>
+                </form> --}}
                 </div>
 
             </div>

@@ -15,7 +15,7 @@
                         folio de compra
                         <br>
                         <div class="ml-8 mt-3">
-                        <input class="py-0.5 px-0.5 sm:py-1 sm:px-1 rounded-lg" type="text" name="folio" value="{{$compra->foliocompra}}">
+                        <input class="py-0.5 px-0.5 sm:py-1 sm:px-1 rounded-lg" type="text" name="folio" value="{{$compra->foliocompra}}" placeholder="{{$compra->foliocompra}}">
                         </div>
                     </label>
             
@@ -39,7 +39,7 @@
                                 @php
                                     $counter1=$counter1+1;    
                                 @endphp
-                                <option value="{{$compra->prov_prod}}" {{$compra->prov_prod==$counter1 ? 'selected' : ''}}><p>{{$proveedor->nombre_prov}} : {{$proveedor->dir_prov}}</p></option>
+                                <option value="{{$proveedor->id}}" {{old('provprod')==$counter1 ? 'selected' : ''}}><p>{{$proveedor->nombre_prov}} : {{$proveedor->dir_prov}}</p></option>
                             @endforeach
                         </select>
                     </div>
@@ -68,7 +68,7 @@
                                 @php
                                     $counter=$counter+1;    
                                 @endphp
-                                <option value="{{$compra->id_resp}}" {{$compra->id_resp==$counter ? 'selected' : ''}}><p>{{$responsable->nombre_resp}} : {{$responsable->puesto}}</p></option>
+                                <option value="{{$responsable->id}}" {{old('resp')==$counter ? 'selected' : ''}}><p>{{$responsable->nombre_resp}} : {{$responsable->puesto}}</p></option>
                             @endforeach
                         </select>
                     </div>
@@ -86,9 +86,9 @@
                     <br>
                     <div class="ml-8 mt-3">
                         <select class="rounded-lg" id="embarque" name="embarque">
-                            <option value="Terrestre" {{$compra->embarc=="Terrestre" ? 'selected' : ''}}>Terrestre</option>
-                            <option value="Maritimo" {{$compra->embarc=="Maritimo" ? 'selected' : ''}}>Maritimo</option>
-                            <option value="Aereo" {{$compra->embarc=="Aereo" ? 'selected' : ''}}>Aereo</option>
+                            <option value="Terrestre" {{old('embarque')=="Terrestre" ? 'selected' : ''}}>Terrestre</option>
+                            <option value="Maritimo" {{old('embarque')=="Maritimo" ? 'selected' : ''}}>Maritimo</option>
+                            <option value="Aereo" {{old('embarque')=="Aereo" ? 'selected' : ''}}>Aereo</option>
                         </select>
                     </div>
                 </label>
@@ -105,8 +105,8 @@
                     <br>
                     <div class="ml-8 mt-3">
                         <select class="rounded-lg" id="tmoneda" name="tmoneda">
-                            <option value="Pesos" {{$compra->t_moneda=="Pesos" ? 'selected' : ''}}>Pesos MXN</option>
-                            <option value="Dolar" {{$compra->t_moneda=="Dolar" ? 'selected' : ''}}>Dolar USD</option>
+                            <option value="Pesos" {{old('embarque')=="Pesos" ? 'selected' : ''}}>Pesos MXN</option>
+                            <option value="Dolar" {{old('embarque')=="Dolar" ? 'selected' : ''}}>Dolar USD</option>
                         </select>
                     </div>
                 </label>
@@ -143,7 +143,7 @@
                     Cotizacion referencia:
                     <br>
                     <div class="ml-8 mt-3">
-                    <input  class="py-0.5 px-0.5 sm:py-1 sm:px-1 rounded-lg" type="text" name="cref" value="{{$compra->cot_ref}}">
+                    <input  class="py-0.5 px-0.5 sm:py-1 sm:px-1 rounded-lg" type="text" name="cref" value={{old('cref')}}>
                     </div>
                 </label>
         
@@ -156,7 +156,7 @@
                 <br>
                 <label >Fecha referencia:</label>
                 <div class="ml-8 mt-3">
-                    <input class="rounded-lg py-0.5 px-0.5 sm:py-1 sm:px-1" type="date" id="fref" name="fref" value="{{$compra->fecha_ref}}"min="2018-01-01" max="2022-12-31">
+                    <input class="rounded-lg py-0.5 px-0.5 sm:py-1 sm:px-1" type="date" id="fref" name="fref" value="{{old('fref')}}"min="2018-01-01" max="2022-12-31">
                 </div>
         
                 @error('fref')
@@ -178,7 +178,7 @@
                                 @php
                                     $counter1=$counter1+1;    
                                 @endphp
-                                <option value="{{$compra->id_envios}}" {{$compra->id_envios==$counter1 ? 'selected' : ''}}><p>{{$envio->nombre}} : {{$envio->dir_envio}}</p></option>
+                                <option value="{{$envio->id}}" {{old('envio')==$counter1 ? 'selected' : ''}}><p>{{$envio->nombre}} : {{$envio->dir_envio}}</p></option>
                             @endforeach
                         </select>
                     </div>
@@ -197,7 +197,7 @@
                     Cuenta cargo: 
                     <br>
                     <div class="ml-8 mt-3">
-                    <input  class="py-0.5 px-0.5 sm:py-1 sm:px-1 rounded-lg" type="text" name="ccargo" value="{{$compra->cuenta_cargo}}">
+                    <input  class="py-0.5 px-0.5 sm:py-1 sm:px-1 rounded-lg" type="text" name="ccargo" value={{old('ccargo')}}>
                     </div>
                 </label>
         
@@ -210,7 +210,7 @@
                 <br>
                 <label >Fecha requerida:</label>
                 <div class="ml-8 mt-3">
-                    <input class="py-0.5 px-0.5 sm:py-1 sm:px-1 rounded-lg" type="date" id="freq" name="freq" value="{{$compra->fecha_req}}" min="2018-01-01" max="2022-12-31">
+                    <input class="py-0.5 px-0.5 sm:py-1 sm:px-1 rounded-lg" type="date" id="freq" name="freq" value="{{old('freq')}}"min="2018-01-01" max="2022-12-31">
                 </div>
 
                 @error('freq')
@@ -227,7 +227,7 @@
                     Requisita:
                     <br>
                     <div class="ml-8 mt-3">
-                    <input class="py-0.5 px-0.5 sm:py-1 sm:px-1 rounded-lg" type="text" name="requisita" value="{{$compra->requisita}}">
+                    <input class="py-0.5 px-0.5 sm:py-1 sm:px-1 rounded-lg" type="text" name="requisita" value={{old('requisita')}}>
                     </div>
                 </label>
         
@@ -242,7 +242,7 @@
                     Comentarios: Puede omitirlos
                     <br> 
                     <div class="ml-8 mt-3">
-                    <textarea class="rounded-lg" name="comentarios" rows="5">{{$compra->comentarios}}</textarea>
+                    <textarea class="rounded-lg" name="comentarios" rows="5">{{old('comentarios')}}</textarea>
                     </div>
                 </label>
         
@@ -258,7 +258,7 @@
                     Descripcion de la Orden:
                     <br> 
                     <div class="ml-8 mt-3">
-                    <textarea class="rounded-lg" name="desc_orden" rows="2" value="{{$compra->desc_orden}}">{{$compra->desc_orden}}</textarea>
+                    <textarea class="rounded-lg" name="desc_orden" rows="2">{{old('desc_orden')}}</textarea>
                     </div>
                 </label>
         

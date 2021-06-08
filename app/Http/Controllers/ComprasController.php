@@ -141,7 +141,6 @@ class ComprasController extends Controller
     public function update(Request $request, Compra $compra)
     {
         $request->validate([
-            'tipo'=>'required',
             'folio'=>'required',
             'provprod'=>'required',
             'resp'=>'required',
@@ -157,7 +156,7 @@ class ComprasController extends Controller
             'desc_orden'=>'required'
         ]);
 
-        $compra->foliocompra=$request->tipo.$request->folio;
+        $compra->foliocompra=$request->folio;
         $compra->desc_orden=$request->desc_orden;
         $compra->prov_prod=$request->provprod;
         $compra->id_resp=$request->resp;

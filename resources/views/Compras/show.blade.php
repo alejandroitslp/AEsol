@@ -5,9 +5,10 @@
                 <div class="ml-8">
                     <h1 class="text-2xl">Datos de orden de compra</h1>
                     <h1>Folio de orden: {{$compra->foliocompra}}</h1>
+                    <h1>Descripcion: {{$compra->desc_orden}}</h1>
                     <h1>Proveedor: <strong>{{$compra->prov_prod}}</strong></h1>
                     <h1>Fecha de emision: {{$compra->fecha_emision}}</h1>
-                    <h2>Precio Total: $ {{$compra->p_total_c_imp}}</h2>
+                    <h2>Requisita: {{$compra->requisita}}</h2>
                     <h2>Fecha requerida: {{$compra->fecha_req}}</h2>
                 </div>
                 

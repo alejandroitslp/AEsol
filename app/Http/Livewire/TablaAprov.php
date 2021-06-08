@@ -17,4 +17,5 @@ class TablaAprov extends Component
         $this->aproProd=Productoscompra::get();
         return view('livewire.tabla-aprov');
     }
+
 }

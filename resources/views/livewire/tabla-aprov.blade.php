@@ -6,7 +6,7 @@
                 <th class="w-1/9">Folio</th>
                 <th class="w-1/9">Fecha de emision</th>
                 <th class="w-1/9">Descripcion</th>
-                <th class="w-1/9">Precio total de compra</th>
+                <th class="w-1/9">Fecha requerida</th>
                 <th class="w-1/9">Cuenta cargo</th>
                 <th class="w-1/9">Metodo de Pago</th>
                 <th class="w-1/9">Requisitó</th>

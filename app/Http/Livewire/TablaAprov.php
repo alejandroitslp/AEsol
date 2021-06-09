@@ -13,7 +13,7 @@ class TablaAprov extends Component
     public function render()
     {
 
-        $this->aproData=Compra::where('autorizado', 1)->get();
+        $this->aproData=Compra::where('autorizado', 1)->orderBy('foliocompra','asc')->get();
         $this->aproProd=Productoscompra::get();
         return view('livewire.tabla-aprov');
     }

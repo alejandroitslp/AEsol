@@ -16,7 +16,7 @@
         {
             margin-bottom: 0cm;
             width: 100%;
-            height: 1.2cm;
+            height: 2cm;
         }
         h1{
             
@@ -36,10 +36,9 @@
 
         .division2
         {
-            margin-top: .6cm;
             background-color:#0070C0;
             width: 100%;
-            height: .8cm;
+            height: .9cm;
         }
         .styledivfont
         {
@@ -85,7 +84,8 @@
             width: 6cms;
         }
         .pdatos{
-            font-size: .4cm;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: .39cm;
             margin:0;
         }
         .pdatos2{
@@ -103,7 +103,7 @@
 
         <div>
             {{-- Cabecera principal --}}
-            <div class="cabecera">
+            <div class="cabecera" >
                 <div>
                     <h1>Orden de Compra</h1>
                 </div>
@@ -117,72 +117,86 @@
             </div>
 
             {{-- Primer Division Folio --}}
-            <div>
+            <div width="100%"  style="height: .85cm; border: ridge ; border-width: thin;">
                 <div class="division2">
                     <div>
                         <p class="styledivfont edivizq"><strong>Datos de facturacion</strong></p>
                     </div>
                     <div>
-                        <p class="stylepcab edivder" style="margin-right: .1cm;">{{$compra->foliocompra}}</p> {{-- Ingreso Contenido --}}
+                        <p class="stylepcab edivder" style="margin-right: .1cm;">{{$compra->foliocompra}}</p> 
                     </div>
                     <div>
                         <p class="styledivfont edivder">OCC Folio</p>
                     </div>
-                    <div style="clear: both;"></div>
-                </div>
+                    <div style="clear: both;"></div> 
+                </div> 
             </div>
 
             {{-- Segunda Division Nombre Empresa --}}
-            <div style="height: 2.7cm;  ">
-                <div class="datosEmpContenedor" style="width: 10cm; margin-top:0.03cm">
-                    <p class="pdatos">AE-SOL  S.A. DE C.V.</p>
-                    <p class="pdatos">I. Zaragoza #151, Col. Cuartel Aguilares</p>
-                    <p class="pdatos">San Luis Potosí, S.L.P., C.P. 78421</p>
-                    <p class="pdatos">(444) 3.53.27.87</p>
-                    <p class="pdatos">RFC: AES120903M16</p>
-                </div>
-
-                {{-- Ingreso datos --}}
-                <div class="edivder" style="height: 2.7cm; margin-top:0.03cm;">
-                    @php
-                        $newfecha_req = date("d/m/Y", strtotime($compra->fecha_req));
-                        $newfecha_emision = date("d/m/Y", strtotime($compra->fecha_emision));
-                        $newfecha_ref = date("d/m/Y", strtotime($compra->fecha_ref));
-                    @endphp
-                    <p class="stylepdatos">{{$newfecha_emision}}</p><br>
-                    <p class="stylepdatos">{{$compra->cot_ref}}</p><br>
-                    <p class="stylepdatos">{{$newfecha_ref}}</p><br>
-                    <p class="stylepdatos">{{$compra->cuenta_cargo}}</p><br>
-                    <p class="stylepdatos">{{$newfecha_req}}</p>
-                </div>
-                <div class=" edivder" style="height: 2.7cm;">
-                    <p class="pdatos">FECHA DE EMISIÓN: </p>
-                    <p class="pdatos">COTIZACIÓN DE REFERENCIA: </p>
-                    <p class="pdatos">FECHA DE REFERENCIA: </p>
-                    <p class="pdatos">CUENTA CARGO: </p>
-                    <p class="pdatos">FECHA REQUERIDA: </p>
+            <div style="height: 2.6cm; width: 100%; border: ridge; border-width: thin">
+                <div style="height: 2.6cm;  ">
+                    <div class="datosEmpContenedor" style="width: 50%; height:2.6cm ; margin-top:0.03cm; margin-left: .2cm ">
+                        <p class="pdatos">AE-SOL  S.A. DE C.V.</p>
+                        <p class="pdatos">I. Zaragoza #151, Col. Cuartel Aguilares</p>
+                        <p class="pdatos">San Luis Potosí, S.L.P., C.P. 78421</p>
+                        <p class="pdatos">(444) 3.53.27.87</p>
+                        <p class="pdatos">RFC: AES120903M16</p>
+                    </div>
+    
+                    {{-- Ingreso datos --}}
+                    <div class="edivder" style="height: 2.7cm; width: 3.1cm;">
+                        @php
+                            $newfecha_req = date("d/m/Y", strtotime($compra->fecha_req));
+                            $newfecha_emision = date("d/m/Y", strtotime($compra->fecha_emision));
+                            $newfecha_ref = date("d/m/Y", strtotime($compra->fecha_ref));
+                        @endphp
+                        <p class="stylepdatos" align="center" style="width: 2.7cm">{{$newfecha_emision}}</p><br>
+                        <p class="stylepdatos" align="center" style="width: 2.7cm">{{$compra->cot_ref}}</p><br>
+                        <p class="stylepdatos" align="center" style="width: 2.7cm">{{$newfecha_ref}}</p><br>
+                        <p class="stylepdatos" align="center" style="width: 2.7cm">{{$compra->cuenta_cargo}}</p><br>
+                        <p class="stylepdatos" align="center" style="width: 2.7cm">{{$newfecha_req}}</p>
+                    </div>
+                    <div class=" edivder" style="height: 2.4cm; width: 6cm; ">
+                        <p class="pdatos" align="right" >FECHA DE EMISIÓN: </p>
+                        <p class="pdatos" align="right">COTIZACIÓN DE REFERENCIA: </p>
+                        <p class="pdatos" align="right">FECHA DE REFERENCIA: </p>
+                        <p class="pdatos" align="right">CUENTA CARGO: </p>
+                        <p class="pdatos" align="right">FECHA REQUERIDA: </p>
+                    </div>
                 </div>
             </div>
+            
 
             {{-- Tercer Division --}}
-            <div class="division2" style="margin-top:.07cm;">
-                <div class="edivizq" style="border-style: 0 solid 0 0; height: .7cm; width: 50%">
-                    <p class="styledivfont" >Proveedor / Seller</p>
+            <div class="division2" style="border: thin" >
+                <div>
+                    <div class="edivizq" style="height: .7cm; width: 15cm; margin-top:0;  ">
+                        <p align="center" style="margin-top:0%; font-size: .7cm;  color: white; width: 50%;  " >Envie a / Ship to</p>
+                    </div>
                 </div>
-                <div class="edivder">
-                    <p class="styledivfont " style="padding: 0 3cm 0 0" >Envie a / Ship to</p> 
+                <div>
+                    <div class="edivder" style="height: .8cm; width: 15cm;" >
+                        <p style="  font-size: .7cm;  color: white; margin-top:0px; width: 50%;"  >Proveedor / Seller </p> 
+                    </div> 
                 </div>
+                <div></div>
+                <br class="clearBoth" />
             </div>
                 {{-- Ingreso datos --}}
-            <div style="height: 2.7cm; width: 100%">
-                <div class="edivizq" style="height:2.7cm ; width: 50% ; ">
-                    <p class="pdatos" style="margin-left:.2cm">{{$envio->nombre}}</p>
-                    <p class="pdatos" style="margin-left:.2cm">{{$envio->nombre_enc}}</p>
-                    <p class="pdatos" style="margin-left:.2cm">{{$envio->dir_envio}}, {{$envio->loc_envio}}</p>
-                    <p class="pdatos" style="margin-left:.2cm">{{$envio->cp_envio}}, {{$envio->edo_envio}}</p>
-                    <p class="pdatos" style="margin-left:.2cm">{{$envio->telefono_envio}}</p>
+            <div style="height: 2.6cm; width: 100%;">
+                <div class="edivder" style="height:2.6cm ; width: 50%; margin-right: 0cm; border: ridge; border-width: thin; ">
+                    {{-- <p class="pdatos" style="margin-left: .2cm">{{$envio->nombre}}</p>
+                    <p class="pdatos" style="margin-left: .2cm">{{$envio->nombre_enc}}</p> --}}
+                    <div style=" padding-top: .5cm, padding-left: .2cm; padding-right: .2cm; padding-bottom: .5cm">
+                        <center>
+                            <p class="pdatos" style="margin-left: .2cm">{{$envio->dir_envio}}, {{$envio->loc_envio}}</p>
+                            <p class="pdatos" style="margin-left: .2cm">C.P: {{$envio->cp_envio}}, {{$envio->edo_envio}}</p>
+                        </center>
+                    </div>
+                    
+                    {{-- <p class="pdatos" style="margin-left: .2cm">{{$envio->telefono_envio}}</p> --}}
                 </div>
-                <div style="height:2.7cm ; width: 50% ; border-style: 0 solid 0 0;">
+                <div class="edivizq" style="height:2.65cm ; width: 50% ; border: ridge; border-width: thin;">
                     @foreach ($proveedor as $item)
                     <p class="pdatos2" style="margin-left:.2cm">{{$item->nombre_prov}}</p>
                     <p class="pdatos2" style="margin-left:.2cm">{{$item->nombre_prov_suc}} 
@@ -202,25 +216,25 @@
             </div>
 
             {{-- Cuarta Division Tipo de moneda--}}
-            <div style="height: 1cm; width: 100%;">
-                <table width="100%" cellspacing="0">
-                    <tr class="division2 styledivfont" style="font-size: .4cm">
+            <div style="height: 1.1cm; width: 100%; border: ridge; border-width: thin; ">
+                <table width="100%" height="100%" cellspacing="0">
+                    <tr class="division2 styledivfont" style="font-size: .4cm;">
                         <th>EMBARCAR VÍA</th>
                         <th>REQUISITAR</th>
                         <th>MONEDA</th>   
                         <th>TERMINOS DE PAGO</th> 
                     </tr>
-                    <tr style="height: .6cm">
-                        <td align="center" style="border-style: ridge; border-width: thin;">{{$compra->embarc}}</td>
-                        <td align="center" style="border-style: ridge; border-width: thin;">{{$compra->requisita}}</td>
-                        <td align="center" style="border-style: ridge; border-width: thin;">{{$compra->t_moneda}}</td>
-                        <td align="center" style="border-style: ridge; border-width: thin;">{{$compra->met_pago}}</td>
+                    <tr>
+                        <td align="center" style=" border: ridge; border-width: thin; ">{{$compra->embarc}}</td>
+                        <td align="center" style=" border: ridge; border-width: thin; ">{{$compra->requisita}}</td>
+                        <td align="center" style=" border: ridge; border-width: thin; ">{{$compra->t_moneda}}</td>
+                        <td align="center" style=" border: ridge; border-width: thin; ">{{$compra->met_pago}}</td>
                     </tr>
                 </table>
             </div>
 
             {{-- Quinta Division Productos--}}
-            <div style="height: 8cm; width: 100%; border-style: ridge ; border-width: thin; margin-top: .1cm">
+            <div style="height: 8.1cm; width: 100%; border: ridge ; border-width: thin; ">
                 <table width="100%" cellspacing="0">
                     <tr class="division2 styledivfont" style="font-size: .4cm">
                         <th>ITEM</th>

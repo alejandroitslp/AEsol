@@ -1697,8 +1697,8 @@ ul {font-size: 16px;}
     .navbar-nav>li {float: none;}
 	
     .navbar-nav>li>a {
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: 3px;
+        padding-bottom: 3px;
     }
     .navbar-collapse.collapse.in {
         display: block!important;

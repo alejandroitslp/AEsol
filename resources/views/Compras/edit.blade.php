@@ -105,8 +105,8 @@
                     <br>
                     <div class="ml-8 mt-3">
                         <select class="rounded-lg" id="tmoneda" name="tmoneda">
-                            <option value="Pesos" {{$compra->t_moneda=="Pesos" ? 'selected' : ''}}>Pesos MXN</option>
-                            <option value="Dolar" {{$compra->t_moneda=="Dolar" ? 'selected' : ''}}>Dolar USD</option>
+                            <option value="Pesos MXN" {{$compra->t_moneda=="Pesos" ? 'selected' : ''}}>Pesos MXN</option>
+                            <option value="Dolar USD" {{$compra->t_moneda=="Dolar" ? 'selected' : ''}}>Dolar USD</option>
                         </select>
                     </div>
                 </label>

@@ -20,7 +20,7 @@ class CreateProductosComprasTable extends Migration
             $table->string('codigo');
             $table->string('nombre');
             $table->integer('cantidad');
-            $table->decimal('precio',8,2);
+            $table->decimal('precio',8,3);
             $table->timestamps();
         });
     }

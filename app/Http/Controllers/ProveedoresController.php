@@ -60,6 +60,7 @@ class ProveedoresController extends Controller
         
         $proveedor=Proveedor::create([
             'nombre_prov'=> $request->nombre_prov,
+            'razon_social'=> $request->razon_social,
             'dir_prov'=>$request->dir_prov,
             'loc_prov'=>$request->loc_prov,
             'edo_prov'=>$request->edo_prov,

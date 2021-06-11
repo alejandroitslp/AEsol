@@ -133,7 +133,23 @@
                             @enderror
                                 <br> 
 
-                            <button  type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-8"> Enviar formulario</button>
+                                <label>
+                                    Razon Social: 
+                                    <br>
+                                    <div class="ml-8 mt-3">
+                                    <input class="rounded-lg" type="text" name="razon_social" value={{old('razon_social')}} >
+                                    </div>
+                                </label>
+                        
+                                @error('razon_social')
+                                    <br>
+                                        <small>*{{$message}}</small>
+                                    <br>
+                                @enderror
+    
+                                    <br>
+
+                            <button  type="submit" class="mb-8 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-8"> Enviar formulario</button>
                         </div>
                         </form>
                     </div>

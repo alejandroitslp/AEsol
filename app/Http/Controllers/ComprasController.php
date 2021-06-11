@@ -29,7 +29,7 @@ class ComprasController extends Controller
         }
         else
         {
-            $compras = Compra::orderBy('fecha_emision','asc')->paginate(5);
+            $compras = Compra::orderBy('fecha_emision','asc')->get();
         }
         
 
@@ -149,7 +149,7 @@ class ComprasController extends Controller
             'metPago'=>'required',
             'cref'=>'required',
             'fref'=>'required',
-            'envio'=>'required',
+            'envio2'=>'required',
             'ccargo'=>'required',
             'freq'=>'required',
             'requisita'=>'required',
@@ -168,7 +168,7 @@ class ComprasController extends Controller
         $compra->fecha_req=$request->freq;
         $compra->requisita=$request->requisita;
         $compra->comentarios=$request->comentarios;
-        $compra->id_envios=$request->envio;
+        $compra->id_envios=$request->envio2;
         $compra->save();
 
 

@@ -39,7 +39,7 @@
                                 @php
                                     $counter1=$counter1+1;    
                                 @endphp
-                                <option value="{{$compra->prov_prod}}" {{$compra->prov_prod==$counter1 ? 'selected' : ''}}><p>{{$proveedor->nombre_prov}} : {{$proveedor->dir_prov}}</p></option>
+                                <option value="{{$counter1}}" {{$compra->prov_prod==$counter1 ? 'selected' : ''}}><p>{{$proveedor->nombre_prov}} : {{$proveedor->dir_prov}}</p></option>
                             @endforeach
                         </select>
                     </div>
@@ -68,7 +68,7 @@
                                 @php
                                     $counter=$counter+1;    
                                 @endphp
-                                <option value="{{$compra->id_resp}}" {{$compra->id_resp==$counter ? 'selected' : ''}}><p>{{$responsable->nombre_resp}} : {{$responsable->puesto}}</p></option>
+                                <option value="{{$counter}}" {{$compra->id_resp==$counter ? 'selected' : ''}}><p>{{$responsable->nombre_resp}} : {{$responsable->puesto}}</p></option>
                             @endforeach
                         </select>
                     </div>
@@ -170,7 +170,7 @@
                     Envio a: 
                     <br>
                     <div class="ml-8 mt-3">
-                        <select   id="envio" name="envio" class="w-28 rounded-lg">
+                        <select   id="envio" name="envio2" class="w-28 rounded-lg">
                             @php
                                 $counter1=0;   
                             @endphp
@@ -178,7 +178,7 @@
                                 @php
                                     $counter1=$counter1+1;    
                                 @endphp
-                                <option value="{{$compra->id_envios}}" {{$compra->id_envios==$counter1 ? 'selected' : ''}}><p>{{$envio->nombre}} : {{$envio->dir_envio}}</p></option>
+                                <option value="{{$counter1}}" {{$compra->id_envios==$counter1 ? 'selected' : ''}}><p>{{$envio->nombre}} : {{$envio->dir_envio}}</p></option>
                             @endforeach
                         </select>
                     </div>

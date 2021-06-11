@@ -189,6 +189,7 @@
                     <p class="pdatos" style="margin-left: .2cm">{{$envio->nombre_enc}}</p> --}}
                     <div style=" padding-top: .5cm, padding-left: .2cm; padding-right: .2cm; padding-bottom: .5cm">
                         <center>
+                            <p class="pdatos" style="margin-left: .2cm">{{$envio->nombre}}</p>
                             <p class="pdatos" style="margin-left: .2cm">{{$envio->dir_envio}}, {{$envio->loc_envio}}</p>
                             <p class="pdatos" style="margin-left: .2cm">C.P: {{$envio->cp_envio}}, {{$envio->edo_envio}}</p>
                         </center>
@@ -199,6 +200,9 @@
                 <div class="edivizq" style="height:2.65cm ; width: 50% ; border: ridge; border-width: thin;">
                     @foreach ($proveedor as $item)
                     <p class="pdatos2" style="margin-left:.2cm">{{$item->nombre_prov}}</p>
+                    @if ($item->razon_social)
+                    <p class="pdatos2" style="margin-left:.2cm">{{$item->razon_social}} </p>
+                    @endif
                     <p class="pdatos2" style="margin-left:.2cm">{{$item->nombre_prov_suc}} 
                         @if ($item->RFC!=null)
                         ,RFC: {{$item->RFC}}
@@ -254,9 +258,9 @@
                             @php
                                $var1=$item2->cantidad;
                                $itemprecio=$item2->precio;
-                               $var2=number_format($itemprecio,2);
+                               $var2=number_format($itemprecio,3);
                                $var3=$var1*$itemprecio; 
-                               $var4=number_format($var3,2);
+                               $var4=number_format($var3,3);
                             @endphp
                         <td align="center">{{$contador=$contador+1}}</td>
                         <td align="center">{{$item2->codigo}}</td>
@@ -266,24 +270,24 @@
                         <td align="center">${{$var4}}</td>
                             @php
                                 $totales=$totales+$var3;   
-                                $totales1=number_format($totales,2); 
+                                $totales1=number_format($totales,3); 
                             @endphp
                         </tr>
                         @endforeach
                     
                 </table>
             </div>
-            <div class="edivder">
+            <div class="edivder" >
                 <table>
                     <tr>
                         <th align="right">SUBTOTAL</th>
                         <td align="right" style="width:2cm;">${{$totales1}}</td>
-                    </tr>
+
                     <tr>
                         <th align="right">IMPUESTO</th>
                         @php
                             $impuestos=$totales*0.16;
-                            $impuestos1=number_format($impuestos,2);
+                            $impuestos1=number_format($impuestos,3);
                         @endphp
                         <td align="right" style="">${{$impuestos1}}</td>
                     </tr>
@@ -295,7 +299,7 @@
                         <th align="right">TOTAL</th>
                         @php
                             $resultado=$totales+$impuestos;   
-                            $resultado1=number_format($resultado,2);
+                            $resultado1=number_format($resultado,3);
                         @endphp
                         <td align="right" style="">${{$resultado1}}</td>
                     </tr>
@@ -304,19 +308,18 @@
 
 
             {{-- Sexta Division Comentarios--}}
-            <div class="edivizq" style="width: 65%; height: 4cm; margin-top:.7cm; border: solid; border-width: thin;">
-                <div>
-                    <p class="styledivfont" style="font-size: .4cm, height: .7cm; background-color:#0070C0; ">Comentarios o instrucciones especiales/ Special Comments</p>
-                    <p style="font-size: .4cm; margin-left:.5cm">{{$compra->comentarios}}</p>
-                </div>
-                <div>
+            <div class="edivizq" style="width: 65%;  margin-top:.7cm; border: solid; border-width: thin;">
+                <div style="height: 3cm; ">
+                    <p class="styledivfont" style="font-size: .4cm, height: .6cm; background-color:#0070C0;">Comentarios o instrucciones especiales/ Special Comments</p>
+                    <p style="font-size: .4cm; margin-left:.5cm; height: .6cm">{{$compra->comentarios}}</p>
+               
                     <p class="styledivfont" style="font-size: .4cm, height: .7cm; background-color:#0070C0; "><strong>AUTORIZÓ /AUTHORIZED</strong></p>
-                    <p style="font-size: .4cm; margin-left:.5cm">Ing. Arturo Arévalo Escobar</p>
+                    <p style="font-size: .4cm; margin-left:.5cm; margin-top:0px;  ">Ing. Arturo Arévalo Escobar</p>
                 </div>
             </div>
 
             {{-- Septima Division Notas--}}
-            <div style="height: 3.5cm; width: 100%; margin-top: 5cm; border-width: thin;">
+            <div style="height: 3.5cm; width: 100%; margin-top: 4.4cm; border-width: thin;">
                 <p style="font-size: .4cm; margin: 0; text-indent: 1cm"><strong>Notas Adicionales: </strong></p>
                 <p style="font-size: .4cm; margin: 0; text-indent: 3.5cm">Consulte con su comprador la política y términos de compra.</p>
                 <p style="font-size: .4cm; margin: 0; text-indent: 3.5cm">Se requiere aviso de aceptación de la presente orden de compra.

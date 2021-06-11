@@ -19,6 +19,7 @@ class CreateProveedoresTable extends Migration
             /* campos agragados segun especificaciones */
 
             $table->string('nombre_prov');
+            $table->string('razon_social')->nullable();
             $table->string('dir_prov');
             $table->string('loc_prov');
             $table->string('edo_prov');

@@ -17,8 +17,9 @@ class EnviosController extends Controller
     {
         //
         $envios=Envio::orderBy('id')->paginate(10);
+        $compras=Compra::get();
         
-        return view('Envios.index', compact('envios'));
+        return view('Envios.index', compact('compras', 'envios'));
     }
 
     /**

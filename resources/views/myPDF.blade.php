@@ -7,6 +7,10 @@
     <title>Orden de compra</title>
     <!-- Styles -->
     <style>
+        @font-face{
+            font-family: fontpredef;
+            src: url({{ storage_path('/fonts/Roboto.ttf') }}) format("truetype");
+        }
         .general{
             margin: auto;
             width: 100%;
@@ -42,9 +46,10 @@
         }
         .styledivfont
         {
+            font-family: fontpredef;
             margin-top: 0cm;
             color: white;
-            font-size:.7cm;
+            font-size:.65cm;
         }
         .edivizq
         {
@@ -72,7 +77,7 @@
             background-color: white;
             margin: 0;
             color: black;
-            font-size:.4cm;
+            font-size:.39cm;
             margin-left: .3cm;
             margin-right: 0;
             height: .4cm;
@@ -84,7 +89,7 @@
             width: 6cms;
         }
         .pdatos{
-            font-family: Arial, Helvetica, sans-serif;
+            
             font-size: .39cm;
             margin:0;
         }
@@ -92,8 +97,39 @@
             font-size: .35cm;
             margin:0;
         }
+        .pdatos3{
+            margin:0;
+            font-size: .33cm;
+        }
         .alineacionderecha{
             text-align: right;
+        }
+        p
+        {
+            font-family: fontpredef;
+            margin: 0;
+        }
+        td{
+            font-family: fontpredef;
+            font-size: .4cm;
+        }
+        .font{
+            font-family: fontpredef;
+        }
+        .footer
+        {
+            font-size: .34cm;
+            margin: 0;
+            text-indent: 3.5cm;
+        }
+
+        .encabezados
+        {
+            font-size: .6cm;
+            color: white; 
+            margin-top:0px; 
+            width: 50%;
+            margin-bottom: .3 cm;
         }
 
     </style>
@@ -105,7 +141,7 @@
             {{-- Cabecera principal --}}
             <div class="cabecera" >
                 <div>
-                    <h1>Orden de Compra</h1>
+                    <h1 class="font">Orden de Compra</h1>
                 </div>
                 <div>
                     <img src="{{ public_path('img/LogoAe.jpg') }}" alt="AeSol" style="height: 1.5cm; width: 1.2cm; margin-left: 1cm">
@@ -126,7 +162,7 @@
                         <p class="stylepcab edivder" style="margin-right: .1cm;">{{$compra->foliocompra}}</p> 
                     </div>
                     <div>
-                        <p class="styledivfont edivder">OCC Folio</p>
+                        <p class="styledivfont edivder ">OCC Folio</p>
                     </div>
                     <div style="clear: both;"></div> 
                 </div> 
@@ -157,11 +193,11 @@
                         <p class="stylepdatos" align="center" style="width: 2.7cm">{{$newfecha_req}}</p>
                     </div>
                     <div class=" edivder" style="height: 2.4cm; width: 6cm; ">
-                        <p class="pdatos" align="right" >FECHA DE EMISIÓN: </p>
-                        <p class="pdatos" align="right">COTIZACIÓN DE REFERENCIA: </p>
-                        <p class="pdatos" align="right">FECHA DE REFERENCIA: </p>
-                        <p class="pdatos" align="right">CUENTA CARGO: </p>
-                        <p class="pdatos" align="right">FECHA REQUERIDA: </p>
+                        <p  class="pdatos3" align="right" >FECHA DE EMISIÓN: </p>
+                        <p  class="pdatos3" align="right">COTIZACIÓN DE REFERENCIA: </p>
+                        <p  class="pdatos3" align="right">FECHA DE REFERENCIA: </p>
+                        <p  class="pdatos3" align="right">CUENTA CARGO: </p>
+                        <p  class="pdatos3" align="right">FECHA REQUERIDA: </p>
                     </div>
                 </div>
             </div>
@@ -171,12 +207,12 @@
             <div class="division2" style="border: thin" >
                 <div>
                     <div class="edivizq" style="height: .7cm; width: 15cm; margin-top:0;  ">
-                        <p align="center" style="margin-top:0%; font-size: .7cm;  color: white; width: 50%;  " >Envie a / Ship to</p>
+                        <p align="center" class="encabezados"  >Envie a / Ship to</p>
                     </div>
                 </div>
                 <div>
                     <div class="edivder" style="height: .8cm; width: 15cm;" >
-                        <p style="  font-size: .7cm;  color: white; margin-top:0px; width: 50%;"  >Proveedor / Seller </p> 
+                        <p class="encabezados"  >Proveedor / Seller </p> 
                     </div> 
                 </div>
                 <div></div>
@@ -199,22 +235,22 @@
                 </div>
                 <div class="edivizq" style="height:2.65cm ; width: 50% ; border: ridge; border-width: thin;">
                     @foreach ($proveedor as $item)
-                    <p class="pdatos2" style="margin-left:.2cm">{{$item->nombre_prov}}</p>
+                    <p class="pdatos3" style="margin-left:.2cm">{{$item->nombre_prov}}</p>
                     @if ($item->razon_social)
-                    <p class="pdatos2" style="margin-left:.2cm">{{$item->razon_social}} </p>
+                    <p class="pdatos3" style="margin-left:.2cm">{{$item->razon_social}} </p>
                     @endif
-                    <p class="pdatos2" style="margin-left:.2cm">{{$item->nombre_prov_suc}} 
+                    <p class="pdatos3" style="margin-left:.2cm">{{$item->nombre_prov_suc}} 
                         @if ($item->RFC!=null)
                         ,RFC: {{$item->RFC}}
                         @endif
                     </p>
-                    <p class="pdatos2" style="margin-left:.2cm">{{$item->dir_prov}}</p>
-                    <p class="pdatos2" style="margin-left:.2cm">{{$item->loc_prov}}, {{$item->edo_prov}} 
+                    <p class="pdatos3" style="margin-left:.2cm">{{$item->dir_prov}}</p>
+                    <p class="pdatos3" style="margin-left:.2cm">{{$item->loc_prov}}, {{$item->edo_prov}} 
                         @if ($item->cp_prov!=null)
                             ,CP: {{$item->cp_prov}}
                         @endif
                         </p>
-                    <p class="pdatos2" style="margin-left:.2cm">{{$item->telefono_prov}}</p>
+                    <p class="pdatos3" style="margin-left:.2cm">{{$item->telefono_prov}}</p>
                     @endforeach
                 </div>
             </div>
@@ -310,24 +346,24 @@
             {{-- Sexta Division Comentarios--}}
             <div class="edivizq" style="width: 65%;  margin-top:.7cm; border: solid; border-width: thin;">
                 <div style="height: 3cm; ">
-                    <p class="styledivfont" style="font-size: .4cm, height: .6cm; background-color:#0070C0;">Comentarios o instrucciones especiales/ Special Comments</p>
-                    <p style="font-size: .4cm; margin-left:.5cm; height: .6cm">{{$compra->comentarios}}</p>
+                    <p class="styledivfont" style="font-size: .4cm, height: .7cm; background-color:#0070C0;">Comentarios o instrucciones especiales/ Special Comments</p>
+                    <p style="font-size: .4cm; margin-left:.5cm; height: 1.3cm">{{$compra->comentarios}}</p>
                
-                    <p class="styledivfont" style="font-size: .4cm, height: .7cm; background-color:#0070C0; "><strong>AUTORIZÓ /AUTHORIZED</strong></p>
-                    <p style="font-size: .4cm; margin-left:.5cm; margin-top:0px;  ">Ing. Arturo Arévalo Escobar</p>
+                    <p class="styledivfont" style="font-size: .4cm, height: .4cm; background-color:#0070C0; "><strong>AUTORIZÓ /AUTHORIZED</strong></p>
+                    <p style="font-size: .4cm; margin-left:.5cm; margin-top:0px; height: .6cm;  ">Ing. Arturo Arévalo Escobar</p>
                 </div>
             </div>
 
             {{-- Septima Division Notas--}}
             <div style="height: 3.5cm; width: 100%; margin-top: 4.4cm; border-width: thin;">
-                <p style="font-size: .4cm; margin: 0; text-indent: 1cm"><strong>Notas Adicionales: </strong></p>
-                <p style="font-size: .4cm; margin: 0; text-indent: 3.5cm">Consulte con su comprador la política y términos de compra.</p>
-                <p style="font-size: .4cm; margin: 0; text-indent: 3.5cm">Se requiere aviso de aceptación de la presente orden de compra.
+                <p class="footer"><strong>Notas Adicionales: </strong></p>
+                <p class="footer">Consulte con su comprador la política y términos de compra.</p>
+                <p class="footer">Se requiere aviso de aceptación de la presente orden de compra.
                 </p>
-                <p style="font-size: .4cm; margin: 0; text-indent: 3.5cm">El surtir los productos o servicios supone la aceptación de los términos de compra.</p>
-                <p style="font-size: .4cm; margin: 0; text-indent: 1cm"><strong>Comprador: </strong></p>
-                <p style="font-size: .4cm; margin: 0; text-indent: 3.5cm">Si usted tiene alguna pregunta sobre esta orden de compra, por favor, póngase en contacto con</p>
-                <p style="font-size: .4cm; margin: 0; text-indent: 3.5cm">Arturo Arévalo, Tel: (444) 3.53.27.87, Mail: arturo.arevalo@ae-sol.net</p>
+                <p class="footer">El surtir los productos o servicios supone la aceptación de los términos de compra.</p>
+                <p class="footer"><strong>Comprador: </strong></p>
+                <p class="footer">Si usted tiene alguna pregunta sobre esta orden de compra, por favor, póngase en contacto con</p>
+                <p class="footer">Arturo Arévalo, Tel: (444) 3.53.27.87, Mail: arturo.arevalo@ae-sol.net</p>
             </div>
         </div>
     </body>

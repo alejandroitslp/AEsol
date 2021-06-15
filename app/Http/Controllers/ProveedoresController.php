@@ -91,9 +91,10 @@ class ProveedoresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Proveedor $proveedor)
     {
         //
+        return view('Proveedores.edit', compact('proveedor'));
     }
 
     /**
@@ -103,9 +104,29 @@ class ProveedoresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Proveedor $proveedor)
     {
         //
+        $request->validate([
+            'nombre_prov'=>'required',
+            'dir_prov'=>'required',
+            'loc_prov'=>'required',
+            'edo_prov'=>'required',
+        ]);
+
+        $proveedor->nombre_prov=$request->nombre_prov;
+        $proveedor->dir_prov=$request->dir_prov;
+        $proveedor->loc_prov=$request->loc_prov;
+        $proveedor->edo_prov=$request->edo_prov;
+        $proveedor->cp_prov=$request->cp_prov;
+        $proveedor->telefono_prov=$request->telefono_prov;
+        $proveedor->nombre_prov_suc=$request->nombre_prov_suco;
+        $proveedor->RFC=$request->RFC;
+        $proveedor->razon_social=$request->razon_social;
+        $proveedor->save();
+
+        
+        return redirect()->route('proveedores.index');
     }
 
     /**

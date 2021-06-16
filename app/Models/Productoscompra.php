@@ -18,6 +18,7 @@ class Productoscompra extends Model
         'codigo',
         'nombre',
         'cantidad',
+        'medida',
         'precio',
     ];
 

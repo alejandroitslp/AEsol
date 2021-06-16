@@ -301,7 +301,7 @@
                         <td align="center">{{$contador=$contador+1}}</td>
                         <td align="center">{{$item2->codigo}}</td>
                         <td align="center">{{$item2->nombre}}</td>
-                        <td align="center">{{$item2->cantidad}}</td>
+                        <td align="center">{{$item2->cantidad}}{{$item2->medida}}</td>
                         <td align="center">${{$var2}}</td>
                         <td align="center">${{$var4}}</td>
                             @php

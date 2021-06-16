@@ -55,6 +55,26 @@
                                 <br>
                             @enderror
                             <br>
+
+                            <label>
+                                Medida: 
+                                <br>
+                                <div class="ml-8 mt-3">
+                                    <select class="rounded-lg" id="medida" name="medida">
+                                        <option value="mts" {{old('medida')=="mts" ? 'selected' : ''}}>metros</option>
+                                        <option value="kgs" {{old('medida')=="kgs" ? 'selected' : ''}}>kilos</option>
+                                        <option value="pzas" {{old('medida')=="pzas" ? 'selected' : ''}}>piezas</option>
+                                        <option value="servicios" {{old('medida')=="servicios" ? 'selected' : ''}}>servicios</option>
+                                    </select>
+                                </div>
+                            </label>
+                    
+                            @error('medida')
+                                <br>
+                                    <small>*{{$message}}</small>
+                                <br>
+                            @enderror
+                            <br>
     
                                 <label>
                                     Precio:

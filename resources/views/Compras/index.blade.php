@@ -125,10 +125,5 @@
         </div>
     </div>
     
-    <div class="mb-20 ml-8 mr-8">
-        @if (($compras->count())>10)
-        {{$compras->links()}}
-        @else
-        @endif
-    </div>
+    
 </x-app-layout>

@@ -46,6 +46,7 @@ class ProductoscomprasController extends Controller
             'codigo'=>$request->codigo,
             'nombre'=>$request->nombre,
             'cantidad'=>$request->cantidad,
+            'medida'=>$request->medida,
             'precio'=>$request->precio,
         ]);
         

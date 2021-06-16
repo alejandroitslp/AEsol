@@ -1,5 +1,5 @@
 <div>
-    <table class="table-fixed ml-8 mt-8 mr-8" cellspacing="10">
+    <table class="table-fixed ml-0 mt-8 mr-8" cellspacing="10">
         <thead>
           <tr class="">
             <th class="w-1/6">Folio</th>

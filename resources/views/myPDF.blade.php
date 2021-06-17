@@ -290,6 +290,7 @@
                             $totales=0;
                         @endphp
                         @foreach ($comprasproducto as $item2)
+                        @if ($item2->precio>0)
                         <tr>
                             @php
                                $var1=$item2->cantidad;
@@ -309,6 +310,25 @@
                                 $totales1=number_format($totales,3); 
                             @endphp
                         </tr>
+                        @endif
+                        @if ($item2->precio<0)
+                        <tr>
+                            @php
+                               $var1=$item2->cantidad;
+                               $itemprecio=$item2->precio;
+                               $var2=number_format($itemprecio,3);
+                               $var3=$var1*$itemprecio; 
+                               $var4=number_format($var3,3);
+                            @endphp
+                        <td align="center">{{$contador=$contador+1}}</td>
+                        <td align="center">{{$item2->codigo}}</td>
+                        <td align="center">{{$item2->nombre}}</td>
+                        <td align="center">{{$item2->cantidad}}{{$item2->medida}}</td>
+                        <td align="center">${{$var2}}</td>
+                        <td align="center">${{$var4}}</td>
+                        </tr>
+                        @endif
+                        
                         @endforeach
                     
                 </table>
@@ -329,12 +349,29 @@
                     </tr>
                     <tr>
                         <th align="right">OTRO</th>
-                        <td align="right" style="">$</td>
+                        @php
+                            $varotro=0;
+                        @endphp
+                        @foreach ($comprasproducto as $item3)
+                            @if ($item3->precio<0)
+                            
+                            
+                                @php
+                                    $varotro=($item3->precio*$item3->cantidad)+$varotro;
+                                @endphp
+                            @else
+                            @endif
+                        @endforeach
+                        @php
+                            $varotro2=number_format($varotro,3);
+                        @endphp
+                        <td align="right" >${{$varotro2}}</td>
                     </tr>
                     <tr>
                         <th align="right">TOTAL</th>
                         @php
-                            $resultado=$totales+$impuestos;   
+                            $resultado=$totales+$impuestos+$varotro;   
+                            
                             $resultado1=number_format($resultado,3);
                         @endphp
                         <td align="right" style="">${{$resultado1}}</td>

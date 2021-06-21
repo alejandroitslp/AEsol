@@ -80,4 +80,7 @@
   'fontpredef' => array(
     'normal' => $fontDir . '/fontpredef_normal_de3c9dd26ac430286ab1119c236fa7e9',
   ),
+  'glyphicons halflings' => array(
+    'normal' => $fontDir . '/glyphicons_halflings_normal_649b202ffed83c4604c4cf7c88e441bc',
+  ),
 ) ?>

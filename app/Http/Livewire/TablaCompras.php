@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Productoscompra;
 use Livewire\Component;
+use PhpParser\Node\Stmt\Foreach_;
 
 class Tablacompras extends Component
 {
@@ -22,4 +23,7 @@ class Tablacompras extends Component
             $record->delete();
         }
     }
+
+    
+
 }

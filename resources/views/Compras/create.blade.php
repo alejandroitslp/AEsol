@@ -18,7 +18,7 @@
                                     @endphp
                                     <option value="WO.{{$vardate}}" {{old('tipo')=="WO."."$vardate" ? 'selected' : ''}}>Work Order</option>
                                     <option value="ALMA.{{$vardate}}" {{old('tipo')=="ALMA."."$vardate" ? 'selected' : ''}}>Almacen</option>
-                                    <option value="GAS.{{$vardate}}" {{old('tipo')=="GAS."."$vardate" ? 'selected' : ''}}>Gasolina</option>
+                                    <option value="RH.{{$vardate}}" {{old('tipo')=="RH."."$vardate" ? 'selected' : ''}}>Recursos Humanos</option>
                                     <option value="LIMP.{{$vardate}}" {{old('tipo')=="LIMP."."$vardate" ? 'selected' : ''}}>Limpieza</option>
                                     <option value="PAPE.{{$vardate}}" {{old('tipo')=="PAPE."."$vardate" ? 'selected' : ''}}>Papeleria</option>
                                     <option value="SEG.{{$vardate}}" {{old('tipo')=="SEG."."$vardate" ? 'selected' : ''}}>Seguridad Industrial</option>

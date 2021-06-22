@@ -29,6 +29,9 @@ class PDFController extends Controller
         if (count($comprasproducto)>7) {
             $comprasproductocoll=$comprasproducto->split(2);
         }
+        else{
+            $comprasproductocoll=$comprasproducto->split(1);
+        }
         $comprasproductocoll->all();
         
 

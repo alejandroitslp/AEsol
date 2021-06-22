@@ -8,6 +8,7 @@ use App\Models\Compra;
 use App\Models\Productoscompra;
 use App\Models\Proveedor;
 use App\Models\Envio;
+use App\Models\ResponsableCompra;
 
 class PDFSnappyController extends Controller
 {
@@ -18,8 +19,10 @@ class PDFSnappyController extends Controller
         $vartemp=$compra->foliocompra;
         $vartemp2=$compra->prov_prod;
         $vartemp3=$compra->id_envios;
+        $vartemp4=$compra->id_resp;
         $comprasproducto=Productoscompra::where('folio',$vartemp)->get();
         $proveedor=Proveedor::where('id',$vartemp2)->get();
+        $responsable=ResponsableCompra::where('id',$vartemp4)->first();
         $envio=Envio::where('id', $vartemp3)->first();
         foreach ($proveedor as $item) {
             # code...
@@ -32,6 +35,7 @@ class PDFSnappyController extends Controller
             'comprasproducto' => $comprasproducto,
             'proveedor' => $proveedor,
             'envio'=> $envio,
+            'responsable' => $responsable,
         ]);
         return $snappy->download();
 

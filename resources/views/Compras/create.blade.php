@@ -245,7 +245,7 @@
                         Requisita:
                         <br>
                         <div class="ml-8 mt-3">
-                        <input class="py-0.5 px-0.5 sm:py-1 sm:px-1 rounded-lg" type="text" name="requisita" value={{old('requisita')}}>
+                        <input class="py-0.5 px-0.5 sm:py-1 sm:px-1 rounded-lg" type="text" name="requisita" value="{{old('requisita')}}">
                         </div>
                     </label>
             

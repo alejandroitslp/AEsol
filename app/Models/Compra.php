@@ -24,6 +24,7 @@ class Compra extends Model
         't_moneda',
         'met_pago',
         'impuesto',
+        'descuento',
         'p_total_c_imp',
         'cot_ref',
         'fecha_ref',

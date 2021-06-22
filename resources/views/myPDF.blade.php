@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Orden de compra</title>
+    {{-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"> --}}
     <!-- Styles -->
     <style>
         @font-face{
             font-family: fontpredef;
             src: url({{ storage_path('/fonts/Roboto.ttf') }}) format("truetype");
         }
+        
         .general{
             margin: auto;
             width: 100%;
@@ -131,13 +133,39 @@
             width: 50%;
             margin-bottom: .3 cm;
         }
+        .header{
+            position: fixed;
+            top: 0cm;
+        }
+        .footer2{
+            position: fixed;
+            left: 0;
+            bottom: 9cm;
+             width: 100%;
+        }
 
+        .contenido{
+            height: 8.1cm;
+            bottom: 9cm;
+            top: 10.2cm;
+            position: absolute;
+            
+        }
+        .page-break
+        {
+            page-break-after: always;
+        }
+        .page-break:last-child{
+            page-break-after: never;
+        }
+      
+    }
     </style>
 
 </head>
     <body>
 
-        <div>
+        <div class="header">
             {{-- Cabecera principal --}}
             <div class="cabecera" >
                 <div>
@@ -156,13 +184,13 @@
             <div width="100%"  style="height: .85cm; border: ridge ; border-width: thin;">
                 <div class="division2">
                     <div>
-                        <p class="styledivfont edivizq"><strong>Datos de facturaci&oacute;n</strong></p>
+                        <p class="styledivfont edivizq"><strong>Datos de facturacion</strong></p>
                     </div>
                     <div>
                         <p class="stylepcab edivder" style="margin-right: .1cm;">{{$compra->foliocompra}}</p> 
                     </div>
                     <div>
-                        <p class="styledivfont edivder ">OC Folio</p>
+                        <p class="styledivfont edivder ">OCC Folio</p>
                     </div>
                     <div style="clear: both;"></div> 
                 </div> 
@@ -175,8 +203,8 @@
                         <p class="pdatos">AE-SOL  S.A. DE C.V.</p>
                         <p class="pdatos">I. Zaragoza #151, Col. Cuartel Aguilares</p>
                         <p class="pdatos">San Luis Potosí, S.L.P., C.P. 78421</p>
-                        <p class="pdatos">(444) 3.53.27.87, RFC: AES120903M16</p>
-                        {{-- <p class="pdatos">RFC: AES120903M16</p> --}}
+                        <p class="pdatos">(444) 3.53.27.87</p>
+                        <p class="pdatos">RFC: AES120903M16</p>
                     </div>
     
                     {{-- Ingreso datos --}}
@@ -207,7 +235,7 @@
             <div class="division2" style="border: thin" >
                 <div>
                     <div class="edivizq" style="height: .7cm; width: 15cm; margin-top:0;  ">
-                        <p align="center" class="encabezados"  >Env&iacute;e a / Ship to</p>
+                        <p align="center" class="encabezados"  >Envie a / Ship to</p>
                     </div>
                 </div>
                 <div>
@@ -256,13 +284,13 @@
             </div>
 
             {{-- Cuarta Division Tipo de moneda--}}
-            <div style="height: 1.1cm; width: 100%; border: ridge; border-width: thin; ">
+            <div style="height: 1.2cm; width: 100%; border: ridge; border-width: thin; ">
                 <table width="100%" height="100%" cellspacing="0">
                     <tr class="division2 styledivfont" style="font-size: .4cm;">
                         <th>EMBARCAR VÍA</th>
-                        <th>REQUISITOR</th>
+                        <th>REQUISITAR</th>
                         <th>MONEDA</th>   
-                        <th>T&Eacute;RMINOS DE PAGO</th> 
+                        <th>TERMINOS DE PAGO</th> 
                     </tr>
                     <tr>
                         <td align="center" style=" border: ridge; border-width: thin; ">{{$compra->embarc}}</td>
@@ -272,109 +300,25 @@
                     </tr>
                 </table>
             </div>
-
-            {{-- Quinta Division Productos--}}
-            <div style="height: 8.1cm; width: 100%; border: ridge ; border-width: thin; ">
-                <table width="100%" cellspacing="0">
-                    <tr class="division2 styledivfont" style="font-size: .4cm">
-                        <th>ITEM</th>
-                        <th>C&Oacute;DIGO</th>
-                        <th>DESCRIPCION</th>
-                        <th>CANT</th>
-                        <th>P/U</th>
-                        <th>TOTAL</th>
-                    </tr>
-                    
-                        @php
-                            $contador=0;
-                            $totales=0;
-                        @endphp
-                        @foreach ($comprasproducto as $item2)
-                        @if ($item2->precio>0)
-                        <tr>
-                            @php
-                               $var1=$item2->cantidad;
-                               $itemprecio=$item2->precio;
-                               $var2=number_format($itemprecio,2);
-                               $var3=$var1*$itemprecio; 
-                               $var4=number_format($var3,2);
-                            @endphp
-                        <td align="center">{{$contador=$contador+1}}</td>
-                        <td align="center">{{$item2->codigo}}</td>
-                        <td align="center">{{$item2->nombre}}</td>
-                        <td align="center">{{$item2->cantidad}}{{$item2->medida}}</td>
-                        <td align="center">${{$var2}}</td>
-                        <td align="center">${{$var4}}</td>
-                            @php
-                                $totales=$totales+$var3;   
-                                $totales1=number_format($totales,2); 
-                            @endphp
-                        </tr>
-                        @endif
-                        @if ($item2->precio<0)
-                        <tr>
-                            @php
-                               $var1=$item2->cantidad;
-                               $itemprecio=$item2->precio;
-                               $var2=number_format($itemprecio,2);
-                               $var3=$var1*$itemprecio; 
-                               $var4=number_format($var3,2);
-                            @endphp
-                        <td align="center">{{$contador=$contador+1}}</td>
-                        <td align="center">{{$item2->codigo}}</td>
-                        <td align="center">{{$item2->nombre}}</td>
-                        <td align="center">{{$item2->cantidad}}{{$item2->medida}}</td>
-                        <td align="center">${{$var2}}</td>
-                        <td align="center">${{$var4}}</td>
-                        </tr>
-                        @endif
-                        
-                        @endforeach
-                    
-                </table>
-            </div>
+        </div>
+        <div class="footer2" >
             <div class="edivder" >
                 <table>
                     <tr>
                         <th align="right">SUBTOTAL</th>
-                        <td align="right" style="width:2cm;">${{$totales1}}</td>
+                        <td align="right" style="width:2cm;">${{$compra->precio_total}}</td>
 
                     <tr>
                         <th align="right">IMPUESTO</th>
-                        @php
-                            $impuestos=$totales*0.16;
-                            $impuestos1=number_format($impuestos,2);
-                        @endphp
-                        <td align="right" style="">${{$impuestos1}}</td>
+                        <td align="right" style="">${{$compra->impuesto}}</td>
                     </tr>
                     <tr>
                         <th align="right">OTRO</th>
-                        @php
-                            $varotro=0;
-                        @endphp
-                        @foreach ($comprasproducto as $item3)
-                            @if ($item3->precio<0)
-                            
-                            
-                                @php
-                                    $varotro=($item3->precio*$item3->cantidad)+$varotro;
-                                @endphp
-                            @else
-                            @endif
-                        @endforeach
-                        @php
-                            $varotro2=number_format($varotro,2);
-                        @endphp
-                        <td align="right" >${{$varotro2}}</td>
+                        <td align="right" >${{$compra->descuento}}</td>
                     </tr>
                     <tr>
                         <th align="right">TOTAL</th>
-                        @php
-                            $resultado=$totales+$impuestos+$varotro;   
-                            
-                            $resultado1=number_format($resultado,2);
-                        @endphp
-                        <td align="right" style="">${{$resultado1}}</td>
+                        <td align="right" style="">${{$compra->p_total_c_imp}}</td>
                     </tr>
                 </table>
             </div>
@@ -383,8 +327,8 @@
             {{-- Sexta Division Comentarios--}}
             <div class="edivizq" style="width: 65%;  margin-top:.7cm; border: solid; border-width: thin;">
                 <div style="height: 3cm; ">
-                    <p class="styledivfont" style="font-size: .4cm, height: .7cm; background-color:#0070C0;">Comentarios o instrucciones especiales/ Special Comments</p>
-                    <p style="font-size: .4cm; margin-left:.5cm; height: 1.3cm">{{$compra->comentarios}}</p>
+                    <p class="styledivfont" style="font-size: .4cm, height: .4cm; background-color:#0070C0;">Comentarios o instrucciones especiales/ Special Comments</p>
+                    <p style="font-size: .4cm; margin-left:.5cm; height: 1.3cm; ">{{$compra->comentarios}}</p>
                
                     <p class="styledivfont" style="font-size: .4cm, height: .4cm; background-color:#0070C0; "><strong>AUTORIZÓ /AUTHORIZED</strong></p>
                     <p style="font-size: .4cm; margin-left:.5cm; margin-top:0px; height: .6cm;  ">Ing. Arturo Arévalo Escobar</p>
@@ -400,8 +344,79 @@
                 <p class="footer">El surtir los productos o servicios supone la aceptación de los términos de compra.</p>
                 <p class="footer"><strong>Comprador: </strong></p>
                 <p class="footer">Si usted tiene alguna pregunta sobre esta orden de compra, por favor, póngase en contacto con</p>
-                <p class="footer">{{$responsable->nombre_resp}}, Tel: (444) 3.53.27.87, Mail: {{$responsable->email}}</p>
+                <p class="footer">Arturo Arévalo, Tel: (444) 3.53.27.87, Mail: arturo.arevalo@ae-sol.net</p>
             </div>
         </div>
+
+        <div class="contenido" >
+            {{-- Quinta Division Productos--}}
+            @php
+                $contador=0;
+            @endphp
+            @foreach ($comprasproductocoll as $comprasproducto)
+                <div class="page-break" style="height: 8.1cm; width: 100%; border: ridge ; border-width: thin; ">
+                    <table width="100%" cellspacing="0">
+                        <tr class="division2 styledivfont" style="font-size: .4cm">
+                            <th>ITEM</th>
+                            <th>C&Oacute;DIGO</th>
+                            <th>DESCRIPCION</th>
+                            <th>CANT</th>
+                            <th>P/U</th>
+                            <th>TOTAL</th>
+                        </tr>
+                        
+                            @php
+                                $totales=0;
+                            @endphp
+                            @foreach ($comprasproducto as $item2)
+                            @if ($item2->precio>0)
+                            <tr>
+                                @php
+                                $var1=$item2->cantidad;
+                                $itemprecio=$item2->precio;
+                                $var2=number_format($itemprecio,2);
+                                $var3=$var1*$itemprecio; 
+                                $var4=number_format($var3,2);
+                                @endphp
+                            <td align="center">{{$contador=$contador+1}}</td>
+                            <td align="center">{{$item2->codigo}}</td>
+                            <td align="center">{{$item2->nombre}}</td>
+                            <td align="center">{{$item2->cantidad}}{{$item2->medida}}</td>
+                            <td align="center">${{$var2}}</td>
+                            <td align="center">${{$var4}}</td>
+                                @php
+                                    $totales=$totales+$var3;   
+                                    $totales1=number_format($totales,2); 
+                                @endphp
+                            </tr>
+                            @endif
+                            @if ($item2->precio<0)
+                            <tr>
+                                @php
+                                $var1=$item2->cantidad;
+                                $itemprecio=$item2->precio;
+                                $var2=number_format($itemprecio,2);
+                                $var3=$var1*$itemprecio; 
+                                $var4=number_format($var3,2);
+                                @endphp
+                            <td align="center">{{$contador=$contador+1}}</td>
+                            <td align="center">{{$item2->codigo}}</td>
+                            <td align="center">{{$item2->nombre}}</td>
+                            <td align="center">{{$item2->cantidad}}{{$item2->medida}}</td>
+                            <td align="center">${{$var2}}</td>
+                            <td align="center">${{$var4}}</td>
+                            </tr>
+                            @endif
+                            
+                            @endforeach
+                    </table>
+                </div>
+            @endforeach        
+        </div>             
+        
+
+
+        
+        
     </body>
 </html>

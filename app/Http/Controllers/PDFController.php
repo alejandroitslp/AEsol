@@ -20,6 +20,18 @@ class PDFController extends Controller
         $vartemp3=$compra->id_envios;
         $vartemp4=$compra->id_resp;
         $comprasproducto=Productoscompra::where('folio',$vartemp)->get();
+        if (count($comprasproducto)>20) {
+            $comprasproductocoll=$comprasproducto->split(5);
+        }
+        if (count($comprasproducto)>15) {
+            $comprasproductocoll=$comprasproducto->split(3);
+        }
+        if (count($comprasproducto)>7) {
+            $comprasproductocoll=$comprasproducto->split(2);
+        }
+        $comprasproductocoll->all();
+        
+
         $proveedor=Proveedor::where('id',$vartemp2)->get();
         $responsable=ResponsableCompra::where('id',$vartemp4)->first();
         $envio=Envio::where('id', $vartemp3)->first();
@@ -28,7 +40,7 @@ class PDFController extends Controller
             $tempid=$item->nombre_prov;
         }
         
-        $pdf = PDF::loadView('myPDF', compact('compra', 'comprasproducto', 'proveedor', 'envio', 'responsable'));
+        $pdf = PDF::loadView('myPDF', compact('compra', 'comprasproductocoll', 'proveedor', 'envio', 'responsable'));
 
         return $pdf->download(''.$vartemp.'.pdf');
 

@@ -34,7 +34,7 @@ class StoreCompra extends FormRequest
             'embarque'=>'required',
             'tmoneda'=>'required',
             'metPago'=>'required',
-            
+            'requisita'=>'required',
             'cref'=>'required',
             'fref'=>'required',
             'ccargo'=>'required',

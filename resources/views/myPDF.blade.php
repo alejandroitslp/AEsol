@@ -184,13 +184,13 @@
             <div width="100%"  style="height: .85cm; border: ridge ; border-width: thin;">
                 <div class="division2">
                     <div>
-                        <p class="styledivfont edivizq"><strong>Datos de facturacion</strong></p>
+                        <p class="styledivfont edivizq"><strong>Datos de facturaci&oacute;n</strong></p>
                     </div>
                     <div>
                         <p class="stylepcab edivder" style="margin-right: .1cm;">{{$compra->foliocompra}}</p> 
                     </div>
                     <div>
-                        <p class="styledivfont edivder ">OCC Folio</p>
+                        <p class="styledivfont edivder ">OC Folio</p>
                     </div>
                     <div style="clear: both;"></div> 
                 </div> 
@@ -203,8 +203,8 @@
                         <p class="pdatos">AE-SOL  S.A. DE C.V.</p>
                         <p class="pdatos">I. Zaragoza #151, Col. Cuartel Aguilares</p>
                         <p class="pdatos">San Luis Potosí, S.L.P., C.P. 78421</p>
-                        <p class="pdatos">(444) 3.53.27.87</p>
-                        <p class="pdatos">RFC: AES120903M16</p>
+                        <p class="pdatos">(444) 3.53.27.87, RFC: AES120903M16</p>
+                        {{-- <p class="pdatos">RFC: AES120903M16</p> --}}
                     </div>
     
                     {{-- Ingreso datos --}}
@@ -235,7 +235,7 @@
             <div class="division2" style="border: thin" >
                 <div>
                     <div class="edivizq" style="height: .7cm; width: 15cm; margin-top:0;  ">
-                        <p align="center" class="encabezados"  >Envie a / Ship to</p>
+                        <p align="center" class="encabezados"  >Env&iacute;e a / Ship to</p>
                     </div>
                 </div>
                 <div>
@@ -288,9 +288,9 @@
                 <table width="100%" height="100%" cellspacing="0">
                     <tr class="division2 styledivfont" style="font-size: .4cm;">
                         <th>EMBARCAR VÍA</th>
-                        <th>REQUISITAR</th>
+                        <th>REQUISITOR</th>
                         <th>MONEDA</th>   
-                        <th>TERMINOS DE PAGO</th> 
+                        <th>T&Eacute;RMINOS DE PAGO</th> 
                     </tr>
                     <tr>
                         <td align="center" style=" border: ridge; border-width: thin; ">{{$compra->embarc}}</td>
@@ -344,7 +344,7 @@
                 <p class="footer">El surtir los productos o servicios supone la aceptación de los términos de compra.</p>
                 <p class="footer"><strong>Comprador: </strong></p>
                 <p class="footer">Si usted tiene alguna pregunta sobre esta orden de compra, por favor, póngase en contacto con</p>
-                <p class="footer">Arturo Arévalo, Tel: (444) 3.53.27.87, Mail: arturo.arevalo@ae-sol.net</p>
+                <p class="footer">{{$responsable->nombre_resp}}, Tel: (444) 3.53.27.87, Mail: {{$responsable->email}}</p>
             </div>
         </div>
 
@@ -359,7 +359,7 @@
                         <tr class="division2 styledivfont" style="font-size: .4cm">
                             <th>ITEM</th>
                             <th>C&Oacute;DIGO</th>
-                            <th>DESCRIPCION</th>
+                            <th>DESCRIPCI&Oacute;N</th>
                             <th>CANT</th>
                             <th>P/U</th>
                             <th>TOTAL</th>

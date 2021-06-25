@@ -4,18 +4,19 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Compra;
+use App\Models\Proveedor;
 use Carbon\Carbon;
 
 class InfoCompras extends Component
 {
 
     public $fechaComp;
+    public $fechaIni;
+    public $fechaEnd;
+    public $fechaIni2='2018-01-01';
+    public $fechaEnd2='2028-01-01';
+    public $provComp;
 
-    public function mount()
-    {
-        
-
-    }
 
     public function render()
     {
@@ -36,10 +37,19 @@ class InfoCompras extends Component
             $dateEnd=Carbon::now()->endOfYear()->format('d/m/y');
         }
 
+
         $yearStart=$this->fechaComp;
         $comprasCurr=Compra::where('autorizado', 1)
                                 ->whereBetween('created_at', [$dateStart, $dateEnd])
                                 ->where('t_moneda', 'like', "Pes".'%')->get();
-        return view('livewire.info-compras', compact('comprasCurr','dateStart','dateEnd'));
+        $comprasCurrEsp=Compra::where('autorizado', 1)
+                                ->whereBetween('created_at', [$this->fechaIni, $this->fechaEnd])
+                                ->where('t_moneda', 'like', "Pes".'%')->get();
+        $provCompras=Compra::where('autorizado',1)->orderBy('prov_prod', 'asc')->get();
+        $relprovs=Proveedor::orderBy('id', 'asc')->get();
+        $comprasProvs=Compra::where('prov_prod',$this->provComp)
+                                ->whereBetween('created_at', [$this->fechaIni2, $this->fechaEnd2])
+                                ->orderBy('created_at', 'asc')->get();
+        return view('livewire.info-compras', compact('comprasCurr','comprasCurrEsp','dateStart','dateEnd', 'provCompras', 'relprovs', 'comprasProvs'));
     }
 }

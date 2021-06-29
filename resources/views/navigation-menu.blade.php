@@ -14,19 +14,27 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
-                    </x-jet-nav-link> 
+                    </x-jet-nav-link>
+                    @can('envios')
                     <x-jet-nav-link href="{{ route('envios.index') }}" :active="request()->routeIs('envios.index')">
                         Envios
                     </x-jet-nav-link>
+                    @endcan 
+                    @can('proveedores')
                     <x-jet-nav-link href="{{ route('proveedores.index') }}" :active="request()->routeIs('proveedores.index')">
                         Proveedores
                     </x-jet-nav-link>
+                    @endcan
+                    @can('compras')
                     <x-jet-nav-link href="{{ route('compras.index') }}" :active="request()->routeIs('compras.index')">
                         Compras
                     </x-jet-nav-link>
+                    @endcan
+                    @can('informacion')
                     <x-jet-nav-link href="{{ route('informacion') }}" :active="request()->routeIs('informacion')">
                         Informaci&oacute;n de Compras
                     </x-jet-nav-link>
+                    @endcan
                 </div>
             </div>
 
@@ -153,18 +161,26 @@
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
+            @can('envios')
             <x-jet-responsive-nav-link href="{{ route('envios.index') }}" :active="request()->routeIs('envios.index')">
                 Envios
             </x-jet-responsive-nav-link>
+            @endcan
+            @can('proveedores')
             <x-jet-responsive-nav-link href="{{ route('proveedores.index') }}" :active="request()->routeIs('proveedores.index')">
                 Proveedores
             </x-jet-responsive-nav-link>
+            @endcan
+            @can('compras')
             <x-jet-responsive-nav-link href="{{ route('compras.index') }}" :active="request()->routeIs('compras.index')">
                 Compras
             </x-jet-responsive-nav-link>
+            @endcan
+            @can('informacion')
             <x-jet-responsive-nav-link href="{{ route('informacion') }}" :active="request()->routeIs('informacion')">
                 Informacion de Compras
             </x-jet-responsive-nav-link>
+            @endcan
         </div>
 
         <!-- Responsive Settings Options -->

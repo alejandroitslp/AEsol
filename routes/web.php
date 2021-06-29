@@ -30,15 +30,15 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::middleware(['auth:sanctum', 'verified'])->resource('Compras', ComprasController::class)->names('compras')->parameters(['Compras'=>'compra']); 
-Route::middleware(['auth:sanctum', 'verified'])->resource('Proveedores', ProveedoresController::class)->names('proveedores')->parameters(['Proveedores'=>'proveedor']);
+Route::middleware(['auth:sanctum', 'verified'])->middleware('can:compras')->resource('Compras', ComprasController::class)->names('compras')->parameters(['Compras'=>'compra']); 
+Route::middleware(['auth:sanctum', 'verified'])->middleware('can:proveedores')->resource('Proveedores', ProveedoresController::class)->names('proveedores')->parameters(['Proveedores'=>'proveedor']);
 Route::middleware(['auth:sanctum', 'verified'])->resource('Productoscompras', ProductoscomprasController::class)->names('productoscompras')->parameters(['Productoscompras'=>'productoscompra']);
 Route::get('Productoscompras/{productoscompra}', [ProductoscomprasController::class, 'agregar'])->name('productoscompras.agregar');
 
-Route::middleware(['auth:sanctum', 'verified'])->resource('Envios', EnviosController::class)->names('envios')->parameters(['Envios'=>'envio']);
+Route::middleware(['auth:sanctum', 'verified'])->middleware('can:envios')->resource('Envios', EnviosController::class)->names('envios')->parameters(['Envios'=>'envio']);
 
 //Route::get('generate-pdf/{id}', [PDFSnappyController::class, 'generarPDF'])->name('generarPDF');
 
 Route::get('generate-pdf/{id}', [PDFController::class, 'generatePDF'])->name('generarPDF');
-Route::get('/Consultas',[InfoComprasController::class, 'costos'])->name('informacion');
+Route::middleware(['auth:sanctum', 'verified'])->middleware('can:informacion')->get('/Consultas',[InfoComprasController::class, 'costos'])->name('informacion');
 

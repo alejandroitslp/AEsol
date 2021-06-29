@@ -18,9 +18,11 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         //Proveedor::factory()->count(10)->create();
         $this->call([
-            ResponsablescompraSeeder::class,
-            EnvioSeeder::class,
-            ProveedorSeeder::class,
+            //ResponsablescompraSeeder::class,
+            //EnvioSeeder::class,
+            //ProveedorSeeder::class,
+            RoleSeeder::class,
+            UserSeeder::class,
         ]);
     }
 }

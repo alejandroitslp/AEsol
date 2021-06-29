@@ -1,8 +1,7 @@
 <x-app-layout>
-    
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg" >
+            
                 <div class="container">
                     <div class="row" >
                         <div class="grid col-md-1">
@@ -16,39 +15,39 @@
                                 </form>
                             </div>
                             <div class="text-lg mt-8 ml-6"> <strong> Ordenes en revisión</strong></div>
-                            <table class="table-fixed ml-8 mt-8 mr-8" cellspacing="10" >
-                                <thead>
+                            <table class="min-w-full bg-white shadow overflow-hidden rounded border-b border-gray-200" cellspacing="10" >
+                                <thead class="bg-blue-400 text-white">
                                   <tr class="">
-                                    <th class="w-1/9">Folio</th>
-                                    <th class="w-1/9">Fecha de emision</th>
-                                    <th class="w-1/9">Descripcion</th>
-                                    <th class="w-1/9">Fecha requerida</th>
-                                    <th class="w-1/9">Cuenta cargo</th>
-                                    <th class="w-1/9">Metodo de Pago</th>
-                                    <th class="w-1/9">Requisitó</th>
-                                    <th class="w-1/9">Botones</th>
-                                    <th class="w-1/9">Autorizado</th>
+                                    <th class="w-1/9 text-left py-3 px-4 uppercase font-semibold text-sm">Folio</th>
+                                    <th class="w-1/9 text-left py-3 px-4 uppercase font-semibold text-sm">Fecha de emision</th>
+                                    <th class="w-1/9 text-left py-3 px-4 uppercase font-semibold text-sm">Descripcion</th>
+                                    <th class="w-1/9 text-left py-3 px-4 uppercase font-semibold text-sm">Fecha requerida</th>
+                                    <th class="w-1/9 text-left py-3 px-4 uppercase font-semibold text-sm">Cuenta cargo</th>
+                                    <th class="w-1/9 text-left py-3 px-4 uppercase font-semibold text-sm">Metodo de Pago</th>
+                                    <th class="w-1/9 text-left py-3 px-4 uppercase font-semibold text-sm">Requisitó</th>
+                                    <th class="w-1/9 text-left py-3 px-4 uppercase font-semibold text-sm">Botones</th>
+                                    <th class="w-1/9 text-left py-3 px-4 uppercase font-semibold text-sm">Autorizado</th>
                                   </tr>
                                 </thead>
 
-                                <tbody class="">
+                                <tbody class="text-gray-700">
                                     @foreach ($compras as $compra)
                                     @if ($compra->autorizado==false)
                                     <tr class="text-center" >
-                                        <td>{{$compra->foliocompra}}</td>
-                                        <td>{{$compra->fecha_emision}}</td>
-                                        <td>{{$compra->desc_orden}}</td>
-                                        <td>{{$compra->fecha_req}}</td>
-                                        <td>{{$compra->cuenta_cargo}}</td>
-                                        <td>{{$compra->met_pago}}</td>
-                                        <td>{{$compra->requisita}}</td>
+                                        <td class="text-left py-3 px-4">{{$compra->foliocompra}}</td>
+                                        <td class="text-left py-3 px-4">{{$compra->fecha_emision}}</td>
+                                        <td class="text-left py-3 px-4">{{$compra->desc_orden}}</td>
+                                        <td class="text-left py-3 px-4">{{$compra->fecha_req}}</td>
+                                        <td class="text-left py-3 px-4">{{$compra->cuenta_cargo}}</td>
+                                        <td class="text-left py-3 px-4">{{$compra->met_pago}}</td>
+                                        <td class="text-left py-3 px-4">{{$compra->requisita}}</td>
                                         @php
                                            $contador=0;
                                            $contador2=0;
                                            $errPDF=false;
                                         @endphp
                                         @if (count($productoscompras)==0)
-                                            <td><form action="{{route('compras.destroy', $compra)}}" method="POST">
+                                            <td class="text-left py-3 px-4"><form action="{{route('compras.destroy', $compra)}}" method="POST">
                                                 @csrf
                                                 @method('delete')
                             
@@ -64,7 +63,7 @@
                                         @endif
                                         @foreach ($productoscompras as $productoscompra)
                                         @if (($productoscompra->folio==$compra->foliocompra)&&$contador==0)
-                                        <td>
+                                        <td class="text-left py-3 px-4">
                                              <a href="{{route('compras.edit', $compra)}}" >
                                                 <svg class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-6 mt-4 mb-3 py-0.2  sm:py-1 sm:px-1" style="width: 30px; height: 30px" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="white">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
@@ -82,7 +81,7 @@
                                         @endphp
                                         @if ($contador2==(count($productoscompras)))
                                         
-                                        <td><form action="{{route('compras.destroy', $compra)}}" method="POST">
+                                        <td class="text-left py-3 px-4"><form action="{{route('compras.destroy', $compra)}}" method="POST">
                                             @csrf
                                             @method('delete')
                         
@@ -103,7 +102,7 @@
                                         @endforeach
                                     @endif
                                     @if ($compra->autorizado==0&&$errPDF==false)
-                                    <td>
+                                    <td class="text-left py-3 px-4">
                                         @livewire('aprobar-compras', ['compra'=>$compra])
                                     </td>
                                     @endif
@@ -118,12 +117,9 @@
                         </div>
                         <div class="text-lg mt-8 ml-6"> <strong> Ordenes Aprobadas</strong></div>
                         @livewire('tabla-aprov', ['compras'=>$compras, 'productoscompras'=>$productoscompras])
-
                     </div>
                 </div> 
-            </div>
+            
         </div>
     </div>
-    
-    
 </x-app-layout>

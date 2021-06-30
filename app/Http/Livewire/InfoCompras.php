@@ -10,31 +10,36 @@ use Carbon\Carbon;
 class InfoCompras extends Component
 {
 
-    public $fechaComp;
+    public $fechaComp=null;
     public $fechaIni;
     public $fechaEnd;
     public $fechaIni2='2018-01-01';
     public $fechaEnd2='2028-01-01';
     public $provComp;
-
+ 
 
     public function render()
     {
-        if ($this->fechaComp==null||$this->fechaComp==1) {
-            $dateStart=Carbon::now()->startOfDay()->format('d/m/y H:i:s');
-            $dateEnd=Carbon::now()->endOfDay()->format('d/m/y H:i:s');
+        if ($this->fechaComp==null) {
+            $dateStart=Carbon::now()->startOfDay();
+            $dateEnd=Carbon::now();
+        }
+        if ($this->fechaComp==1) 
+        {
+            $dateStart=Carbon::now()->startOfDay();
+            $dateEnd=Carbon::now();
         }
         if ($this->fechaComp==2) {
-            $dateStart=Carbon::now()->startOfWeek()->format('d/m/y');
-            $dateEnd=Carbon::now()->endOfWeek()->format('d/m/y');
+            $dateStart=Carbon::now()->startOfWeek();
+            $dateEnd=Carbon::now();
         }
         if ($this->fechaComp==3) {
-            $dateStart=Carbon::now()->startOfMonth()->format('d/m/y');
-            $dateEnd=Carbon::now()->endOfMonth()->format('d/m/y');
+            $dateStart=Carbon::now()->startOfMonth();
+            $dateEnd=Carbon::now()->endOfMonth();
         }
         if ($this->fechaComp==4) {
-            $dateStart=Carbon::now()->startOfYear()->format('d/m/y');
-            $dateEnd=Carbon::now()->endOfYear()->format('d/m/y');
+            $dateStart=Carbon::now()->startOfYear();
+            $dateEnd=Carbon::now()->endOfYear();
         }
 
 

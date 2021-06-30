@@ -23,7 +23,7 @@
                     <label>
                         Gasto del:
                     </label>
-                    <select   id="fechaComp" name="fechaComp" wire:model="fechaComp" class="w-28 rounded-lg h-7 p-1" required>
+                    <select id="fechaComp" name="fechaComp" wire:model="fechaComp" class="w-28 rounded-lg h-7 p-1" required>
                             <option value="1" ><p>D&iacute;a</p></option>
                             <option value="2" ><p>Semana</p></option>
                             <option value="3" ><p>Mes</p></option>

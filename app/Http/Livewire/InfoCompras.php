@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\Compra;
 use App\Models\Proveedor;
 use Carbon\Carbon;
+use Livewire\WithPagination;
 
 class InfoCompras extends Component
 {
@@ -16,8 +17,10 @@ class InfoCompras extends Component
     public $fechaIni2='2018-01-01';
     public $fechaEnd2='2028-01-01';
     public $provComp;
+    public $search;
+    public $coincidences;
  
-
+    use WithPagination;
     public function render()
     {
         if ($this->fechaComp==null) {
@@ -41,9 +44,16 @@ class InfoCompras extends Component
             $dateStart=Carbon::now()->startOfYear();
             $dateEnd=Carbon::now()->endOfYear();
         }
-
-
+        if($this->coincidences==null||$this->coincidences=='')
+        {
+            $varpag=15;
+        }
+        if($this->coincidences!=null)
+        {
+            $varpag=$this->coincidences;;
+        }
         $yearStart=$this->fechaComp;
+        
         $comprasCurr=Compra::where('autorizado', 1)
                                 ->whereBetween('created_at', [$dateStart, $dateEnd])
                                 ->where('t_moneda', 'like', "Pes".'%')->get();
@@ -53,8 +63,12 @@ class InfoCompras extends Component
         $provCompras=Compra::where('autorizado',1)->orderBy('prov_prod', 'asc')->get();
         $relprovs=Proveedor::orderBy('id', 'asc')->get();
         $comprasProvs=Compra::where('prov_prod',$this->provComp)
+                                ->where('autorizado', 1)
                                 ->whereBetween('created_at', [$this->fechaIni2, $this->fechaEnd2])
                                 ->orderBy('created_at', 'asc')->get();
-        return view('livewire.info-compras', compact('comprasCurr','comprasCurrEsp','dateStart','dateEnd', 'provCompras', 'relprovs', 'comprasProvs'));
+        $compraFolios=Compra::where('foliocompra','LIKE','%'.$this->search.'%')
+                                ->where('autorizado', 1)
+                                ->orderBy('foliocompra', 'asc')->paginate($varpag);
+        return view('livewire.info-compras', compact('comprasCurr','comprasCurrEsp','dateStart','dateEnd', 'provCompras', 'relprovs', 'comprasProvs','compraFolios'));
     }
 }

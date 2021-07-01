@@ -1,5 +1,6 @@
 <div class="md:px-32 py-8 w-full">
     <div class="shadow overflow-hidden rounded border-b border-gray-200">
+        <input class="appearance-none bg-white-200 border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Buscar por Descripcion" aria-label="Descripcion" wire:model="searchDesc">
     {{-- The Master doesn't talk, he acts. --}}
     <table class="min-w-full bg-white" cellspacing="10">
         <thead class="bg-blue-400 text-white">
@@ -28,10 +29,17 @@
                 <td class="w-1/9 text-left py-2 px-2 text-sm">
                     <a href="{{route('generarPDF', $item)}}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-6 mt-4 mb-3 py-0.2  sm:py-1 sm:px-1">PDF</a>
                 </td>
-                <td class="w-1/9"> @livewire('aprobar-compras', ['compra'=>$item])</td>
+                <td class="w-1/9"> 
+                    <input type="checkbox" id="cbox2" value="" wire:click="actApr2('{{ $item->foliocompra }}','{{ $item->autorizado }}')" {{$item->autorizado==true ? 'checked' : ''}} > <label for="cbox2">Aprobar</label>
+                </td>
             </tr>
         </tbody>
         @endforeach
     </table>
+    <div>
+        @if ($aproData)
+            {{$aproData->links()}}
+        @endif
+    </div>
     </div>
 </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Facade\FlareClient\View;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
@@ -16,8 +17,8 @@ class UserController extends Controller
     public function index()
     {
         //
-        $usuarios=User::get();
-        return view('Usuarios.index', compact('usuarios'));
+        
+        return view('Usuarios.index');
     }
 
     /**
@@ -58,9 +59,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $usuario)
     {
         //
+        $roles=Role::all();
+        return view('Usuarios.edit', compact('usuario', 'roles'));
     }
 
     /**
@@ -70,9 +73,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $usuario)
     {
         //
+        $usuario->roles()->sync($request->roles);
+
+        return redirect()->route('usuarios.edit', $usuario)->with('info', 'Se asigno el rol correctamente');
     }
 
     /**

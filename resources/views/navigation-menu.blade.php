@@ -35,9 +35,11 @@
                         Informaci&oacute;n de Compras
                     </x-jet-nav-link>
                     @endcan
+                    @can('usuarios')
                     <x-jet-nav-link href="{{ route('usuarios.index') }}" :active="request()->routeIs('usuarios.index')">
                         Usuarios
                     </x-jet-nav-link>
+                    @endcan
                 </div>
             </div>
 
@@ -184,9 +186,11 @@
                 Informacion de Compras
             </x-jet-responsive-nav-link>
             @endcan
+            @can('usuarios')
             <x-jet-responsive-nav-link href="{{ route('usuarios.index') }}" :active="request()->routeIs('usuarios.index')">
                 Usuarios
             </x-jet-responsive-nav-link>
+            @endcan
         </div>
 
         <!-- Responsive Settings Options -->

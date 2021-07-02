@@ -21,8 +21,9 @@ class DatabaseSeeder extends Seeder
             //ResponsablescompraSeeder::class,
             //EnvioSeeder::class,
             //ProveedorSeeder::class,
-            RoleSeeder::class,
             UserSeeder::class,
+            RoleSeeder::class,
+            
         ]);
     }
 }

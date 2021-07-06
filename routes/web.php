@@ -42,5 +42,6 @@ Route::middleware(['auth:sanctum', 'verified'])->middleware('can:envios')->resou
 //Route::get('generate-pdf/{id}', [PDFSnappyController::class, 'generarPDF'])->name('generarPDF');
 
 Route::get('generate-pdf/{id}', [PDFController::class, 'generatePDF'])->name('generarPDF');
+//Route::get('generate-excel/{id}', [ExcelController::class, 'generateExcel'])->name('generarExcel');
 Route::middleware(['auth:sanctum', 'verified'])->middleware('can:informacion')->get('/Consultas',[InfoComprasController::class, 'costos'])->name('informacion');
 

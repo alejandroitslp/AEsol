@@ -2,11 +2,14 @@
 
 namespace App\Http\Livewire;
 
+use App\Exports\ComprasExport;
 use Livewire\Component;
 use App\Models\Compra;
 use App\Models\Proveedor;
+use App\Models\User;
 use Carbon\Carbon;
 use Livewire\WithPagination;
+use Maatwebsite\Excel\Facades\Excel;
 
 class InfoCompras extends Component
 {
@@ -19,7 +22,7 @@ class InfoCompras extends Component
     public $provComp;
     public $search;
     public $coincidences;
- 
+    private $compraFolios;
     use WithPagination;
     public function render()
     {
@@ -68,7 +71,11 @@ class InfoCompras extends Component
                                 ->orderBy('created_at', 'asc')->get();
         $compraFolios=Compra::where('foliocompra','LIKE','%'.$this->search.'%')
                                 ->where('autorizado', 1)
-                                ->orderBy('foliocompra', 'asc')->paginate($varpag);
+                                ->orderBy('foliocompra', 'asc')->paginate($varpag); 
         return view('livewire.info-compras', compact('comprasCurr','comprasCurrEsp','dateStart','dateEnd', 'provCompras', 'relprovs', 'comprasProvs','compraFolios'));
+    }
+    public function export()
+    {
+        return Excel::download(new ComprasExport($this->search, $this->coincidences),'OrdenesDeCompra.xlsx');
     }
 }

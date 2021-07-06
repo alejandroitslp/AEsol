@@ -91,9 +91,10 @@
                 <div class="mt-8">
                     <div class="inline-block">
                         <div class="mr-8"> 
-                            <p>Se muestra una lista de 15 elementos, a un costado de el cuadro de busqueda se muestra el precio
-                                total de los productos listados, en la pagina numero 2 se mostrara otra lista con el resto de elementos
-                                y el precio de la totalidad de la lista 2. Si desea mostrar todos los resultados, modifique el valor de coincidencias.
+                            <p>Se muestra una lista de 15 elementos, en la parte inferior se muestra el precio
+                                total de los productos listados, incluido el impuesto, en la pagina numero 2 se mostrara otra lista con el resto de elementos
+                                y el precio de la totalidad de la lista 2. Si desea mostrar todos los resultados, modifique el valor de coincidencias al valor de los resultados mostrados en la parte inferior.
+                                Para imprimir el archivo en Excel con el total de las compras, gasto en impuestos, total sin impuesto, presione el boton de Exportar XLXS
                             </p>
                         </div>
                         <br>
@@ -121,10 +122,14 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        
                     </div>
                     <div class="inline-block">
                         <br><br>
                         <p>Total: ${{number_format($cuentaFolio,2,'.',',')}}</p>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"  wire:click="export()">
+                            Exportar XLXS
+                        </button>
                     </div>
                     
                         @if ($compraFolios)

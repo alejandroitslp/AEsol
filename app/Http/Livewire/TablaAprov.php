@@ -37,4 +37,5 @@ class TablaAprov extends Component
         }
      redirect()->route('compras.index');
     }
+
 }

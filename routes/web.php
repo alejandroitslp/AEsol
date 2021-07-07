@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ComprasController;
+use App\Http\Controllers\DestinatariosController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PDFController;
@@ -41,7 +42,10 @@ Route::middleware(['auth:sanctum', 'verified'])->middleware('can:envios')->resou
 
 //Route::get('generate-pdf/{id}', [PDFSnappyController::class, 'generarPDF'])->name('generarPDF');
 
-Route::get('generate-pdf/{id}', [PDFController::class, 'generatePDF'])->name('generarPDF');
+Route::middleware(['auth:sanctum', 'verified'])->middleware('can:compras')->get('generate-pdf/{id}', [PDFController::class, 'generatePDF'])->name('generarPDF');
+Route::middleware(['auth:sanctum', 'verified'])->middleware('can:compras')->post('send-pdf/{id}', [PDFController::class, 'sendPDF'])->name('enviarPDF');
+Route::middleware(['auth:sanctum', 'verified'])->middleware('can:compras')->get('destinatarios/{id}',[DestinatariosController::class, 'editar'])->name('destinatarios.edit');
+Route::middleware(['auth:sanctum', 'verified'])->middleware('can:compras')->post('destinatarios/store/{id}',[DestinatariosController::class, 'almacenar'])->name('destinatarios.store');
 //Route::get('generate-excel/{id}', [ExcelController::class, 'generateExcel'])->name('generarExcel');
 Route::middleware(['auth:sanctum', 'verified'])->middleware('can:informacion')->get('/Consultas',[InfoComprasController::class, 'costos'])->name('informacion');
 

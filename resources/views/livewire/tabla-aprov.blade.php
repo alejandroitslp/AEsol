@@ -27,7 +27,17 @@
                 <td class="w-1/9 text-left py-2 px-2 text-sm">{{$item->met_pago}}</td>
                 <td class="w-1/9 text-left py-2 px-2 text-sm">{{$item->requisita}}</td>
                 <td class="w-1/9 text-left py-2 px-2 text-sm">
-                    <a href="{{route('generarPDF', $item)}}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-6 mt-4 mb-3 py-0.2  sm:py-1 sm:px-1">PDF</a>
+                    <a href="{{route('generarPDF', $item->id)}}" class="inline-block bg-green-500 hover:bg-green-700 text-white font-bold  rounded   sm:py-1 sm:px-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z" clip-rule="evenodd" />
+                      </svg>
+                    </a>
+                    <a href="{{route('destinatarios.edit', $item->id)}}" class="inline-block bg-blue-300 hover:bg-blue-400 text-white font-bold  rounded   sm:py-1 sm:px-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 " viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                      </svg>
+                    </a>
                 </td>
                 <td class="w-1/9"> 
                     <input type="checkbox" id="cbox2" value="" wire:click="actApr2('{{ $item->foliocompra }}','{{ $item->autorizado }}')" {{$item->autorizado==true ? 'checked' : ''}} > <label for="cbox2">Aprobar</label>

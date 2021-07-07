@@ -1,7 +1,7 @@
 <x-app-layout>
     <div>
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8" ">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8" >
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg grid  lg:grid-cols-3 sm:grid-cols-2">
                 <div class="ml-14 mt-8 text-xs sm:text-base">
                     <form action="{{route('compras.store')}}" method="POST">

@@ -12,10 +12,4 @@ class DestinatariosController extends Controller
     {
         return view('DestinatariosMail.create', compact('id'));
     }
-    public function almacenar(Request $request, $id)
-    {
-        $email=$request->emailProv;
-        $asunto=$request->asuntomail;
-        return redirect()->route('enviarPDF', compact('id','email','asunto'));
-    }
 }

@@ -71,8 +71,11 @@ class PDFController extends Controller
         $request->validate([
             'emailProv'=>'required'
         ]);
-        $emailreq=$request->emailProv;
+        
+        $emailreq=explode(',',$request->emailProv);
         $asuntoreq=$request->asuntomail;
+        $msjvar=$request->msj;
+        
         $compra=Compra::find($id);
         $pdf1=$this->logicaCreacion($id);
         extract($pdf1);
@@ -84,7 +87,7 @@ class PDFController extends Controller
             $data["title"] = $asuntoreq;
         }
         $data["email"] = $emailreq;
-        
+        $data["bodymsj"] = $msjvar;
         
         
         

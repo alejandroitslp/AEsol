@@ -7,7 +7,12 @@
     <title>Email</title>
 </head>
 <body>
-    <h1>Orden de Compra generada desde ae-sol.net</h1>
-    <p>Esta es una orden de compra generada desde AE Solutions</p>
+    <h1>Orden de Compra generada desde ae-sol.net </h1>
+    @if ($bodymsj!=null)
+    <h2>{{$bodymsj}}</h2>
+    @endif
+    @if ($bodymsj==null)
+    <h2>Esta es una orden de compra generada desde AE Solutions</h2> 
+    @endif
 </body>
 </html>

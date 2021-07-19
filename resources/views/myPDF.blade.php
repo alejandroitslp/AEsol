@@ -85,6 +85,18 @@
             height: .4cm;
             width: 3.2cms;
         }
+        .stylepdatos2
+        {
+            display: inline-block;
+            background-color: white;
+            margin: 0;
+            color: black;
+            font-size:.26cm;
+            margin-left: .3cm;
+            margin-right: 0;
+            height: .4cm;
+            width: 3.2cms;
+        }
         .datosEmpContenedor{
             float: left;
             height: 2.7cm;
@@ -102,6 +114,10 @@
         .pdatos3{
             margin:0;
             font-size: .33cm;
+        }
+        .pdatos3alt{
+            margin:0;
+            font-size: .27cm;
         }
         .alineacionderecha{
             text-align: right;
@@ -217,7 +233,13 @@
                         <p class="stylepdatos" align="center" style="width: 2.7cm">{{$newfecha_emision}}</p><br>
                         <p class="stylepdatos" align="center" style="width: 2.7cm">{{$compra->cot_ref}}</p><br>
                         <p class="stylepdatos" align="center" style="width: 2.7cm">{{$newfecha_ref}}</p><br>
-                        <p class="stylepdatos" align="center" style="width: 2.7cm">{{$compra->cuenta_cargo}}</p><br>
+                        <p 
+                        @if (strlen($compra->cuenta_cargo)<10)
+                            class="stylepdatos"
+                        @else
+                            class="stylepdatos2"
+                        @endif
+                         align="center" style="width: 2.7cm">{{$compra->cuenta_cargo}}</p><br>
                         <p class="stylepdatos" align="center" style="width: 2.7cm">{{$newfecha_req}}</p>
                     </div>
                     <div class=" edivder" style="height: 2.4cm; width: 6cm; ">
@@ -263,22 +285,22 @@
                 </div>
                 <div class="edivizq" style="height:2.65cm ; width: 50% ; border: ridge; border-width: thin;">
                     @foreach ($proveedor as $item)
-                    <p class="pdatos3" style="margin-left:.2cm">{{$item->nombre_prov}}</p>
+                    <p class="pdatos3alt" style="margin-left:.2cm">{{$item->nombre_prov}}</p>
                     @if ($item->razon_social)
-                    <p class="pdatos3" style="margin-left:.2cm">{{$item->razon_social}} </p>
+                    <p class="pdatos3alt" style="margin-left:.2cm">{{$item->razon_social}} </p>
                     @endif
-                    <p class="pdatos3" style="margin-left:.2cm">{{$item->nombre_prov_suc}} 
+                    <p class="pdatos3alt" style="margin-left:.2cm">{{$item->nombre_prov_suc}} 
                         @if ($item->RFC!=null)
                         ,RFC: {{$item->RFC}}
                         @endif
                     </p>
-                    <p class="pdatos3" style="margin-left:.2cm">{{$item->dir_prov}}</p>
-                    <p class="pdatos3" style="margin-left:.2cm">{{$item->loc_prov}}, {{$item->edo_prov}} 
+                    <p class="pdatos3alt" style="margin-left:.2cm">{{$item->dir_prov}}</p>
+                    <p class="pdatos3alt" style="margin-left:.2cm">{{$item->loc_prov}}, {{$item->edo_prov}} 
                         @if ($item->cp_prov!=null)
                             ,CP: {{$item->cp_prov}}
                         @endif
                         </p>
-                    <p class="pdatos3" style="margin-left:.2cm">{{$item->telefono_prov}}</p>
+                    <p class="pdatos3alt" style="margin-left:.2cm">{{$item->telefono_prov}}</p>
                     @endforeach
                 </div>
             </div>

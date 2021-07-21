@@ -762,8 +762,8 @@
         
                <p><a href="mailto:contacto@ae-sol.net">contacto@ae-sol.net</a></p>
                <hr>
-               <p>Tel&eacutefono oficina matriz: <br>+52 (444) 353 2787</p><hr>
-        <p>Ventas, S.L.P: <br> +52 1 (444) 444 6028</p><hr>
+               <p>Tel&eacutefono oficina matriz: <br> (444) 353 2787</p><hr>
+        <p>Ventas, S.L.P: <br> (444) 444 6028</p><hr>
         <p></p>
         
                  

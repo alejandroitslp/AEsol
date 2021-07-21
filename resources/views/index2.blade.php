@@ -754,8 +754,8 @@
 
 			 <p><a href="mailto:contacto@ae-sol.net">contacto@ae-sol.net</a></p>
 			 <hr>
-			 <p>Office Phone: <br>+52 (444) 353 2787</p><hr>
-<p>San Luis Potos&iacute;­­, Sales Phone: <br> +52 1 (444) 444 6028</p><hr>
+			 <p>Office Phone: <br> (444) 353 2787</p><hr>
+<p>San Luis Potos&iacute;­­, Sales Phone: <br> (444) 444 6028</p><hr>
 
 
 			   

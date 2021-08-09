@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Automatización industrial; Programación de PLCs y robots; Instalaciones eléctricas; Fabricación de mesas de trabajo. Cobertura: Todo México y el extranjero.">
 
         <title>AE Solutions</title>
 
@@ -26,13 +27,13 @@
       <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 	  
       <!-- Icon fonts -->
-      <link href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-      <link href="fonts/flaticons/flaticon.css" rel="stylesheet" type="text/css">
+      {{-- <link href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+      <link href="fonts/flaticons/flaticon.css" rel="stylesheet" type="text/css"> --}}
 	  
       <!-- Google fonts -->
       <!--
       <link href='http://fonts.googleapis.com/css?family=Nunito:300,400,700' rel='stylesheet' type='text/css'>-->
-	  <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+	  <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
 
       <!-- Css Animations -->
       <link href="css/animate.css" rel="stylesheet" />
@@ -112,7 +113,7 @@
                        <div class="page-scroll">
                           <a class="navbar-brand" href="#page-top">
                   <!--Font Icon logo and text -->
-                             <img src="img/logw.jpg">
+                             <img id="logo" src="img/logw.png" alt="imagenlogo" class=" ">
                           </a>
                        </div>
                     </div>
@@ -386,7 +387,7 @@
                               </a>
                               </center>
                              
-                   <h6>Control de motores</h6>
+                    <h6>Control de motores</h6>
                           </div>
                           <div class="col-md-3 col-sm-6 res-margin" style="margin-bottom:50px">
                              <!-- Number 3 -->
@@ -396,7 +397,7 @@
                               </a>
                               </center>
                              
-                             <h6>Outsourcing</h6>
+                             {{-- <h6>Outsourcing</h6>
                           </div>
                           <div class="col-md-3 col-sm-6" style="margin-bottom:50px">
                              <!-- Number 4 -->
@@ -404,12 +405,11 @@
                                 <a href="#" data-toggle="modal" data-target="#myModal8">
                                 <img src="img/icono-08.png" class="img-responsive">
                               </a>
-                              </center>
+                              </center> --}}
                              
                    <h6>Soluci&oacute;n de problemas</h6>
                           </div>
-                       </div>
-                    </div>
+                       
         
         
         
@@ -425,6 +425,8 @@
                              
                    <h6>Armado de tableros el&eacute;ctricos</h6>
                           </div>
+                        </div>
+                      </div>
                           <div class="col-md-3 col-sm-6 res-margin">
                              <!-- Number 2 -->
                               <center>
@@ -615,7 +617,7 @@
             
           
           <!-- Section Offers -->
-          <section id="testimonials" class="home-section" style="background: url('img/fondo5.jpg') center fixed; min-height: 900px;height: auto;">
+          <section id="testimonials" class="home-section" style="background: url('img/fondo5.png') center fixed; min-height: 900px;height: auto;">
              <div class="col-lg-8 col-lg-offset-2">
                <!-- Section Heading -->
               <div class="section-heading">
@@ -762,8 +764,8 @@
         
                <p><a href="mailto:contacto@ae-sol.net">contacto@ae-sol.net</a></p>
                <hr>
-               <p>Tel&eacutefono oficina matriz: <br> (444) 353 2787</p><hr>
-        <p>Ventas, S.L.P: <br> (444) 444 6028</p><hr>
+               <p>Tel&eacutefono oficina matriz: <br> +52 (444) 353 2787</p><hr>
+        <p>Ventas, S.L.P: <br> +52 (444) 444 6028</p><hr>
         <p></p>
         
                  
@@ -776,6 +778,12 @@
                 <div id="contact_results"></div>
                 <div class="form-group">
                    <input type="text" name="name" class="form-control input-field" placeholder="Nombre" required>
+                </div>
+                <div class="form-group">
+                   <input type="text" name="organization" class="form-control input-field" placeholder="Empresa" required>
+                </div>
+                <div class="form-group">
+                   <input type="text" name="phone" class="form-control input-field" placeholder="Telefono" required>
                 </div>
                 <div class="form-group">
                    <input type="email" name="email" class="form-control input-field"  placeholder="Correo" required>
@@ -858,17 +866,22 @@
               <div class="row wow fadeInUp" data-wow-delay="0.2s">
                <div class="col-sm-6 col-md-4">
                <!-- Social Media icons -->  
-                
+                {{-- <a href="#contact">Contactanos</a>
+                <a>|</a>
+                <a href="{{route('privacy')}}">Aviso de privacidad</a> --}}
                </div>
                <!-- Bottom Credits -->
+               
                <div class="col-sm-6 col-md-offset-5 col-md-3 text-center">
-                <p>COPYRIGHT © 2016 AE Solutions</p>
-               </div>			 
+                 <p>COPYRIGHT © 2016 AE Solutions</p> 
+                </div>			 
               </div><!-- /row-->
              </div><!-- /container -->
              <!-- Go To Top Link -->
              <div class="page-scroll hidden-sm hidden-xs">
-              <a href="#page-top" class="back-to-top"><i class="fas fa-angle-up" ></i></a>
+              <a href="#page-top" class="back-to-top"><i class="fas fa-angle-up"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11l7-7 7 7M5 19l7-7 7 7" />
+              </svg></i></a>
              </div>
           </footer>
         

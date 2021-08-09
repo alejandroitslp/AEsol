@@ -11,6 +11,7 @@ use App\Http\Controllers\ProductoscomprasController;
 use App\Http\Controllers\EnviosController;
 use App\Http\Controllers\InfoComprasController;
 use App\Http\Controllers\PDFSnappyController;
+use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\UserController;
 use App\Models\Proveedor;
 
@@ -45,7 +46,7 @@ Route::middleware(['auth:sanctum', 'verified'])->middleware('can:envios')->resou
 Route::middleware(['auth:sanctum', 'verified'])->middleware('can:compras')->get('generate-pdf/{id}', [PDFController::class, 'generatePDF'])->name('generarPDF');
 Route::middleware(['auth:sanctum', 'verified'])->middleware('can:compras')->post('send-pdf/{id}', [PDFController::class, 'sendPDF'])->name('enviarPDF');
 Route::middleware(['auth:sanctum', 'verified'])->middleware('can:compras')->get('destinatarios/{id}',[DestinatariosController::class, 'editar'])->name('destinatarios.edit');
-
+Route::get('Privacidad',[PrivacyController::class, 'index'])->name('privacy');
 //Route::get('generate-excel/{id}', [ExcelController::class, 'generateExcel'])->name('generarExcel');
 Route::middleware(['auth:sanctum', 'verified'])->middleware('can:informacion')->get('/Consultas',[InfoComprasController::class, 'costos'])->name('informacion');
 

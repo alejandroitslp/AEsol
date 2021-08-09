@@ -23,10 +23,14 @@ $(document).ready(function () {
             //get input field values data to be sent to server
             post_data = {
                 'user_name': $('input[name=name]').val(),
+                'user_organization': $('input[name=organization]').val(),
+                'user_phone': $('input[name=phone]').val(),
                 'user_email': $('input[name=email]').val(),
                 'subject': $('input[name=subject]').val(),
                 'msg': $('textarea[name=message]').val()
             };
+
+            // alert(post_data);
 
             //Ajax post data to server
             $.post('php/sendmail.php', post_data, function (response) {
@@ -42,6 +46,7 @@ $(document).ready(function () {
                     $("#contact_form #contact_body").slideUp(); //hide form after success
                 }
                 $("#contact_form #contact_results").hide().html(output).slideDown();
+
             }, 'json');
         }
     });

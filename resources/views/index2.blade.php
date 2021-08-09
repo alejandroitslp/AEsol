@@ -6,7 +6,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <![endif]-->
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-      <meta name="description" content="">
+      <meta name="description" content="Automatización industrial; Programación de PLCs y robots; Instalaciones eléctricas; Fabricación de mesas de trabajo. Cobertura: Todo México y el extranjero.">
       <meta name="author" content="SUMA Web Diseño">
       <!-- Page title -->
       <title>AE-Solutions</title>
@@ -21,13 +21,13 @@
       <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 	  
       <!-- Icon fonts -->
-      <link href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-      <link href="fonts/flaticons/flaticon.css" rel="stylesheet" type="text/css">
+      {{-- <link href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+      <link href="fonts/flaticons/flaticon.css" rel="stylesheet" type="text/css"> --}}
 	  
       <!-- Google fonts -->
       <!--
       <link href='http://fonts.googleapis.com/css?family=Nunito:300,400,700' rel='stylesheet' type='text/css'>-->
-	  <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+	  <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
 
       <!-- Css Animations -->
       <link href="css/animate.css" rel="stylesheet" />
@@ -101,7 +101,7 @@
                <div class="page-scroll">
                   <a class="navbar-brand" href="#page-top">
 				  <!--Font Icon logo and text -->
-                     <img src="img/logw.jpg">
+                     <img id="logo" class="img-fluid img-thumbnail" src="img/logw.jpg" alt="imagenlogo">
                   </a>
                </div>
             </div>
@@ -377,7 +377,7 @@
                       </a>
                       </center>
                      
-                     <h6>Outsourcing</h6>
+                     {{-- <h6>Outsourcing</h6>
                   </div>
                   <div class="col-md-3 col-sm-6" style="margin-bottom:50px">
                      <!-- Number 4 -->
@@ -385,12 +385,11 @@
                       	<a href="#" data-toggle="modal" data-target="#myModal8">
                       	<img src="img/icono-08.png" class="img-responsive">
                       </a>
-                      </center>
+                      </center> --}}
                      
 					 <h6>Troubleshooting</h6>
                   </div>
-               </div>
-            </div>
+               
 
 
 
@@ -406,6 +405,8 @@
                      
 					 <h6>Electrical panels assembly</h6>
                   </div>
+               </div>
+            </div>
                   <div class="col-md-3 col-sm-6 res-margin">
                      <!-- Number 2 -->
                       <center>
@@ -754,8 +755,8 @@
 
 			 <p><a href="mailto:contacto@ae-sol.net">contacto@ae-sol.net</a></p>
 			 <hr>
-			 <p>Office Phone: <br> (444) 353 2787</p><hr>
-<p>San Luis Potos&iacute;­­, Sales Phone: <br> (444) 444 6028</p><hr>
+			 <p>Office Phone: <br> +52 (444) 353 2787</p><hr>
+<p>San Luis Potos&iacute;­­, Sales Phone: <br> +52 (444) 444 6028</p><hr>
 
 
 			   
@@ -769,6 +770,12 @@
 				<div class="form-group">
 				   <input type="text" name="name" class="form-control input-field" placeholder="Name" required>
 				</div>
+            <div class="form-group">
+               <input type="text" name="organization" class="form-control input-field" placeholder="Company" required>
+            </div>
+            <div class="form-group">
+               <input type="text" name="phone" class="form-control input-field" placeholder="Phone" required>
+            </div>
 				<div class="form-group">
 				   <input type="email" name="email" class="form-control input-field"  placeholder="E-Mail" required>
 				</div>

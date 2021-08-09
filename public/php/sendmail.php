@@ -3,12 +3,22 @@
 require './dump.class.php';
 
 $name = strip_tags($_POST['user_name']);
+$organization = strip_tags($_POST['user_organization']);
+$phone = strip_tags($_POST['user_phone']);
 $email = strip_tags($_POST['user_email']);
 $subject = strip_tags($_POST['subject']);
 $msg = strip_tags($_POST['msg']);
 
 if (strlen($name) < 2) {
     $error['name'] = "Por favor ingrese su nombre.";
+}
+
+if (strlen($organization) < 2) {
+    $error['name'] = "Por favor ingrese la empresa donde trabaja.";
+}
+
+if (strlen($phone) < 2) {
+    $error['name'] = "Por favor ingrese su telefono.";
 }
 
 if (!preg_match('/^[a-z0-9&\'\.\-_\+]+@[a-z0-9\-]+\.([a-z0-9\-]+\.)*+[a-z]{2}/is', $email)) {
@@ -26,6 +36,14 @@ if (!$error) {
     $mensaje = '<table>'
             .'<tr><td>'
             . '<strong>Nombre:</strong><br>'.$name
+            . '<td>'
+            . '</tr>'
+            .'<tr><td>'
+            . '<strong>Nombre empresa:</strong><br>'.$organization
+            . '<td>'
+            . '</tr>'
+            .'<tr><td>'
+            . '<strong>Telefono:</strong><br>'.$phone
             . '<td>'
             . '</tr>'
             .'<tr><td>'

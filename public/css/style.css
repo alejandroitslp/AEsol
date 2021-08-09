@@ -1651,7 +1651,7 @@ ul {font-size: 16px;}
 	
 	.social-media a i{margin:0px;}
 	
-    .navbar-custom ul.nav li a {font-size: 12px;}
+    .navbar-custom ul.nav li a {font-size: 9px;}
 	
     .wow {
         visibility: visible !important;
@@ -1762,6 +1762,12 @@ ul {font-size: 16px;}
 	.margin  {margin-bottom: 40px;}
 	
     #lightbox [class*="col-"] {margin-bottom: 10px;}
+	
+	#logo
+	{
+		width: 130px;
+		height: auto;
+	}
 }
 
 @media (min-width: 768px)
@@ -1775,16 +1781,35 @@ ul {font-size: 16px;}
 		border: solid;
 		border-radius: 8%;
 	}
+
+	
+	#logo
+	{
+		width: 150px;
+		height: auto;
+	}
+
+}
+@media(max-width: 900px) {
+	#policy{
+		height: 1200px;
+	}
+
+	.tamanoCuadroPoliticas{
+		height: 1100px;
+		border: solid;
+		border-radius: 8%;
+	}
 }
 
 /* max width 767px */
 @media (max-width: 767px) {
 	#policy{
-		height: 1600px;
+		height: 1700px;
 	}
 
 	.tamanoCuadroPoliticas{
-		height: 1500px;
+		height: 1550px;
 		border: solid;
 		border-radius: 8%;
 	}
@@ -1803,11 +1828,17 @@ ul {font-size: 16px;}
 	footer p,
 	footer .social-media {text-align: center;}	
 	
+	
+	#logo
+	{
+		width: 120px;
+		height: auto;
+	}
 }
 
 @media (max-width: 528px) {
 	#policy{
-		height: 2000px;
+		height: 2100px;
 	}
 
 	.tamanoCuadroPoliticas{
@@ -1815,11 +1846,25 @@ ul {font-size: 16px;}
 		border: solid;
 		border-radius: 8%;
 	}
+
+	#logo
+	{
+		width: 90px;
+		height: auto;
+	}
 }
 
 /* max width 480px */
 @media (max-width: 480px) {
+	#policy{
+		height: 2300px;
+	}
 
+	.tamanoCuadroPoliticas{
+		height: 2150px;
+		border: solid;
+		border-radius: 8%;
+	}
 
 	.nav-pills> li.active:after, .nav-pills> li.active:before {top: -48%;}
 	
@@ -1841,10 +1886,29 @@ ul {font-size: 16px;}
 	.nav-pills > li {float: none;}
 			
 }
+@media (max-width: 391px) {
+	#policy{
+		height: 3100px;
+	}
+
+	.tamanoCuadroPoliticas{
+		height: 2950px;
+		border: solid;
+		border-radius: 8%;
+	}
+}
 
 /* max width 320px */
 @media (max-width: 320px) {
+	#policy{
+		height: 3800px;
+	}
 
+	.tamanoCuadroPoliticas{
+		height: 3750px;
+		border: solid;
+		border-radius: 8%;
+	}
 	
 	.navbar-brand {font-size: 22px;}
 		

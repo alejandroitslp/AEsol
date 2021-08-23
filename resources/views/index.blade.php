@@ -127,7 +127,7 @@
                           <li><a href="#clientes">Clientes</a></li>
                           
                   
-                          <li><a href="#contact">Contacto</a></li>
+                          <li><a href="#contact">Contacto</a></li> 
                           <li><a href="#policy">Calidad</a></li>
         
         
@@ -471,10 +471,10 @@
           <!-- Section Ends-->
             
             <!-- Section About -->	
-          <section id="about" class="home-section" style="background-image: url('img/fondo1.png');">
-             <div class="col-lg-8 col-lg-offset-2">
+          <section id="about" class="home-section" style="background-image: url('img/fondo1.png');" >
+             <div class="col-lg-8 col-lg-offset-2" >
                <!-- Section Heading -->	
-              <div class="section-heading">
+              <div class="section-heading" >
                <h2>Nosotros</h2>
                
               </div>
@@ -688,45 +688,72 @@
           
           
           
-            <!--
+            {{-- Mancom Seccion --}}
           <section id="brands" class="home-section">
-             <div class="col-lg-8 col-lg-offset-2">
-             
-              <div class="section-heading">
-               <h2>Brands we work with</h2>
-               <hr>
+             <div class="col-lg-8 col-lg-offset-2" >
+              
+              <div class="section-heading" >
+               <h2 style="color: black">Distribuidor Autorizado </h2>
+              
+               <div class="res-margin">
+                <div class=" wow fadeInLeft">
+                   <a href="https://www.mencom.com/"><img width="250px"style="border-radius: 35px;" src="img/mencom1.png" alt="client" class="col-centered img-responsive"/></a>
+                </div>
+               </div>
+               <br style="margin-bottom: 5px">
+               <p style="color: black">Es una marca de conectividad industrial, ubicada
+                 en Oakwood, Georgia USA, con norma de calidad ISO 9001.
+               </p>
+               <p style="color: black">Productos:</p>
+               <br>
+               <div class="col-md-6" style="" >
+               <ul class="ul-mencom" style="text-align: left; ">
+                 <li>Cables y recept&aacute;culos</li>
+                 <li>Conectores de interfaz de panel</li>
+                 <li>Bloque de distribuci&oacute;n</li>
+                 <li>M&oacute;dulos de riel DIN</li>
+                 <li>Conectores rectangulares</li>
+                 <li>Conectores de v&aacute;lvula selenoide</li>
+                 <li>Soluciones en redes industriales</li>
+                 <div class="" style="margin-left: 20px; ">
+                  <ul>
+                    <li>Switches</li>
+                    <li>Secure Routers</li>
+                    <li>Media Converters</li>
+                    <li>Serial Device Servers</li>
+                    <li>Modbus Gateways</li>
+                    <li>Protocol Gateways</li>
+                  </ul>
+                </div>
+               </ul>
+               </div>
+               <div class="wow fadeInRight col-md-6  img-wrapper" style="float: right; margin-top: 15px">
+                <a href="https://www.mencom.com/"><img style="border-radius: 15%" width="300px" height="auto" src="img/mencom3.jpeg" alt="client" class="col-centered img-responsive"/></a>
+                </div>
               </div>
              </div>
-             <div class="container text-center">
+             <div class="container text-center " style="background: rgb(255, 255, 1); background: radial-gradient(circle, rgba(234,235,240,1) 0%, rgba(255,255,255,1) 100%); border-radius: 30px;">
                 <div class="row">
             
-             <div class="col-sm-6 col-md-3 res-margin">
-              <div class="well well-sm wow fadeInLeft">
-                 <a href="#"><img src="img/client1.png" alt="client" class="col-centered img-responsive"/></a>
-              </div>
-             </div>
              
-             <div class="col-sm-6 col-md-3 res-margin">
-              <div class="well well-sm wow fadeInLeft">
-                 <a href="#"><img src="img/client2.png" alt="client" class="col-centered img-responsive"/></a>
+             
+             <div class="col-sm-6 col-md-12 res-margin" style="margin-top: 30px">
+              <div class="wow fadeInLeft">
+                 <img style="border-radius: 2%;" src="img/mencom2.jpeg" alt="client" class="col-centered img-responsive"/>
               </div>
              </div>
             
-             <div class="col-sm-6 col-md-3 res-margin">
-              <div class="well well-sm wow fadeInRight">
-                 <a href="#"><img src="img/client3.png" alt="client" class="col-centered img-responsive"/></a>
+             {{-- <div class="col-sm-6 col-md-3">
+              <div class="wow fadeInRight">
+                 <a href="#"><img src="img/mencom4.jpeg" alt="client" class="col-centered img-responsive"/></a>
               </div>
-             </div>
-            
-             <div class="col-sm-6 col-md-3">
-              <div class="well well-sm wow fadeInRight">
-                 <a href="#"><img src="img/client4.png" alt="client" class="col-centered img-responsive"/></a>
-              </div>
-              </div>
+              </div> --}}
             </div>  
              </div>
+            
           </section>
-        -->
+        
+          {{-- Mancom Seccion fin --}}
              
           <!-- Section Contact -->
           <section id="contact" class="home-section">
@@ -793,6 +820,10 @@
                 </div>
                 <div class="form-group">
                    <textarea name="message" id="message" class="textarea-field form-control" rows="4" placeholder="Informaci&oacute;n" required></textarea>
+                </div>
+                <div class="form-check">
+                  <input id="privacy" type="checkbox" name="privacy" class="checkbox-field form-check-input" value="Bike">
+                  <label class="form-check-label" for="privacy">He le&iacute;do y estoy de acuerdo con los <a href="{{route('privacy')}}">t&eacute;rminos de privacidad</a></label>
                 </div>
                 <div class="form-group">
                    <button type="submit" id="submit_btn" value="Submit" class="btn btn-default pull-right">Enviar</button>
@@ -866,9 +897,7 @@
               <div class="row wow fadeInUp" data-wow-delay="0.2s">
                <div class="col-sm-6 col-md-4">
                <!-- Social Media icons -->  
-                {{-- <a href="#contact">Contactanos</a>
-                <a>|</a>
-                <a href="{{route('privacy')}}">Aviso de privacidad</a> --}}
+                <a href="{{route('privacy')}}">Aviso de privacidad</a> 
                </div>
                <!-- Bottom Credits -->
                

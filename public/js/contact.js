@@ -2,9 +2,17 @@ $(document).ready(function () {
     $("#submit_btn").click(function () {
 
         var proceed = true;
+        if ($('#privacy').is(":checked"))
+        {
+            varprivacy=true;
+        }
+        else{
+            varprivacy=false;
+        }
+            
         //simple validation at client's end
         //loop through each field and we simply change border color to red for invalid fields		
-        $("#contact_form input[required], #contact_form textarea[required]").each(function () {
+        $("#contact_form input[required], #contact_form textarea[required], #contact_form checkbox[required]").each(function () {
             $(this).css('background-color', '');
             if (!$.trim($(this).val())) { //if this field is empty 
                 $(this).css('background-color', '#FFDEDE'); //change border color to #FFDEDE   
@@ -27,7 +35,8 @@ $(document).ready(function () {
                 'user_phone': $('input[name=phone]').val(),
                 'user_email': $('input[name=email]').val(),
                 'subject': $('input[name=subject]').val(),
-                'msg': $('textarea[name=message]').val()
+                'msg': $('textarea[name=message]').val(),
+                'pvc': varprivacy,
             };
 
             // alert(post_data);

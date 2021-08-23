@@ -1212,8 +1212,11 @@ ul.slider-pagi {padding-left:0px;}
 ============================ */
 
 #brands {
-	margin-top:1000px;
-	background: url(../img/brandsbg.jpg) no-repeat;
+	margin-top:10px;
+
+	background-color: white;
+
+	 background: url(../img/fondo1.png) no-repeat;  
 	background-attachment:fixed;
 	background-position:bottom;
 	-webkit-background-size: cover;
@@ -1221,6 +1224,15 @@ ul.slider-pagi {padding-left:0px;}
 	-o-background-size: cover;
 	background-size: cover;
 	color:#fff;
+}
+.ul-mencom{
+	color: black;
+}
+.ul-mencom > li{
+		list-style: none;
+}
+.ul-mencom > li:before{
+	content: '✓';
 }
 
 .well:hover{

@@ -15,6 +15,7 @@
                     <p>Los datos personales que recabamos de usted, los utilizaremos para la respuesta a mensajes del
                        formulario de contacto y/o ingreso a herramienta web
                     </p>
+                    <p>Los datos recabados no se comparten con terceros, es uso exclusivo de AE Solutions</p>
                 </div>
                 <p class="text-2xl"><strong>¿Qué datos personales utilizaremos para estos fines? </strong></p>
                 <div class="ml-4 mt-4 mr-8 mb-2 text-justify">
@@ -109,7 +110,7 @@
                 <br>
                 <br>
                 <br>
-                @livewire('privacycheck')
+                
                 </div>
             </div>
         </div>

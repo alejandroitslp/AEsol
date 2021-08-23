@@ -690,45 +690,72 @@
 	
 	
 	
-    <!--
-	<section id="brands" class="home-section">
-	   <div class="col-lg-8 col-lg-offset-2">
-	   
-		  <div class="section-heading">
-			 <h2>Brands we work with</h2>
-			 <hr>
-		  </div>
-	   </div>
-	   <div class="container text-center">
-	   	 <div class="row">
-		
-		 <div class="col-sm-6 col-md-3 res-margin">
-			<div class="well well-sm wow fadeInLeft">
-			   <a href="#"><img src="img/client1.png" alt="client" class="col-centered img-responsive"/></a>
-			</div>
-		 </div>
-		 
-		 <div class="col-sm-6 col-md-3 res-margin">
-			<div class="well well-sm wow fadeInLeft">
-			   <a href="#"><img src="img/client2.png" alt="client" class="col-centered img-responsive"/></a>
-			</div>
-		 </div>
-		
-		 <div class="col-sm-6 col-md-3 res-margin">
-			<div class="well well-sm wow fadeInRight">
-			   <a href="#"><img src="img/client3.png" alt="client" class="col-centered img-responsive"/></a>
-			</div>
-		 </div>
-		
-		 <div class="col-sm-6 col-md-3">
-			<div class="well well-sm wow fadeInRight">
-			   <a href="#"><img src="img/client4.png" alt="client" class="col-centered img-responsive"/></a>
-			</div>
-		  </div>
-		</div>  
-	   </div>
-	</section>
--->
+   {{-- Mancom Seccion --}}
+   <section id="brands" class="home-section">
+      <div class="col-lg-8 col-lg-offset-2" >
+       
+       <div class="section-heading" >
+        <h2 style="color: black">Authorized Distributor</h2>
+       
+        <div class="res-margin">
+         <div class=" wow fadeInLeft">
+            <a href="https://www.mencom.com/"><img width="250px"style="border-radius: 35px;" src="img/mencom1.png" alt="client" class="col-centered img-responsive"/></a>
+         </div>
+        </div>
+        <br style="margin-bottom: 5px">
+        <p style="color: black">This is an industrial connectivity brand, located in Oakwood, Georgia USA, with ISO 9001 standard.
+
+        </p>
+        <p style="color: black">Products:</p>
+        <br>
+        <div class="col-md-6" style="" >
+        <ul class="ul-mencom" style="text-align: left; ">
+          <li>Molded cordsets receptacles</li>
+          <li>Panel interface connectors</li>
+          <li>Junctions blocks</li>
+          <li>T35 DIN-Rail connectors</li>
+          <li>Rectangular connectors</li>
+          <li>Solenoid valve connectors</li>
+          <li>Industrial networking solutions</li>
+          <div class="" style="margin-left: 20px; ">
+           <ul>
+             <li>Switches</li>
+             <li>Secure Routers</li>
+             <li>Media Converters</li>
+             <li>Serial Device Servers</li>
+             <li>Modbus Gateways</li>
+             <li>Protocol Gateways</li>
+           </ul>
+         </div>
+        </ul>
+        </div>
+        <div class="wow fadeInRight col-md-6  img-wrapper" style="float: right; margin-top: 15px">
+         <a href="https://www.mencom.com/"><img style="border-radius: 15%" width="300px" height="auto" src="img/mencom3.jpeg" alt="client" class="col-centered img-responsive"/></a>
+         </div>
+       </div>
+      </div>
+      <div class="container text-center " style="background: rgb(255, 255, 1); background: radial-gradient(circle, rgba(234,235,240,1) 0%, rgba(255,255,255,1) 100%); border-radius: 30px;">
+         <div class="row">
+     
+      
+      
+      <div class="col-sm-6 col-md-12 res-margin" style="margin-top: 30px">
+       <div class="wow fadeInLeft">
+          <img style="border-radius: 2%;" src="img/mencom2.jpeg" alt="client" class="col-centered img-responsive"/>
+       </div>
+      </div>
+     
+      {{-- <div class="col-sm-6 col-md-3">
+       <div class="wow fadeInRight">
+          <a href="#"><img src="img/mencom4.jpeg" alt="client" class="col-centered img-responsive"/></a>
+       </div>
+       </div> --}}
+     </div>  
+      </div>
+     
+   </section>
+ 
+   {{-- Mancom Seccion fin --}}
      
 	<!-- Section Contact -->
 	<section id="contact" class="home-section">
@@ -785,6 +812,10 @@
 				<div class="form-group">
 				   <textarea name="message" id="message" class="textarea-field form-control" rows="4" placeholder="Information" required></textarea>
 				</div>
+            <div class="form-check">
+               <input id="privacy" type="checkbox" name="privacy" class="checkbox-field form-check-input" required>
+               <label class="form-check-label" for="privacy">I agree to the <a href="{{route('privacy')}}">privacy terms and conditions</a></label>
+             </div>
 				<div class="form-group">
 				   <button type="submit" id="submit_btn" value="Submit" class="btn btn-default pull-right">Send</button>
 				</div>				
@@ -852,34 +883,26 @@
 	</section>
 			  
     <!-- Footer -->	
-	<footer>
-	   <div class="container">
-		  <div class="row wow fadeInUp" data-wow-delay="0.2s">
-			 <div class="col-sm-6 col-md-4">
-			 <!-- Social Media icons -->	
-				 <!--<ul class="social-media">
-				   <li>
-            <center>
-                  	<a href="http://www.facebook.com/pages/AESolutions/116445135184447" target="_blank"> <img src="img/fb.png" class="img-responsive" alt="Responsive image" style="margin-left: 40px;">
-                  	</a>
-                  	<a href="https://www.linkedin.com/company/ae-solutions" target="_blank"> <img src="img/in.png" class="img-responsive" alt="Responsive image" style="margin-left: 40px;">
-                      </center>
-                   </li>  
-				  
-				   
-				</ul> -->
-			 </div>
-			 <!-- Bottom Credits -->
-			 <div class="col-sm-6 col-md-offset-5 col-md-3 text-center">
-				<p>COPYRIGHT Â© 2016 AE Solutions</p>
-			 </div>			 
-		  </div><!-- /row-->
-	   </div><!-- /container -->
-	   <!-- Go To Top Link -->
-	   <div class="page-scroll hidden-sm hidden-xs">
-		  <a href="#page-top" class="back-to-top"><i class="fa fa-angle-up"></i></a>
-	   </div>
-	</footer>
+    <footer>
+      <div class="container">
+       <div class="row wow fadeInUp" data-wow-delay="0.2s">
+        <div class="col-sm-6 col-md-4">
+        <!-- Social Media icons -->  
+         <a href="{{route('privacy')}}">Privacy Terms and conditions</a> 
+        </div>
+        <!-- Bottom Credits -->
+        
+        <div class="col-sm-6 col-md-offset-5 col-md-3 text-center">
+          <p>COPYRIGHT © 2016 AE Solutions</p> 
+         </div>			 
+       </div><!-- /row-->
+      </div><!-- /container -->
+      <!-- Go To Top Link -->
+      <div class="page-scroll hidden-sm hidden-xs">
+       <a href="#page-top" class="back-to-top"><i class="fas fa-angle-up"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11l7-7 7 7M5 19l7-7 7 7" />
+       </svg></i></a>
+      </div>
 
 
 

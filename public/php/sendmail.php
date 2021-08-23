@@ -8,6 +8,7 @@ $phone = strip_tags($_POST['user_phone']);
 $email = strip_tags($_POST['user_email']);
 $subject = strip_tags($_POST['subject']);
 $msg = strip_tags($_POST['msg']);
+$pvc = strip_tags($_POST['pvc']);
 
 if (strlen($name) < 2) {
     $error['name'] = "Por favor ingrese su nombre.";
@@ -27,6 +28,9 @@ if (!preg_match('/^[a-z0-9&\'\.\-_\+]+@[a-z0-9\-]+\.([a-z0-9\-]+\.)*+[a-z]{2}/is
 
 if (strlen($msg) < 3) {
     $error['msg'] = "Por favor indique un mensaje.";
+}
+if ($pvc=="false") {
+    $error['msg'] = "Seleccione aceptar t&eacute;rminos de privacidad";
 }
 
 if (!$error) {
@@ -54,6 +58,10 @@ if (!$error) {
             . '<strong>Mensaje:</strong><br>'.$msg
             . '<td>'
             . '</tr>'
+            . '<tr><td>'
+            . '<strong>Acepto condiciones de privacidad:</strong><br>'.$pvc
+            . '<td>'
+            . '</tr>'
             . '</table>';
     $cabeceras = 'Content-type: text/html; \r\n From: ' . $email . "\r\n" .
             'Reply-To:' . $email . "\r\n" .
@@ -70,6 +78,7 @@ else {
     $response .= (isset($error['email'])) ? "<li class='error'>" . $error['email'] . "</li> \n" : null;
     $response .= (isset($error['subject'])) ? "<li class='error'>" . $error['subject'] . "</li> \n" : null;
     $response .= (isset($error['msg'])) ? "<li class='error'>" . $error['msg'] . "</li>" : null;
+    $response .= (isset($error['pvc'])) ? "<li class='error'>" . $error['pvc'] . "</li>" : null;
     $response .= '</ul>';
     
     echo json_encode(array('type' => 'error','text' => $response));

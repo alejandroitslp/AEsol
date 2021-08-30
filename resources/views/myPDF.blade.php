@@ -183,6 +183,9 @@
 
         <div class="header">
             {{-- Cabecera principal --}}
+            <div>
+                <h5 style="float: right; position: relative; margin-top: -1cm">F-09-02 Orden de Compra Rev.00</h5>
+            </div>
             <div class="cabecera" >
                 <div>
                     <h1 class="font">Orden de Compra</h1>
@@ -191,7 +194,7 @@
                     <img src="{{ public_path('img/LogoAe.jpg') }}" alt="AeSol" style="height: 1.5cm; width: 1.2cm; margin-left: 1cm">
                 </div>
                 <div>
-                    <h3>AE SOLUTIONS <br> 
+                    <h3>AE SOLUTIONS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br> 
                         Automation & Energy Solutions</h3>
                 </div>
             </div>

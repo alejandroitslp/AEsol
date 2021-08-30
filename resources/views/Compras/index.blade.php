@@ -26,7 +26,9 @@
                                     <th class="w-1/9 text-left py-3 px-4 uppercase font-semibold text-sm">Metodo de Pago</th>
                                     <th class="w-1/9 text-left py-3 px-4 uppercase font-semibold text-sm">Requisitó</th>
                                     <th class="w-1/9 text-left py-3 px-4 uppercase font-semibold text-sm">Botones</th>
+                                    @can('usuarios')
                                     <th class="w-1/9 text-left py-3 px-4 uppercase font-semibold text-sm">Autorizado</th>
+                                    @endcan
                                   </tr>
                                 </thead>
 
@@ -101,12 +103,13 @@
                                         
                                         @endforeach
                                     @endif
-                                    @if ($compra->autorizado==0&&$errPDF==false)
-                                    <td class="text-left py-3 px-4">
-                                        @livewire('aprobar-compras', ['compra'=>$compra])
-                                    </td>
-                                    @endif
-                                    
+                                    @can('usuarios')
+                                        @if ($compra->autorizado==0&&$errPDF==false)
+                                        <td class="text-left py-3 px-4">
+                                            @livewire('aprobar-compras', ['compra'=>$compra])
+                                        </td>
+                                        @endif
+                                    @endcan
                                     @endforeach
                                   </tr>
                                 </tbody>

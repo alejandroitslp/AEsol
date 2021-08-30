@@ -472,7 +472,7 @@ ul.slider-pagi {padding-left:0px;}
   opacity: 0;
 }
 
-.slide__overlay path {opacity: 0.4;}
+.slide__overlay path {opacity: 0.7;}
 
 /* Slider Typography */
 
@@ -543,8 +543,11 @@ ul.slider-pagi {padding-left:0px;}
 }
 
 .slide:nth-child(4) .slide__bg {
-  left: -150%;
+  margin-top: 95px;
+  left: -160%;
   background-image: url(../img/slide4.jpg);
+  background-repeat: no-repeat;
+  background-size: 70%;
 }
 
 /*===========================
@@ -1897,6 +1900,7 @@ ul {font-size: 16px;}
 	
 	.nav-pills > li {float: none;}
 			
+	
 }
 @media (max-width: 391px) {
 	#policy{
@@ -1954,4 +1958,5 @@ ul {font-size: 16px;}
     color: #a94442;
     background-color: #f2dede;
     border-color: #ebccd1;
+
 }

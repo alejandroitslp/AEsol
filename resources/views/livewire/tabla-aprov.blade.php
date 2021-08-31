@@ -2,28 +2,60 @@
     <div class="shadow overflow-hidden rounded border-b border-gray-200">
         <input class="appearance-none bg-white-200 border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Buscar por Descripcion" aria-label="Descripcion" wire:model="searchDesc">
     {{-- The Master doesn't talk, he acts. --}}
-    <table class="min-w-full bg-white" cellspacing="10">
+    <table class="min-w-full bg-white " cellspacing="10">
         <thead class="bg-blue-400 text-white">
             <tr class="">
                 <th class="w-1/9 text-left py-3 px-4 uppercase font-semibold text-sm">Folio</th>
                 <th class="w-1/9 text-left py-3 px-4 uppercase font-semibold text-sm">Fecha de emision</th>
                 <th class="w-1/9 text-left py-3 px-4 uppercase font-semibold text-sm">Descripcion</th>
                 <th class="w-1/9 text-left py-3 px-4 uppercase font-semibold text-sm">Fecha requerida</th>
-                <th class="w-1/9 text-left py-3 px-4 uppercase font-semibold text-sm">Cuenta cargo</th>
+                {{-- <th class="w-1/9 text-left py-3 px-4 uppercase font-semibold text-sm">Cuenta cargo</th> --}}
                 <th class="w-1/9 text-left py-3 px-4 uppercase font-semibold text-sm">Metodo de Pago</th>
                 <th class="w-1/9 text-left py-3 px-4 uppercase font-semibold text-sm">Requisitó</th>
                 <th class="w-1/9 text-left py-3 px-4 uppercase font-semibold text-sm">Botones</th>
+                @can('usuarios')
                 <th class="w-1/9 text-left py-3 px-4 uppercase font-semibold text-xs">Autorizado</th>
+                @endcan
+                {{-- <th class="w-1/9 text-left py-3 px-4 uppercase font-semibold text-xs">Estado</th> --}}
               </tr>
         </thead>
-        @foreach ($aproData as $item)
         <tbody class="text-gray-700">
+        @foreach ($aproData as $item)
+        
             <tr class="text-center" >
-                <td class="w-1/9 text-left py-2 px-2 text-sm">{{$item->foliocompra}}</td>
+                <td class="w-1/9 text-left py-2 px-2 text-sm text-white"><div  x-data="{ open: false }"><button class="rounded focus:outline-none focus:ring " @click="open = true" style="background-color:
+                    @php
+                    $colorCelda='';
+                        foreach ($estado as $itemStatus) {
+                            if (($item->foliocompra==$itemStatus->folio)&&($itemStatus->estado=='pendiente')) {
+                            $colorCelda='#ECCF00';
+                            break;
+                            }
+                            else if(($item->foliocompra==$itemStatus->folio)&&($itemStatus->estado=='cancelado')){
+                            $colorCelda='#EB3030';
+                            break;
+                            } 
+                            else if(($item->foliocompra==$itemStatus->folio)&&($itemStatus->estado=='entregado')){
+                            $colorCelda='#31AEFF';
+                            break;
+                            }
+                            else
+                            {
+                                $colorCelda='#566573';
+                            }
+                        }
+                    @endphp
+                {{$colorCelda}}"><strong> {{$item->foliocompra}}</strong></button>
+                    <ul x-show="open" @click.away="open = false">
+                        <li class="text-center mt-2"><button class='bg-blue-300 hover:bg-blue-400 active:bg-blue-700 text-white font-bold rounded content-center focus:outline-none focus:ring focus:border-blue-300' wire:click="entregado('{{ $item->foliocompra }}')">Entregado</button></li>
+                        <li class="text-center mt-2"><button class='bg-yellow-300 hover:bg-yellow-400 text-white font-bold rounded focus:outline-none focus:ring' wire:click="pendiente('{{ $item->foliocompra }}')">Pendiente</button></li>
+                        <li class="text-center mt-2"><button class='bg-red-500 hover:bg-red-800 text-white font-bold rounded focus:outline-none focus:ring      ' wire:click="cancelar('{{ $item->foliocompra }}')">Cancelar</button></li>
+                    </ul>
+                </div></td> 
                 <td class="w-1/9 text-left py-2 px-2 text-sm">{{$item->fecha_emision}}</td>
                 <td class="w-1/9 text-left py-2 px-2 text-sm">{{$item->desc_orden}}</td>
                 <td class="w-1/9 text-left py-2 px-2 text-sm">{{$item->fecha_req}}</td>
-                <td class="w-1/9 text-left py-2 px-2 text-sm">{{$item->cuenta_cargo}}</td>
+                {{-- <td class="w-1/9 text-left py-2 px-2 text-sm">{{$item->cuenta_cargo}}</td> --}}
                 <td class="w-1/9 text-left py-2 px-2 text-sm">{{$item->met_pago}}</td>
                 <td class="w-1/9 text-left py-2 px-2 text-sm">{{$item->requisita}}</td>
                 <td class="w-1/9 text-left py-2 px-2 text-sm">
@@ -39,12 +71,17 @@
                       </svg>
                     </a>
                 </td>
+                @can('usuarios')
                 <td class="w-1/9"> 
                     <input type="checkbox" id="cbox2" value="" wire:click="actApr2('{{ $item->foliocompra }}','{{ $item->autorizado }}')" {{$item->autorizado==true ? 'checked' : ''}} > <label for="cbox2">Aprobar</label>
                 </td>
+                @endcan
+                {{-- <td>
+                    <input class="bg-red-500 text-white font-bold rounded-t px-4 py-2" wire:click="cancelar('{{ $item->foliocompra }}')" type="button" value="Cancelar" >
+                </td> --}}
             </tr>
-        </tbody>
         @endforeach
+    </tbody>
     </table>
     <div>
         @if ($aproData)

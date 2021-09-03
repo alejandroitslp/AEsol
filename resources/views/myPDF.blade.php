@@ -406,7 +406,20 @@
                             <td align="center">{{$contador=$contador+1}}</td>
                             <td align="center">{{$item2->codigo}}</td>
                             <td align="center">{{$item2->nombre}}</td>
-                            <td align="center">{{$item2->cantidad}}{{$item2->medida}}</td>
+                            <td align="center">
+                                @php
+                                    if ($item2->medida=='kgs') {
+                                        $cantidadval=number_format($item2->cantidad,3);
+                                    }
+                                    else if($item2->medida=='mts'|| $item2->medida=='hrs')
+                                    {
+                                        $cantidadval=number_format($item2->cantidad,2);;
+                                    }
+                                    else {
+                                        $cantidadval=number_format($item2->cantidad,0);
+                                    }
+                                @endphp
+                                {{$cantidadval}} {{$item2->medida}}</td>
                             <td align="center">${{$var2}}</td>
                             <td align="center">${{$var4}}</td>
                                 @php

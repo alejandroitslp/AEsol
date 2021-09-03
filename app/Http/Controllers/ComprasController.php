@@ -181,10 +181,12 @@ class ComprasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Compra $compra)
+    public function destroy($id)
     {
         //
+        $compra=Compra::where('id',$id)->first();
         $compra->delete();
+        
         return redirect()->route('compras.index');
     }
     

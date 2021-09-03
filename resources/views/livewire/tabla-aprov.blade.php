@@ -23,7 +23,7 @@
         @foreach ($aproData as $item)
         
             <tr class="text-center" >
-                <td class="w-1/8 text-left py-2 px-2 text-sm text-white"><div  x-data="{ open: false }"><button class="rounded focus:outline-none focus:ring " @click="open = true" style="background-color:
+                <td class="w-1/8 text-left py-2 px-2 text-sm text-white"><div x-data="{ open: false }"><button class="rounded focus:outline-none focus:ring " x-on:click="open = !open" x-transition style="background-color:
                     @php
                     $colorCelda='';
                         foreach ($estado as $itemStatus) {
@@ -46,7 +46,8 @@
                         }
                     @endphp
                 {{$colorCelda}}"><strong> {{$item->foliocompra}}</strong></button>
-                    <ul x-show="open" @click.away="open = false">
+                <div>
+                    <ul x-show="open" @click.away="open = false" >
                         <li class="text-center mt-2"><button class='bg-blue-300 hover:bg-blue-400 active:bg-blue-700 text-white font-bold rounded content-center focus:outline-none focus:ring focus:border-blue-300' wire:click="entregado('{{ $item->foliocompra }}')">Entregado</button></li>
                         <li class="text-center mt-2"><button class='bg-yellow-300 hover:bg-yellow-400 text-white font-bold rounded focus:outline-none focus:ring' wire:click="pendiente('{{ $item->foliocompra }}')">Pendiente</button></li>
                         <li class="text-center mt-2"><button class='bg-red-500 hover:bg-red-800 text-white font-bold rounded focus:outline-none focus:ring      ' wire:click="cancelar('{{ $item->foliocompra }}')">Cancelar</button></li>

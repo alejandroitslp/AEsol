@@ -331,19 +331,19 @@
                 <table>
                     <tr>
                         <th align="right">SUBTOTAL</th>
-                        <td align="right" style="width:2cm;">${{$compra->precio_total}}</td>
+                        <td align="right" style="width:2cm;">${{number_format($compra->precio_total,2)}}</td>
 
                     <tr>
                         <th align="right">IMPUESTO</th>
-                        <td align="right" style="">${{$compra->impuesto}}</td>
+                        <td align="right" style="">${{number_format($compra->impuesto,2)}}</td>
                     </tr>
                     <tr>
                         <th align="right">OTRO</th>
-                        <td align="right" >${{$compra->descuento}}</td>
+                        <td align="right" >${{number_format($compra->descuento,2)}}</td>
                     </tr>
                     <tr>
                         <th align="right">TOTAL</th>
-                        <td align="right" style="">${{$compra->p_total_c_imp}}</td>
+                        <td align="right" style="">${{number_format($compra->p_total_c_imp,2)}}</td>
                     </tr>
                 </table>
             </div>
@@ -405,7 +405,15 @@
                                 @endphp
                             <td align="center">{{$contador=$contador+1}}</td>
                             <td align="center">{{$item2->codigo}}</td>
-                            <td align="center">{{$item2->nombre}}</td>
+                            @php
+                                if((strlen($item2->nombre))>50){
+                                    $estiloNombre='pdatos3alt';
+                                }
+                                else {
+                                    $estiloNombre="";
+                                }
+                            @endphp
+                            <td align="center" class="{{$estiloNombre}}">{{$item2->nombre}}</td>
                             <td align="center">
                                 @php
                                     if ($item2->medida=='kgs') {

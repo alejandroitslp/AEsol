@@ -81,14 +81,16 @@
                                               </a>
                                             </div>
                                             <div class="inline-block"  >
-                                                <form class="destruir" action="{{route('compras.destroy', $compra->id)}}" method="POST">
+                                                <form class="destruir" 
+                                                action="" 
+                                                method="POST">
                                                     @csrf
                                                     @method('delete')
-                                                    <button type="submit" style="display: none">
-                                                        {{-- Boton invisible para enviar el formulario por POST, el boton debajo sirve para enviar los datos a la funcion en js --}}
-                                                    </button>
+                                                    {{--<button type="submit" style="display: none">
+                                                         Boton invisible para enviar el formulario por POST, el boton debajo sirve para enviar los datos a la funcion en js 
+                                                    </button>--}}
                                                 </form>
-                                                <button id="destroyFolio" onclick="destroyFolio({{$compra->id}})" type="submit" class="w-7 bg-red-500 hover:bg-red-700 text-white font-bold  rounded ">
+                                                <button onclick="destroyFolio({{$compra->id}})" type="submit" class="w-7 bg-red-500 hover:bg-red-700 text-white font-bold  rounded ">
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                                       </svg>
@@ -153,7 +155,9 @@
 
     <script>
         var token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
         function destroyFolio(id){
+            
             Swal.fire({
             title: '¿Está seguro?',
             text: "Una vez eliminado, no podra revertir el proceso!",
@@ -164,6 +168,9 @@
             confirmButtonText: 'Si, eliminar!'
             }).then((result) => {
             if (result.isConfirmed) {
+                let idval=id;
+                var url = "{{route('compras.destroy', '')}}"+"/"+id;
+                $('.destruir').attr("action",url); 
                 $('.destruir').submit();
                 /* $.ajax({
                     type: 'POST',
@@ -184,6 +191,7 @@
             } 
             })
             }
+
  </script>
 @endpush
 </x-app-layout>

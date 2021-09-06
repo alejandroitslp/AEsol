@@ -187,8 +187,19 @@
                 <h5 style="float: right; position: relative; margin-top: -1cm">F-09-02 Orden de Compra Rev.00</h5>
             </div>
             <div class="cabecera" >
-                <div>
-                    <h1 class="font">Orden de Compra</h1>
+                <div><h1 class='font' style="color: 
+                        @php
+                        if ($compra->autorizado==1) {
+                            $autorizadovar="Orden de Compra";
+                            $colorautorizado="#0070C0"; 
+                        }
+                        else {
+                            $autorizadovar="No autorizado";
+                            $colorautorizado="red"; 
+                        }
+                        @endphp
+                        {{$colorautorizado}}">{{$autorizadovar}}
+                    </h1>
                 </div>
                 <div>
                     <img src="{{ public_path('img/LogoAe.jpg') }}" alt="AeSol" style="height: 1.5cm; width: 1.2cm; margin-left: 1cm">

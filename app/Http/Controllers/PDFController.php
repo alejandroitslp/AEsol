@@ -51,6 +51,25 @@ class PDFController extends Controller
 
     public function generatePDF($id)
     {
+        $sumaTotal=0;
+        $sumaParcial=0;
+        $impuesto=0;
+        $otros=0;
+        $records = Compra::where('id',$id)->first();
+        $folioforeign=$records->foliocompra;
+        $colProds=Productoscompra::where('folio',$folioforeign)->get();
+        foreach ($colProds as $colProd) {
+            if (($colProd->precio)>0) {
+                $sumaParcial=$sumaParcial+($colProd->cantidad*$colProd->precio);
+            }
+            if (($colProd->precio)<0) {
+                $otros=$otros+($colProd->cantidad*$colProd->precio);
+            }
+        }
+        $impuesto=$sumaParcial*0.16;
+        $sumaTotal=$sumaParcial+$impuesto+$otros;
+
+
         $pdf1=$this->logicaCreacion($id);
         extract($pdf1);
         $compra=Compra::find($id);

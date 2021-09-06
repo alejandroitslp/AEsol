@@ -68,7 +68,12 @@ class PDFController extends Controller
         }
         $impuesto=$sumaParcial*0.16;
         $sumaTotal=$sumaParcial+$impuesto+$otros;
-
+        $records->update([
+            'precio_total'=>$sumaParcial,
+            'impuesto'=>$impuesto,
+            'descuento'=>$otros,
+            'p_total_c_imp'=>$sumaTotal,
+        ]);
 
         $pdf1=$this->logicaCreacion($id);
         extract($pdf1);

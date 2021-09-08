@@ -45,6 +45,7 @@ Route::middleware(['auth:sanctum', 'verified'])->middleware('can:envios')->resou
 
 Route::middleware(['auth:sanctum', 'verified'])->middleware('can:compras')->get('generate-pdf/{id}', [PDFController::class, 'generatePDF'])->name('generarPDF');
 Route::middleware(['auth:sanctum', 'verified'])->middleware('can:compras')->post('send-pdf/{id}', [PDFController::class, 'sendPDF'])->name('enviarPDF');
+Route::middleware(['auth:sanctum', 'verified'])->middleware('can:compras')->get('send-pdf/Notfy/{id}', [PDFController::class, 'sendPDFNotification'])->name('notificacionPDF');
 Route::middleware(['auth:sanctum', 'verified'])->middleware('can:compras')->get('destinatarios/{id}',[DestinatariosController::class, 'editar'])->name('destinatarios.edit');
 Route::get('Privacidad',[PrivacyController::class, 'index'])->name('privacy');
 //Route::get('generate-excel/{id}', [ExcelController::class, 'generateExcel'])->name('generarExcel');

@@ -71,9 +71,11 @@ class ComprasController extends Controller
             $valor2=$request->folio;
             $valor3=$valor1.$valor2;
             
-            $fechaActual = Carbon::now(); 
-           
+            
+            
+            $fechaActual = Carbon::now();
 
+            try{
             $compra =Compra::create([
             'foliocompra'=> $valor3,
             'fecha_emision'=>$fechaActual,
@@ -94,7 +96,35 @@ class ComprasController extends Controller
             'comentarios'=>$request->comentarios,
             'id_envios'=>$request->envio,
             ]);
-
+            }
+            catch(\Illuminate\Database\QueryException $e){
+                if(($e->errorInfo[1])=='1062'){
+                    if(strlen($valor2)<=3)
+                    {   $consecutivo=0;
+                        $consecutivo=$valor2+1;
+                        return "<h1>Folio duplicado, tal vez quiera intentar el folio de compra consecutivo: </h1>".str_pad($consecutivo,3,'0',STR_PAD_LEFT)." ó el valor ".str_pad($valor2,3,'0',STR_PAD_LEFT)."-01".
+                        "<p> Una vez actualizado, el folio se reflejará como: <strong>".$valor1.str_pad($consecutivo,3,'0',STR_PAD_LEFT)."</strong> ó <strong>" .$valor1.str_pad($valor2,3,'0',STR_PAD_LEFT)."-01</strong>
+                        <p> Porfavor regrese a la pagina anterior para corregir el numero de folio, al regresar con el boton del navegador, sus cambios seguirán allí</p>";
+                    }
+                    else if(strlen($valor2)>3)
+                    {
+                        $rest=0;
+                        $consecutivo=0;
+                        $consecutivo1=0;
+                        $rest1=0;
+                        $rest=substr($valor2, strpos($valor2, "-")+1);
+                        $consecutivo=strtok($valor2,"-");
+                        $consecutivo1=$consecutivo+1;
+                        $rest1=$rest+1;
+                        return "
+                        <h1>Folio duplicado, talvez quiera intentar el folio de compra consecutivo: </h1>
+                        <p>".str_pad($consecutivo1,3,'0',STR_PAD_LEFT)." ó ".str_pad($consecutivo,3,'0',STR_PAD_LEFT)."-".str_pad($rest1,2,'0',STR_PAD_LEFT)."</p>
+                        <p> Una vez actualizado, el folio se reflejará como: <strong>".$valor1.str_pad($consecutivo1,3,'0',STR_PAD_LEFT)."</strong> ó <strong>" .$valor1.str_pad($consecutivo,3,'0',STR_PAD_LEFT)."-".str_pad($rest1,2,'0',STR_PAD_LEFT)."</strong>
+                        <p> Porfavor regrese a la pagina anterior para corregir el numero de folio, al regresar con el boton del navegador, sus cambios seguirán allí</p>";
+                    }
+                }
+                
+            }
             
             $compra1=Compra::where('foliocompra',$valor3)->first();
             return redirect()->route('compras.show', $compra1);

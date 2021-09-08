@@ -95,6 +95,11 @@
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                                       </svg>
                                                 </button>
+                                            </div>
+                                            <div class="inline-block">
+                                                <a onclick="notificar({{$compra->id}})"><svg xmlns="http://www.w3.org/2000/svg" class="py-1 px-1 h-7 w-7 rounded bg-yellow-500 hover:bg-yellow-700 text-white font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                                                  </svg></a>
                                             </div> 
                                         </td>
                                         @php
@@ -186,6 +191,29 @@
                 Swal.fire({
                     title:"Proceso Completado",
                     text: "Eliminado",
+                    icon:"success",
+                    });
+            } 
+            })
+            }
+
+            function notificar(id)
+            {
+                Swal.fire({
+            title: '¿Está seguro que desea enviar notificación para aprobación?',
+            text: "Una vez enviado, se notificará via email a Arturo Arevalo",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, notificar ahora!'
+            }).then((result) => {
+            if (result.isConfirmed) {
+                var url = "{{route('notificacionPDF', '')}}"+"/"+id;
+                location.href=url;
+                Swal.fire({
+                    title:"Proceso Completo",
+                    text: "Notificacion Enviada",
                     icon:"success",
                     });
             } 

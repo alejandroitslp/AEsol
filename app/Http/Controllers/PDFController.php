@@ -124,4 +124,24 @@ class PDFController extends Controller
         
         return redirect()->route('compras.index');
     }
+    public function sendPDFNotification($id)
+    {
+        $compra=Compra::find($id);
+        $pdf1=$this->logicaCreacion($id);
+        extract($pdf1);
+        $data["title"] = "Notificacion Orden de Compra con folio: '$compra->foliocompra'";
+        $data["email"] = "arturo.arevalo@ae-sol.net";
+        $data["bodymsj"] = "Se necesita aprobación para esta orden de compra.";
+        
+        
+        
+          Mail::send('email',$data, function ($message) use ($data, $pdf, $compra) {
+
+            $message->to($data["email"], $data["email"])
+                ->subject($data["title"])
+                ->attachData($pdf->output(), "".$compra->foliocompra .".pdf");
+            });
+        
+        return redirect()->route('compras.index');
+    }
 }

@@ -51,44 +51,14 @@ class PDFController extends Controller
 
     public function generatePDF($id)
     {
-        $sumaTotal=0;
-        $sumaParcial=0;
-        $impuesto=0;
-        $otros=0;
-        $records = Compra::where('id',$id)->first();
-        $folioforeign=$records->foliocompra;
-        $colProds=Productoscompra::where('folio',$folioforeign)->get();
-        foreach ($colProds as $colProd) {
-            if (($colProd->precio)>0) {
-                $sumaParcial=$sumaParcial+($colProd->cantidad*$colProd->precio);
-            }
-            if (($colProd->precio)<0) {
-                $otros=$otros+($colProd->cantidad*$colProd->precio);
-            }
-        }
-        $impuesto=$sumaParcial*0.16;
-        $sumaTotal=$sumaParcial+$impuesto+$otros;
-        $records->update([
-            'precio_total'=>$sumaParcial,
-            'impuesto'=>$impuesto,
-            'descuento'=>$otros,
-            'p_total_c_imp'=>$sumaTotal,
-        ]);
-
+        $compra=Compra::find($id);
+        $this->cotizar($compra);
         $pdf1=$this->logicaCreacion($id);
         extract($pdf1);
-        $compra=Compra::find($id);
+        
 
         return $pdf->download(''.$compra->foliocompra.'.pdf');
 
-        /* $data = [
-            'title' => 'Welcome to IT',
-            'date' => date('m/d/Y')
-        ];
-
-        $pdf = PDF::loadView('myPDF', $data);
-
-        return $pdf->download('IT.pdf'); */
     }
     public function sendPDF(Request $request, $id)
     {
@@ -127,10 +97,17 @@ class PDFController extends Controller
     public function sendPDFNotification($id)
     {
         $compra=Compra::find($id);
+        if($compra->autorizado==0)
+        {
+            $this->cotizar($compra);
+        }
+        else{}
+        
+
         $pdf1=$this->logicaCreacion($id);
         extract($pdf1);
         $data["title"] = "Notificacion Orden de Compra con folio: '$compra->foliocompra'";
-        $data["email"] = "arturo.arevalo@ae-sol.net";
+        $data["email"] = "alejandro.perez@ae-sol.net";
         $data["bodymsj"] = "Se necesita aprobación para esta orden de compra.";
         
         
@@ -143,5 +120,31 @@ class PDFController extends Controller
             });
         
         return redirect()->route('compras.index');
+    }
+
+    function cotizar($compra)
+    {
+        $sumaTotal=0;
+            $sumaParcial=0;
+            $impuesto=0;
+            $otros=0;
+            $folioforeign=$compra->foliocompra;
+            $colProds=Productoscompra::where('folio',$folioforeign)->get();
+            foreach ($colProds as $colProd) {
+                if (($colProd->precio)>0) {
+                    $sumaParcial=$sumaParcial+($colProd->cantidad*$colProd->precio);
+                }
+                if (($colProd->precio)<0) {
+                    $otros=$otros+($colProd->cantidad*$colProd->precio);
+                }
+            }
+            $impuesto=$sumaParcial*0.16;
+            $sumaTotal=$sumaParcial+$impuesto+$otros;
+            $compra->update([
+                'precio_total'=>$sumaParcial,
+                'impuesto'=>$impuesto,
+                'descuento'=>$otros,
+                'p_total_c_imp'=>$sumaTotal,
+            ]);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Compra;
 use App\Models\Productoscompra;
+use App\Models\Status;
 use Livewire\Component;
 
 class AprobarCompras extends Component
@@ -31,6 +32,7 @@ class AprobarCompras extends Component
         $record = Compra::where('foliocompra',$this->compra2)->first();
         $this->variableprueba=$record->autorizado;
         $colProds=Productoscompra::where('folio',$this->compra2)->get();
+        $status=Status::where('folio',$this->compra2)->first();
         foreach ($colProds as $colProd) {
             if (($colProd->precio)>0) {
                 $sumaParcial=$sumaParcial+($colProd->cantidad*$colProd->precio);
@@ -56,6 +58,14 @@ class AprobarCompras extends Component
                 'autorizado'=> false
             ]);
         }
+        if (!$status) {
+            Status::create([
+                'folio' => $this->compra2,
+                'estado' => 'pendiente',
+                'fecha' => null,
+            ]); 
+        }
+        else{}
         redirect()->route('compras.index');
     }
 }

@@ -19,7 +19,7 @@ class TablaAprov extends Component
 
     public function render()
     {
-
+        
         $aproData=Compra::where('autorizado', 1)->where('desc_orden','LIKE','%'.$this->searchDesc.'%')->orderBy('foliocompra','asc')->paginate(10);
         $estado=Status::all();
         $this->aproProd=Productoscompra::get();
@@ -29,6 +29,7 @@ class TablaAprov extends Component
     public function actApr2($foliocompra, $autorizado)
     {
         $record=Compra::where('foliocompra',$foliocompra)->first();
+        $status=Status::where('folio',$foliocompra)->first();
         if ($autorizado==false) {
             $record->update([
                 'autorizado'=> true,
@@ -39,16 +40,7 @@ class TablaAprov extends Component
                 'autorizado'=> false
             ]);
         
-        if ((Status::where('folio',$foliocompra)->first())!=null) {
-            
-        }
-        else{
-            Status::create([
-                'folio' => $foliocompra,
-                'estado' => 'pendiente',
-                'fecha' => null,
-            ]); 
-        }            
+                   
         }
         
      redirect()->route('compras.index');

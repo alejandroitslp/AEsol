@@ -12,6 +12,7 @@ use Livewire\WithPagination;
 class TablaAprov extends Component
 {
     public $searchDesc;
+    public $searchFolio;
     public $selectedState;
     protected $listeners=['entregadoMet','entregadoMetSP'];
 
@@ -21,7 +22,7 @@ class TablaAprov extends Component
     public function render()
     {
         
-        $aproData=Compra::where('autorizado', 1)->where('desc_orden','LIKE','%'.$this->searchDesc.'%')->orderBy('foliocompra','asc')->paginate(10);
+        $aproData=Compra::where('autorizado', 1)->where('desc_orden','LIKE','%'.$this->searchDesc.'%')->where('foliocompra','LIKE','%'.$this->searchFolio.'%')->orderBy('foliocompra','asc')->paginate(10);
         $estado=Status::all();
         $this->aproProd=Productoscompra::get();
         return view('livewire.tabla-aprov',compact('aproData', 'estado'));

@@ -59,18 +59,55 @@ class InfoCompras extends Component
         
         $comprasCurr=Compra::where('autorizado', 1)
                                 ->whereBetween('created_at', [$dateStart, $dateEnd])
-                                ->where('t_moneda', 'like', "Pes".'%')->get();
+                                ->where('t_moneda', 'like', "Pes".'%')
+                                ->where(function($q)
+                                {
+                                    $q->whereIn('foliocompra', function($q){
+                                        $q->select('folio')
+                                        ->from('status')
+                                        ->where('estado','!=','cancelado');
+                                    });
+                                })->get();
         $comprasCurrEsp=Compra::where('autorizado', 1)
                                 ->whereBetween('created_at', [$this->fechaIni, $this->fechaEnd])
-                                ->where('t_moneda', 'like', "Pes".'%')->get();
-        $provCompras=Compra::where('autorizado',1)->orderBy('prov_prod', 'asc')->get();
+                                ->where('t_moneda', 'like', "Pes".'%')->where(function($q)
+                                {
+                                    $q->whereIn('foliocompra', function($q){
+                                        $q->select('folio')
+                                        ->from('status')
+                                        ->where('estado','!=','cancelado');
+                                    });
+                                })->get();
+        $provCompras=Compra::where('autorizado',1)->orderBy('prov_prod', 'asc')->
+                            where(function($q)
+                            {
+                                $q->whereIn('foliocompra', function($q){
+                                    $q->select('folio')
+                                    ->from('status')
+                                    ->where('estado','!=','cancelado');
+                                });
+                            })->get();
         $relprovs=Proveedor::orderBy('id', 'asc')->get();
         $comprasProvs=Compra::where('prov_prod',$this->provComp)
-                                ->where('autorizado', 1)
+                                ->where('autorizado', 1)->where(function($q)
+                                {
+                                    $q->whereIn('foliocompra', function($q){
+                                        $q->select('folio')
+                                        ->from('status')
+                                        ->where('estado','!=','cancelado');
+                                    });
+                                })
                                 ->whereBetween('created_at', [$this->fechaIni2, $this->fechaEnd2])
                                 ->orderBy('created_at', 'asc')->get();
         $compraFolios=Compra::where('foliocompra','LIKE','%'.$this->search.'%')
-                                ->where('autorizado', 1)
+                                ->where('autorizado', 1)->where(function($q)
+                                {
+                                    $q->whereIn('foliocompra', function($q){
+                                        $q->select('folio')
+                                        ->from('status')
+                                        ->where('estado','!=','cancelado');
+                                    });
+                                })
                                 ->orderBy('foliocompra', 'asc')->paginate($varpag); 
         return view('livewire.info-compras', compact('comprasCurr','comprasCurrEsp','dateStart','dateEnd', 'provCompras', 'relprovs', 'comprasProvs','compraFolios'));
     }

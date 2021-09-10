@@ -13,6 +13,7 @@ class TablaAprov extends Component
 {
     public $searchDesc;
     public $selectedState;
+    protected $listeners=['entregadoMet','entregadoMetSP'];
 
     use WithPagination;
 
@@ -80,18 +81,42 @@ class TablaAprov extends Component
         
     }
 
-    public function entregado($foliocompra)
+    public function entregadoMet($id)
     {
-        if ((Status::where('folio',$foliocompra)->first())!=null) {
-            $record2=Status::where('folio',$foliocompra)->first();
+        $compra=Compra::where('id',$id)->first();
+        $foliocompra1=$compra->foliocompra;
+        $record2=Status::where('folio',$foliocompra1)->first();
+        if ($record2) {           
             $record2->update([
-                'estado'=> 'entregado']);
+                'estado'=> 'entregado',
+                'fecha' => Carbon::now()]);
         }
         else{
             Status::create([
-                'folio' => $foliocompra,
+                'folio' => $foliocompra1,
                 'estado' => 'entregado',
-                'fecha' => null,
+                'fecha' => Carbon::now(),
+            ]); 
+        }         
+        
+    }
+
+    public function entregadoMetSP($date, $id)
+    {
+        $fecha=substr($date, 0, -14);
+        $compra=Compra::where('id',$id)->first();
+        $foliocompra1=$compra->foliocompra;
+        $record2=Status::where('folio',$foliocompra1)->first();
+        if ($record2) {           
+            $record2->update([
+                'estado'=> 'entregado',
+                'fecha' => $fecha]);
+        }
+        else{
+            Status::create([
+                'folio' => $foliocompra1,
+                'estado' => 'entregado',
+                'fecha' => $fecha,
             ]); 
         }         
         

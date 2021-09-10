@@ -189,7 +189,7 @@
                 }); */
                 //location.reload(2);
                 Swal.fire({
-                    title:"Proceso Completado",
+                    title:"Proceso Completo",
                     text: "Eliminado",
                     icon:"success",
                     });
@@ -219,6 +219,8 @@
             } 
             })
             }
+
+            
 
  </script>
 @endpush

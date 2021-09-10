@@ -1,5 +1,6 @@
 <div class="px-0 md:px-32 w-5/3 py-8 md:w-full">
     <div class="shadow overflow-scroll md:overflow-hidden rounded border-b border-gray-200">
+        <input class="appearance-none bg-white-200 border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Buscar por Folio" aria-label="Folio" wire:model="searchFolio">
         <input class="appearance-none bg-white-200 border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Buscar por Descripcion" aria-label="Descripcion" wire:model="searchDesc">
     {{-- The Master doesn't talk, he acts. --}}
     <table class="min-w-full bg-white table-auto" cellspacing="10">
@@ -48,7 +49,7 @@
                 {{$colorCelda}}"><strong> {{$item->foliocompra}}</strong></button>
                 <div>
                     <ul x-show="open" @click.away="open = false" >
-                        <li class="text-center mt-2"><button class='bg-blue-300 hover:bg-blue-400 active:bg-blue-700 text-white font-bold rounded content-center focus:outline-none focus:ring focus:border-blue-300' wire:click="entregado('{{ $item->foliocompra }}')">Entregado</button></li>
+                        <li class="text-center mt-2"><button class='bg-blue-300 hover:bg-blue-400 active:bg-blue-700 text-white font-bold rounded content-center focus:outline-none focus:ring focus:border-blue-300' wire:click="$emit('entregado',{{ $item->id }})">Entregado</button></li>
                         <li class="text-center mt-2"><button class='bg-yellow-300 hover:bg-yellow-400 text-white font-bold rounded focus:outline-none focus:ring' wire:click="pendiente('{{ $item->foliocompra }}')">Pendiente</button></li>
                         <li class="text-center mt-2"><button class='bg-red-500 hover:bg-red-800 text-white font-bold rounded focus:outline-none focus:ring      ' wire:click="cancelar('{{ $item->foliocompra }}')">Cancelar</button></li>
                     </ul>
@@ -90,4 +91,51 @@
         @endif
     </div>
     </div>
+    @push('js')
+    <script>
+        Livewire.on('entregado', idCompra =>
+        {
+            Swal.fire({
+            title: 'Selecciona la fecha en la que se entregó',
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: 'Hoy',
+            denyButtonText: 'Otra Fecha',
+            customClass: {
+                actions: 'my-actions',
+                cancelButton: 'order-3 right-gap',
+                confirmButton: 'order-2',
+                denyButton: 'order-1',
+            }
+            }).then((result) => {
+            if (result.isConfirmed) {
+                Livewire.emitTo('tabla-aprov','entregadoMet',idCompra);
+                Swal.fire('Gracias!', '', 'success')
+            } else if (result.isDenied) {
+                Swal.fire({
+                title: 'Porfavor selecciona la fecha de entrega',
+                html: '<input class="swal2-input" id="expiry-date">',
+                stopKeydownPropagation: false,
+                preConfirm: () => {
+                    if (!flatpickrInstance.selectedDates[0]) {
+                    Swal.showValidationMessage(`No se introdujo una fecha`)
+                    }
+                    else{
+                        Livewire.emitTo('tabla-aprov','entregadoMetSP', flatpickrInstance.selectedDates[0], idCompra);
+                        Swal.fire(
+                        'Guardado, gracias!','','success'
+                    );
+                    }
+                },
+                willOpen: () => {
+                    flatpickrInstance = flatpickr(
+                    Swal.getPopup().querySelector('#expiry-date')
+                    )
+                }
+                })
+            }
+            })
+        });
+    </script>
+    @endpush
 </div>

@@ -105,19 +105,21 @@
                         <label>Coincidencias </label>
                         <br>
                         <br>
-                        <table >
+                        <table class="rounded-t-lg m-5 w-5/6 mx-auto bg-gray-800 text-gray-200">
                             <thead>
-                                <tr>
-                                    <td>Folio</td>
+                                <tr class="text-left border-b border-gray-300">
+                                    <td class="px-4 py-3">Folio</td>
+                                    <td class="px-4 py-3">Descripcion</td>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody >
                                 @foreach ($compraFolios as $compraFolio)
                                 @php
                                     $cuentaFolio=$cuentaFolio+$compraFolio->p_total_c_imp;
                                 @endphp
-                                <tr>
-                                    <td>{{$compraFolio->foliocompra}}</td>
+                                <tr class="bg-gray-700 border-b border-gray-600">
+                                    <td class="px-4 py-3">{{$compraFolio->foliocompra}}</td>
+                                    <td class="px-4 py-3">{{$compraFolio->desc_orden}}</td>
                                 </tr>
                                 @endforeach
                             </tbody>

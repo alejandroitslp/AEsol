@@ -25,7 +25,7 @@ class ComprasExport implements FromCollection, WithCustomStartCell, WithHeadings
     public $busqueda; 
     public $coincidencias;
     public $contador;
-    public $i;
+    public $i=1;
 
     
     public function __construct($busqueda,$coincidencias)
@@ -58,7 +58,8 @@ class ComprasExport implements FromCollection, WithCustomStartCell, WithHeadings
         // $coleccionDatos 
 
         return [
-            $coleccionDatos->id,
+            $this->i++,
+            // $coleccionDatos->id,
             $coleccionDatos->foliocompra,
             $coleccionDatos->fecha_emision,
             $coleccionDatos->desc_orden,
@@ -91,7 +92,7 @@ class ComprasExport implements FromCollection, WithCustomStartCell, WithHeadings
 
     public function headings() :array
     {
-        return ["id", "folio", "fecha de emision","descripcion","proveedor","precio total","responsable","embarque","tipo de moneda","metodo de pago","impuestos","descuento","precio total con impuesto","cotizacion referencia","fecha referencia","cuenta cargo","fecha requerido","requisitor","comentarios","envio","autorizado","creado","actualizado"];
+        return ["#", "folio", "fecha de emision","descripcion","proveedor","precio total","responsable","embarque","tipo de moneda","metodo de pago","impuestos","descuento","precio total con impuesto","cotizacion referencia","fecha referencia","cuenta cargo","fecha requerido","requisitor","comentarios","envio","autorizado","creado","actualizado"];
     }
 
     public function registerEvents(): array

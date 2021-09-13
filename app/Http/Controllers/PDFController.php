@@ -107,7 +107,7 @@ class PDFController extends Controller
         $pdf1=$this->logicaCreacion($id);
         extract($pdf1);
         $data["title"] = "Notificacion Orden de Compra con folio: '$compra->foliocompra'";
-        $data["email"] = "alejandro.perez@ae-sol.net";
+        $data["email"] = "arturo.arevalo@ae-sol.net";
         $data["bodymsj"] = "Se necesita aprobación para esta orden de compra.";
         
         

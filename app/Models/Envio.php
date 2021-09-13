@@ -23,4 +23,8 @@ class Envio extends Model
             'edo_envio',
             'telefono_envio',
     ];
+
+    public function compra(){
+        return $this->hasOne('App\Models\Compra','id_envios','id'); 
+    } 
 }

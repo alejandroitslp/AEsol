@@ -17,4 +17,7 @@ class ResponsableCompra extends Model
         'nombre_resp',
         'puesto',
     ];
+    public function compra(){
+        return $this->hasOne('App\Models\Compra','id_resp','id'); 
+    } 
 }

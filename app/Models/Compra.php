@@ -36,4 +36,14 @@ class Compra extends Model
         'autorizado',
     ];
 
+        public function proveedor(){
+            return $this->belongsTo('App\Models\Proveedor','prov_prod','id');
+        }
+        public function responsable(){
+            return $this->belongsTo('App\Models\ResponsableCompra','id_resp','id');
+        }
+        public function envio(){
+            return $this->belongsTo('App\Models\Envio','id_envios','id');
+        }
+    
 }

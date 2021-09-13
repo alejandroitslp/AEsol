@@ -9,7 +9,7 @@ class Proveedor extends Model
 {
     use HasFactory;
     protected $table = 'proveedores';
-    //se establece la llave primaria como cod_producto
+    
     protected $primaryKey='id';
 
     protected $fillable = 
@@ -25,4 +25,8 @@ class Proveedor extends Model
         'RFC',
         
     ];
+
+        public function compra(){
+            return $this->hasOne('App\Models\Compra','prov_prod','id'); 
+        } 
 }

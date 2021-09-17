@@ -20,4 +20,14 @@ class Status extends Model
         'estado',
         'fecha',
     ];
+
+    /**
+     * Get the user that owns the Status
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function compra()
+    {
+        return $this->belongsTo(Compra::class, 'folio', 'foliocompra');
+    }
 }

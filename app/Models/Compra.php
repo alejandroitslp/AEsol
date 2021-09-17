@@ -45,5 +45,8 @@ class Compra extends Model
         public function envio(){
             return $this->belongsTo('App\Models\Envio','id_envios','id');
         }
+        public function status(){
+            return $this->hasOne(Status::class,'folio','foliocompra');
+        }
     
 }

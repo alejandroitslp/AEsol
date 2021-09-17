@@ -53,13 +53,15 @@ class TablaAprov extends Component
         if ((Status::where('folio',$foliocompra)->first())!=null) {
             $record2=Status::where('folio',$foliocompra)->first();
             $record2->update([
-                'estado'=> 'cancelado']);
+                'estado'=> 'cancelado',
+                'fecha' => Carbon::now(),]);
+                
         }
         else{
             Status::create([
                 'folio' => $foliocompra,
                 'estado' => 'cancelado',
-                'fecha' => null,
+                'fecha' => Carbon::now(),
             ]); 
         }         
         
@@ -70,7 +72,8 @@ class TablaAprov extends Component
         if ((Status::where('folio',$foliocompra)->first())!=null) {
             $record2=Status::where('folio',$foliocompra)->first();
             $record2->update([
-                'estado'=> 'pendiente']);
+                'estado'=> 'pendiente',
+                'fecha' => null,]);
         }
         else{
             Status::create([

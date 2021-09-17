@@ -103,6 +103,11 @@
                         <label>Mostrar: </label>
                         <input type="text" wire:model="coincidences" class="w-32 rounded-lg h-7 p-1" placeholder="# Numero">
                         <label>Coincidencias </label>
+                        <div class="float-right mr-8">
+                        <button wire:click="entregado()" class="bg-blue-500 hover:bg-blue-700 text-white rounded px-1"><a>entregados</a></button>
+                        <button wire:click="pendiente()" class="bg-yellow-500 hover:bg-yellow-700 text-white rounded px-1"><a>pendientes</a></button>
+                        <button wire:click="cancelado()" class="bg-red-500 hover:bg-red-700 text-white rounded px-1"><a>cancelados</a></button>
+                        </div>
                         <br>
                         <br>
                         <table class="rounded-t-lg m-5 w-5/6 mx-auto bg-gray-800 text-gray-200">
@@ -120,6 +125,30 @@
                                 <tr class="bg-gray-700 border-b border-gray-600">
                                     <td class="px-4 py-3">{{$compraFolio->foliocompra}}</td>
                                     <td class="px-4 py-3">{{$compraFolio->desc_orden}}</td>
+                                    @if ($compraFolio->status->estado=='entregado')
+                                    @php
+                                        $newVariableDate1=strtotime($compraFolio->status->fecha);
+                                        $newVariableDate2=strtotime($compraFolio->fecha_req);
+                                        if ($newVariableDate1>=$newVariableDate2) {
+                                            $difDate=$newVariableDate1-$newVariableDate2;
+                                            $leyenda='dias despues';
+                                        }
+                                        else
+                                        {
+                                            $difDate=$newVariableDate2-$newVariableDate1;
+                                            $leyenda='dias antes';
+                                        }
+                                    @endphp
+                                    <td class="px-4 py-3">Se entreg&oacute; {{$difDate/(60*60*24)}} {{$leyenda}}</td>
+                                    @else
+                                        @if ($compraFolio->status->estado=='cancelado' && $compraFolio->status->fecha!=null)
+                                         @php
+                                          $fechaCancelado=date("d-m-Y",strtotime($compraFolio->status->fecha));   
+                                         @endphp
+                                        <td class="px-4 py-3">Se cancel&oacute; el dia {{$fechaCancelado}}</td>
+                                        @endif
+                                    @endif
+
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -129,7 +158,7 @@
                     <div class="inline-block">
                         <br><br>
                         <p>Total: ${{number_format($cuentaFolio,2,'.',',')}}</p>
-                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"  wire:click="export()">
+                        <button class="bg-blue-500 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"  wire:click="export()">
                             Exportar XLXS
                         </button>
                     </div>

@@ -25,26 +25,35 @@ class ComprasExport implements FromCollection, WithCustomStartCell, WithHeadings
     public $busqueda; 
     public $coincidencias;
     public $contador;
+    public $status;
     public $i=1;
 
     
-    public function __construct($busqueda,$coincidencias)
+    public function __construct($busqueda,$coincidencias,$status)
     {
         $this->busqueda=$busqueda;
         $this->coincidencias=$coincidencias;
+        $this->status=$status;
     }
     public function collection()
     {
         $coleccionDatos=Compra::where('foliocompra','LIKE','%'.$this->busqueda.'%')
         ->where('autorizado', 1)
         ->where(function($q)
-                {
-                    $q->whereIn('foliocompra', function($q){
+            {
+                $q->whereIn('foliocompra', function($q){
+                    if ($this->status==null) {
                         $q->select('folio')
                         ->from('status')
                         ->where('estado','!=','cancelado');
-                    });
-                })
+                    }
+                    else{
+                        $q->select('folio')
+                        ->from('status')
+                        ->where('estado',$this->status);
+                    }
+                });
+            })
         ->orderBy('foliocompra', 'asc')->paginate($this->coincidencias);
         
 
@@ -80,6 +89,8 @@ class ComprasExport implements FromCollection, WithCustomStartCell, WithHeadings
             $coleccionDatos->comentarios,
             $coleccionDatos->envio->dir_envio,
             $coleccionDatos->autorizado,
+            $coleccionDatos->status->estado,
+            $coleccionDatos->status->fecha,
             $coleccionDatos->created_at,
             $coleccionDatos->updated_at
         ];
@@ -92,16 +103,16 @@ class ComprasExport implements FromCollection, WithCustomStartCell, WithHeadings
 
     public function headings() :array
     {
-        return ["#", "folio", "fecha de emision","descripcion","proveedor","precio total","responsable","embarque","tipo de moneda","metodo de pago","impuestos","descuento","precio total con impuesto","cotizacion referencia","fecha referencia","cuenta cargo","fecha requerido","requisitor","comentarios","envio","autorizado","creado","actualizado"];
+        return ["#", "folio", "fecha de emision","descripcion","proveedor","precio total","responsable","embarque","tipo de moneda","metodo de pago","impuestos","descuento","precio total con impuesto","cotizacion referencia","fecha referencia","cuenta cargo","fecha requerido","requisitor","comentarios","envio","autorizado","estado","fecha de estado","creado","actualizado"];
     }
 
     public function registerEvents(): array
     {
         return [
             AfterSheet::class => function(AfterSheet $event) {
-                $cellRange='B2:W2';
+                $cellRange='B2:Z2';
                 $event->sheet->getDelegate()->toArray();
-                $event->sheet->getStyle('B2:X2')->applyFromArray([
+                $event->sheet->getStyle('B2:Z2')->applyFromArray([
                     'font' => [
                         'name' => 'Arial',
                         'size' => 14,
@@ -130,7 +141,7 @@ class ComprasExport implements FromCollection, WithCustomStartCell, WithHeadings
                         ],
                     ],
                 ];
-                $event->sheet->getStyle('B2:X'.($this->contador+2))->applyFromArray($styleArray);
+                $event->sheet->getStyle('B2:Z'.($this->contador+2))->applyFromArray($styleArray);
                 $event->sheet->getStyle('C'.($this->contador+5) .':D'.($this->contador+7))->applyFromArray($styleArray);
             }];
 

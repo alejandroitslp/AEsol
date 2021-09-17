@@ -22,6 +22,7 @@ class InfoCompras extends Component
     public $provComp;
     public $search;
     public $coincidences;
+    public $status;
     private $compraFolios;
     use WithPagination;
     public function render()
@@ -103,9 +104,16 @@ class InfoCompras extends Component
                                 ->where('autorizado', 1)->where(function($q)
                                 {
                                     $q->whereIn('foliocompra', function($q){
-                                        $q->select('folio')
-                                        ->from('status')
-                                        ->where('estado','!=','cancelado');
+                                        if ($this->status==null) {
+                                            $q->select('folio')
+                                            ->from('status')
+                                            ->where('estado','!=','cancelado');
+                                        }
+                                        else{
+                                            $q->select('folio')
+                                            ->from('status')
+                                            ->where('estado',$this->status);
+                                        }
                                     });
                                 })
                                 ->orderBy('foliocompra', 'asc')->paginate($varpag); 
@@ -113,6 +121,20 @@ class InfoCompras extends Component
     }
     public function export()
     {
-        return Excel::download(new ComprasExport($this->search, $this->coincidences),'OrdenesDeCompra.xlsx');
+        return Excel::download(new ComprasExport($this->search, $this->coincidences, $this->status),'OrdenesDeCompra.xlsx');
+    }
+
+    public function entregado()
+    {
+        $this->status='entregado';
+
+    }
+    public function pendiente()
+    {
+        $this->status='pendiente';
+    }
+    public function cancelado()
+    {
+        $this->status='cancelado';
     }
 }

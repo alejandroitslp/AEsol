@@ -184,8 +184,24 @@
 		   <ul class="slider-pagi"></ul>
 	   <!--Slider -->
 	   <div class="slider">
+         <!-- Slide 4-->
+        <div class="slide slide-0 active">
+         <div class="slide__bg"></div>
+         <div class="slide__content">
+          <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+             <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+          </svg>
+          <div class="slide__text">
+            <img src="img/visuales-08.png" class="img-responsive">
+             <div class="hidden-sm hidden-xs">
+              <p class="lead"> </p>
+              
+             </div>
+          </div>
+         </div>
+        </div>
 	   <!-- Slide 1 -->
-		  <div class="slide slide-0 active">
+		  <div class="slide slide-1">
 			 <div class="slide__bg"></div>
 			 <div class="slide__content">
 				<svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
@@ -202,7 +218,7 @@
 			 </div>
 		  </div>
 		 <!-- Slide 2 -->
-		  <div class="slide slide-1">
+		  <div class="slide slide-2">
 			 <div class="slide__bg"></div>
 			 <div class="slide__content">
 				<svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
@@ -218,7 +234,7 @@
 			 </div>
 		  </div>
 		  <!-- Slide 3-->
-		  <div class="slide slide-2">
+		  <div class="slide slide-3">
 			 <div class="slide__bg"></div>
 			 <div class="slide__content">
 				<svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
@@ -233,22 +249,7 @@
 				</div>
 			 </div>
 		  </div>
-        <!-- Slide 4-->
-        <div class="slide slide-3">
-         <div class="slide__bg"></div>
-         <div class="slide__content">
-          <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
-             <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
-          </svg>
-          <div class="slide__text">
-            <img src="img/visuales-08.png" class="img-responsive">
-             <div class="hidden-sm hidden-xs">
-              <p class="lead"> </p>
-              
-             </div>
-          </div>
-         </div>
-        </div>
+        
 		 
 	   </div>
 	</div>	
@@ -850,6 +851,8 @@
 
    <!-- Policy -->
    <section id="policy" class="home-section" >
+      <div style="position: relative; height: 500px; ">
+         <img src="img/slide4.jpg" alt="certificado iso 9001:2015" width="600px" class="img-responsive certificadoCalidad" style=" ">
 	   <div class="col-lg-8 col-lg-offset-2 cuadroTextoPoliticas tamanoCuadroPoliticas" >
 		  <div class="section-heading" >
            <br>

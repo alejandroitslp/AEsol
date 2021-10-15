@@ -6,8 +6,8 @@
     <table class="min-w-full bg-white table-auto" cellspacing="10">
         <thead class="bg-blue-400 text-white">
             <tr class="">
-                <th class="w-1/8 text-left py-3 px-4 uppercase font-semibold text-sm">Folio</th>
-                <th class="w-1/8 text-left py-3 px-4 uppercase font-semibold text-sm">Fecha de emision</th>
+                <th class="w-1/8 text-left py-3 px-4 uppercase font-semibold text-sm"><button wire:click="listarfolio()">Folio</button></th>
+                <th class="w-1/8 text-left py-3 px-4 uppercase font-semibold text-sm"><button wire:click="listarfecha()">Fecha de emision</button></th>
                 <th class="w-1/8 text-left py-3 px-4 uppercase font-semibold text-sm">Descripcion</th>
                 <th class="w-1/8 text-left py-3 px-4 uppercase font-semibold text-sm">Fecha requerida</th>
                 {{-- <th class="w-1/9 text-left py-3 px-4 uppercase font-semibold text-sm">Cuenta cargo</th> --}}

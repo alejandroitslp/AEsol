@@ -22,6 +22,7 @@
                                     <option value="LIMP.{{$vardate}}" {{old('tipo')=="LIMP."."$vardate" ? 'selected' : ''}}>Limpieza</option>
                                     <option value="PAPE.{{$vardate}}" {{old('tipo')=="PAPE."."$vardate" ? 'selected' : ''}}>Papeleria</option>
                                     <option value="SEG.{{$vardate}}" {{old('tipo')=="SEG."."$vardate" ? 'selected' : ''}}>Seguridad Industrial</option>
+                                    <option value="IT.{{$vardate}}" {{old('tipo')=="IT."."$vardate" ? 'selected' : ''}}>Tecnologias de Informacion</option>
                                     <option value="VEHIC.{{$vardate}}" {{old('tipo')=="VEHIC."."$vardate" ? 'selected' : ''}}>Vehiculos</option>
                                 </select>
                             </div>
@@ -86,7 +87,12 @@
                                     @php
                                         $counter=$counter+1;    
                                     @endphp
-                                    <option value="{{$responsable->id}}" {{old('resp')==$counter ? 'selected' : ''}}><p>{{$responsable->nombre_resp}} : {{$responsable->puesto}}</p></option>
+                                    @if ($responsable->id==1)
+                                        {{-- Se omite al responsable david badillo, no se elimina de bdd porque hay facturas con su nombre --}}
+                                    @else
+                                        <option value="{{$responsable->id}}" {{old('resp')==$counter ? 'selected' : ''}}><p>{{$responsable->nombre_resp}} : {{$responsable->puesto}}</p></option>
+                                    @endif
+                                    
                                 @endforeach
                             </select>
                         </div>

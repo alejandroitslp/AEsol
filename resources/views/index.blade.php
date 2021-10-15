@@ -202,10 +202,26 @@
                <ul class="slider-pagi"></ul>
              <!--Slider -->
              <div class="slider">
+               <!-- Slide 4-->
+              <div class="slide slide-0 active">
+                <div class="slide__bg"></div>
+                <div class="slide__content">
+                 <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+                    <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+                 </svg>
+                 <div class="slide__text">
+                   <img src="img/visuales-07.png" class="img-responsive">
+                    <div class="hidden-sm hidden-xs">
+                     <p class="lead"> </p>
+                     
+                    </div>
+                 </div>
+                </div>
+               </div>
              <!-- Slide 1 -->
               
         
-              <div class="slide slide-0 active">
+              <div class="slide slide-1">
                <div class="slide__bg"></div>
                <div class="slide__content">
                 <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
@@ -222,7 +238,7 @@
                </div>
               </div>
              <!-- Slide 2 -->
-              <div class="slide slide-1">
+              <div class="slide slide-2">
                <div class="slide__bg"></div>
                <div class="slide__content">
                 <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
@@ -238,7 +254,7 @@
                </div>
               </div>
               <!-- Slide 3-->
-              <div class="slide slide-2">
+              <div class="slide slide-3">
                <div class="slide__bg"></div>
                <div class="slide__content">
                 <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
@@ -253,22 +269,7 @@
                 </div>
                </div>
               </div>
-              <!-- Slide 4-->
-              <div class="slide slide-3">
-                <div class="slide__bg"></div>
-                <div class="slide__content">
-                 <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
-                    <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
-                 </svg>
-                 <div class="slide__text">
-                   <img src="img/visuales-07.png" class="img-responsive">
-                    <div class="hidden-sm hidden-xs">
-                     <p class="lead"> </p>
-                     
-                    </div>
-                 </div>
-                </div>
-               </div>
+              
              
              </div>
           </div>	
@@ -861,12 +862,15 @@
                 
            <!-- Policy -->
            <section id="policy" class="home-section">
-             <div class="col-lg-8 col-lg-offset-2 cuadroTextoPoliticas tamanoCuadroPoliticas"  >
-              <div class="section-heading" >
+            <div style="position: relative; height: 500px; ">
+            <img src="img/slide4.jpg" alt="certificado iso 9001:2015" width="600px" class="img-responsive certificadoCalidad" style=" ">
+             <div class="col-lg-8 col-lg-offset-2 cuadroTextoPoliticas tamanoCuadroPoliticas">
+             </div>
+              <div class="col-lg-8 col-lg-offset-2 section-heading tamanoTextoPoliticas" style="">
                    <br>
-               <h2>Politica de Calidad AE Solutions </h2>
+               <h2 style="text-align: center">Politica de Calidad AE Solutions </h2>
                   <br>
-                  <div class="paneltab tab-pane fade active in textoPoliticas" align="justify" style="margin-left: 30px; margin-right: 30px;">
+                  <div class="textoPoliticas" align="justify" style="margin-left: 30px; margin-right: 30px;">
                     <div class="row" style="float: left; height: 400px ">
                      <p style="color:white"><strong>AE Solutions:</strong> Organizaci&oacute;n dedicada a la Automatizaci&oacute;n Industrial 
                        ubicada en Calle I. Zaragoza 151, Col. Cuartel Aguilares, San Luis Potos&iacute;, M&eacute;xico, ha decidido implantar un 
@@ -896,15 +900,18 @@
                           de Calidad, de acuerdo con la realidad cambiante de la Compa&ntilde;&iacute;a y el mercado.</p></li>
                        <li style="color:white"><p style="color:white">La Calidad requiere de la participaci&oacute;n y colaboraci&oacute;n de todos 
                           por lo que esta Pol&iacute;tica es difundida a todo el personal de AE SOLUTIONS para su conocimiento y comprensi&oacute;n.</p></li>
-                    </Ul>
+                    </Ul> 
                     <br><br>
+                    
                     <p style="color:white">La presente politica es el marco para generar los objetivos de calidad de AE SOLUTIONS</p>
                     <br>
                     <p style="color:white">Para la aplicaci&oacute;n efectiva de estos principios, es absolutamente necesario el apoyo a los mismos tanto del equipo directivo como de la plantilla.</p>
+                      
                     </div>
                   </div>
               </div>
              </div>
+            </div>
           </section>
         
             <!-- Footer -->	

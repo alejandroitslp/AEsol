@@ -14,15 +14,16 @@ class TablaAprov extends Component
     public $searchDesc;
     public $searchFolio;
     public $selectedState;
+    public $boolorden=true;
+    public $switchLista = 'foliocompra';
+    public $orden = 'asc';
     protected $listeners=['entregadoMet','entregadoMetSP'];
 
     use WithPagination;
 
-
     public function render()
     {
-        
-        $aproData=Compra::where('autorizado', 1)->where('desc_orden','LIKE','%'.$this->searchDesc.'%')->where('foliocompra','LIKE','%'.$this->searchFolio.'%')->orderBy('foliocompra','asc')->paginate(10);
+        $aproData=Compra::where('autorizado', 1)->where('desc_orden','LIKE','%'.$this->searchDesc.'%')->where('foliocompra','LIKE','%'.$this->searchFolio.'%')->orderBy($this->switchLista,$this->orden)->paginate(10);
         $estado=Status::all();
         $this->aproProd=Productoscompra::get();
         return view('livewire.tabla-aprov',compact('aproData', 'estado'));
@@ -124,6 +125,34 @@ class TablaAprov extends Component
             ]); 
         }         
         
+    }
+    public function listarfecha()
+    {
+        $this->switchLista='created_at';
+        if($this->boolorden==true)
+        {
+            $this->orden='desc';
+            $this->boolorden=false;
+        }
+        else
+        {
+            $this->orden='asc';
+            $this->boolorden=true;
+        }
+    }
+    public function listarfolio()
+    {
+        $this->switchLista='foliocompra';
+        if($this->boolorden==true)
+        {
+            $this->orden='desc';
+            $this->boolorden=false;
+        }
+        else
+        {
+            $this->orden='asc';
+            $this->boolorden=true;
+        }
     }
 
 }

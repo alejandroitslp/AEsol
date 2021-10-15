@@ -65,6 +65,7 @@
                                         <option value="hrs" {{old('medida')=="hrs" ? 'selected' : ''}}>horas</option>
                                         <option value="mts" {{old('medida')=="mts" ? 'selected' : ''}}>metros</option>
                                         <option value="kgs" {{old('medida')=="kgs" ? 'selected' : ''}}>kilos</option>
+                                        <option value="lts" {{old('medida')=="lts" ? 'selected' : ''}}>litros</option>
                                         <option value="servicios" {{old('medida')=="servicios" ? 'selected' : ''}}>servicios</option>
                                     </select>
                                 </div>

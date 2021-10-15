@@ -510,8 +510,11 @@ ul.slider-pagi {padding-left:0px;}
 }
 
 .slide:nth-child(1) .slide__bg {
-  left: 0;
-  background-image: url(../img/slide1.jpg);
+  left: -10%;
+  margin-top: 120px;
+  background-image: url(../img/slide4.jpg);
+  background-repeat: no-repeat;
+  background-size: 70%;
 }
 
 /* slide2 */
@@ -522,7 +525,7 @@ ul.slider-pagi {padding-left:0px;}
 
 .slide:nth-child(2) .slide__bg {
   left: -50%;
-  background-image: url(../img/slide2.jpg);
+  background-image: url(../img/slide1.jpg);
 }
 
 /* slide3 */
@@ -533,7 +536,7 @@ ul.slider-pagi {padding-left:0px;}
 
 .slide:nth-child(3) .slide__bg {
   left: -100%;
-  background-image: url(../img/slide3.jpg);
+  background-image: url(../img/slide2.jpg);
 }
 
 /* slide4 */
@@ -544,10 +547,10 @@ ul.slider-pagi {padding-left:0px;}
 
 .slide:nth-child(4) .slide__bg {
   margin-top: 95px;
-  left: -160%;
-  background-image: url(../img/slide4.jpg);
+  left: -150%;
+  background-image: url(../img/slide3.jpg);
   background-repeat: no-repeat;
-  background-size: 70%;
+  
 }
 
 /*===========================
@@ -1270,7 +1273,7 @@ ul.slider-pagi {padding-left:0px;}
 
 .cuadroTextoPoliticas{
 	background-color: #004773;
-	opacity: 95%;
+	opacity: 75%;
 }
 
 .textoPoliticas > p{
@@ -1634,6 +1637,7 @@ ul {font-size: 16px;}
 	margin-left: -36px;
 }
 
+
 .centered-pills { text-align: center;}
 
 .centered-pills ul.nav-pills {display: inline-block;}
@@ -1641,6 +1645,14 @@ ul {font-size: 16px;}
 .centered-pills li {display: inline;}
 
 * html .centered-pills ul.nav-pills, *+html .centered-pills ul.nav-pills {display: inline;}
+
+.certificadoCalidad{
+	position: absolute; 
+	margin-left:28% ; 
+	margin-right:72%; 
+	z-index: 0; 
+	margin-top: 100px;
+}
 
 /*===========================
   Media Queries
@@ -1783,7 +1795,10 @@ ul {font-size: 16px;}
 		width: 130px;
 		height: auto;
 	}
+	
+	
 }
+
 
 @media (min-width: 768px)
 {
@@ -1797,7 +1812,11 @@ ul {font-size: 16px;}
 		border-radius: 8%;
 	}
 
-	
+	.tamanoTextoPoliticas
+	{
+		margin-top: -950px	
+	}
+
 	#logo
 	{
 		width: 150px;
@@ -1814,6 +1833,15 @@ ul {font-size: 16px;}
 		height: 1100px;
 		border: solid;
 		border-radius: 8%;
+	}
+
+	.tamanoTextoPoliticas
+	{
+		margin-top: -1100px	
+	}
+	.certificadoCalidad{
+		margin-top: 200px;
+		margin-left:10%;
 	}
 }
 
@@ -1849,6 +1877,14 @@ ul {font-size: 16px;}
 		width: 120px;
 		height: auto;
 	}
+	.tamanoTextoPoliticas
+	{
+		margin-top: -1500px	
+	}
+	.certificadoCalidad{
+		margin-top: 200px;
+		margin-left:5%;
+	}
 }
 
 @media (max-width: 528px) {
@@ -1866,6 +1902,14 @@ ul {font-size: 16px;}
 	{
 		width: 90px;
 		height: auto;
+	}
+	.tamanoTextoPoliticas
+	{
+		margin-top: -1850px	
+	}
+	.certificadoCalidad{
+		margin-top: 200px;
+		margin-left:0px;
 	}
 }
 
@@ -1899,7 +1943,13 @@ ul {font-size: 16px;}
 	.nav-pills > li + li {margin-bottom: 20px;}
 	
 	.nav-pills > li {float: none;}
-			
+	.tamanoTextoPoliticas{
+		margin-top: -2150px;	
+	}
+	.certificadoCalidad{
+		margin-top: 200px;
+		margin-left:0px;
+	}
 	
 }
 @media (max-width: 391px) {
@@ -1911,6 +1961,14 @@ ul {font-size: 16px;}
 		height: 2950px;
 		border: solid;
 		border-radius: 8%;
+	}
+	.tamanoTextoPoliticas{
+		margin-top: -2950px	
+	}
+
+	.certificadoCalidad{
+		margin-top: 200px;
+		margin-left:0px;
 	}
 }
 
@@ -1943,7 +2001,18 @@ ul {font-size: 16px;}
 		border:0px}	
 			
 	.panel-title {font-size: 20px;}
+
+	.tamanoTextoPoliticas{
+		margin-top: -3750px	
+	}
+	.certificadoCalidad{
+		 
+		margin-left:0px;
+	}
+
 }
+
+
 
 .logotipos{
 
